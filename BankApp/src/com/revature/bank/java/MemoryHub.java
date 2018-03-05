@@ -30,6 +30,7 @@ public class MemoryHub {
 	public static void readStored(String file) {
 		
 		HashMap<String, Object> storedData = FileManipulator.ReadIn(file);
+		
 		for(HashMap.Entry<String, Object> me : storedData.entrySet()) {
 			
 			if(me.getValue() instanceof Account) {

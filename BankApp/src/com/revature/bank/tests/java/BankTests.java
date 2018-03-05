@@ -37,22 +37,22 @@ public class BankTests {
 		Wallet w2 = new Wallet(500.00, "two");
 		Wallet w3 = new Wallet(10000.00, "three");
 		
-		List<String> walletsowned = new ArrayList<String>();
-		walletsowned.add("one");
-		Customer c1 = new Customer("Crawdady", "Lee", "Brin", ("password" + "lee").hashCode(), "richmondbrininger@gmail.com", walletsowned);
-		walletsowned.clear();
-		walletsowned.add("two");
-		Customer c2 = new Customer("NK", "Nick", "Nick", ("12345" + "lee").hashCode(), "nick@gmail.com", walletsowned);
-		walletsowned.clear();
-		walletsowned.add("three");
-		Customer c3 = new Customer("SSB4", "Chris", "Wagner", ("password" + "lee").hashCode(), "youknowitsthebestSSB@gmail.com", walletsowned);
-		walletsowned.clear();
-		walletsowned.add("one");
-		walletsowned.add("two");
-		Customer c4 = new Customer("Stuff", "AJ", "Williams", ("pass" + "lee").hashCode(), "morestuff@gmail.com", walletsowned);
-		Employee e1 = new Employee("Emp1", "John", "Cena", ("93o4tgn" + "lee").hashCode(), "dodododo@yahoo.com");
-		Employee e2 = new Employee("Emp2", "Cowman", "Sad", ("jklol5" + "lee").hashCode(), "penguinz0@gmail.com");
-		Admin a1 = new Admin("Admin", "Richmond", "Brininger", ("thebest" + "lee").hashCode(), "youknowitsthebestSSB@gmail.com");
+		List<String> walletsowned1 = new ArrayList<String>();
+		List<String> walletsowned2 = new ArrayList<String>();
+		List<String> walletsowned3 = new ArrayList<String>();
+		List<String> walletsowned4 = new ArrayList<String>();
+		walletsowned1.add("one");
+		Customer c1 = new Customer("Crawdady", "Lee", "Brin", ("password" + "lee").hashCode(), "richmondbrininger@gmail.com", 888888888, walletsowned1);
+		walletsowned2.add("two");
+		Customer c2 = new Customer("NK", "Nick", "Nick", ("12345" + "lee").hashCode(), "nick@gmail.com", 999999999, walletsowned2);
+		walletsowned3.add("three");
+		Customer c3 = new Customer("SSB4", "Chris", "Wagner", ("password" + "lee").hashCode(), "youknowitsthebestSSB@gmail.com", 111111111, walletsowned3);
+		walletsowned4.add("one");
+		walletsowned4.add("two");
+		Customer c4 = new Customer("Stuff", "AJ", "Williams", ("pass" + "lee").hashCode(), "morestuff@gmail.com", 343443434, walletsowned4);
+		Employee e1 = new Employee("Emp1", "John", "Cena", ("93o4tgn" + "lee").hashCode(), "dodododo@yahoo.com", 001112345);
+		Employee e2 = new Employee("Emp2", "Cowman", "Sad", ("jklol5" + "lee").hashCode(), "penguinz0@gmail.com", 954674433);
+		Admin a1 = new Admin("Admin", "Richmond", "Brininger", ("thebest" + "lee").hashCode(), "youknowitsthebestSSB@gmail.com", 987345765);
 		
 		
 		

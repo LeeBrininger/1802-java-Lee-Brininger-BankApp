@@ -19,10 +19,10 @@ public class MenuInterface {
 	public static int introQuestions() {
 		String response = "";
 		System.out.println("Welcome! Please select your option: ");
-		System.out.println("1 - Log In | 2 - Create Account | 3 - Apply for Joint Account");
+		System.out.println("1 - Log In | 2 - Create Account | 3 - Exit");
 		response = input.nextLine();
 		LoggingUtil.logInfo(response);
-		if(response.equals("1") || response.equals("2") || response.equals("3") ) {
+		if(response.equals("1") || response.equals("2") || response.equals("3")) {
 			return Integer.parseInt(response);
 		}else {
 			System.out.println("Invalid Entry, please enter a valid entry" + '\n');
@@ -44,14 +44,6 @@ public class MenuInterface {
 		MenuCreateNewAccount.runCreate(input);
 		clearScreen();
 	}
-	
-	public static void runJoinAccounts() {
-		aesthetics();
-		MenuJoinAccount.JoinMenu();
-		clearScreen();
-	}
-	
-	
 	
 	
 	public static void aesthetics() {

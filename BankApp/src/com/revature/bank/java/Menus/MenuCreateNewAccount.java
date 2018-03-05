@@ -4,9 +4,7 @@ import java.util.Scanner;
 
 import com.revature.bank.java.Users.Customer;
 
-public class MenuCreateNewAccount {
-	
-	static Scanner input = new Scanner(System.in);   
+public class MenuCreateNewAccount {  
 	
 	public static Customer runCreate(Scanner input) {
 		Customer newCust = new Customer();
@@ -16,12 +14,16 @@ public class MenuCreateNewAccount {
 		newCust.setFirstName(input.nextLine());
 		System.out.println("Please Enter your last name: ");
 		newCust.setLastName(input.nextLine());
+		System.out.println("Please Enter your SSN: ");
+		newCust.setSSN(Integer.parseInt(input.nextLine()));
 		System.out.println("Please Set your Username: ");
 		newCust.setUsername(input.nextLine());
 		System.out.println("Please Set your Password: ");
 		newCust.setPassword((input.nextLine() + "Lee").hashCode());
 		System.out.println("Please Enter your e-mail: ");
 		newCust.setEmail(input.nextLine());
+		System.out.println("Thank you, your account is awaiting approval.");
+		newCust.setUnActive();
 		return newCust;
 	}
 }

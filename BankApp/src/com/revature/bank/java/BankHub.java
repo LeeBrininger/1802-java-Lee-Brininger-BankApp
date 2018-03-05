@@ -33,9 +33,8 @@ public class BankHub {
 			MenuInterface.runCreateNew();
 			break;
 		case 3:
-			MenuInterface.runJoinAccounts();
-			break;
-		
+			MemoryHub.storeData();
+			System.exit(0);
 		default:
 			System.out.println("Please enter one of the options");
 			commandTree();

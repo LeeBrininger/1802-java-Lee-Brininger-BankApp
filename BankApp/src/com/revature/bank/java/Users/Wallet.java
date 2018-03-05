@@ -10,7 +10,6 @@ public class Wallet implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private double money;
-	private int address;
 	private String name;
 	
 
@@ -18,7 +17,11 @@ public class Wallet implements Serializable{
 		this.money = d;
 		this.name = Name;
 		Random rand = new Random();
-		this.address = rand.nextInt();
+	}
+	
+	public void printInfo() {
+		System.out.println("Account name: " + name);
+		System.out.println("Account money: " + money);
 	}
 
 	public boolean addFunds(double ammount) {
@@ -37,15 +40,6 @@ public class Wallet implements Serializable{
 		}else {
 			return false;
 		}
-	}
-	
-	public void redoAddress() {
-		Random rand = new Random();
-		this.address = rand.nextInt();
-	}	
-	
-	public int getAddress() {
-		return address;
 	}
 
 	public double getMoney() {

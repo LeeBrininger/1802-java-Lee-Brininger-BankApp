@@ -8,21 +8,24 @@ public class Customer implements Account{
 	private String firstName = new String();
 	private String lastName = new String();
 	private int password = 0;
+	int ssn = 0;
 	private String email = new String();
-	private Integer accessLevel = 1;
+	private int accessLevel = 1;
 	private List<String> walletsOwned = new ArrayList<String>();
-	
+	private Boolean active = true;
+
 
 	private static final long serialVersionUID = 1L;
 	
 	public Customer(){};
 	
-	public Customer(String Username, String FirstName, String LastName, int Password, String Email, List<String> walletsowned) {
+	public Customer(String Username, String FirstName, String LastName, int Password, String Email, int Ssn, List<String> walletsowned) {
 		this.username = Username;
 		this.firstName = FirstName;
 		this.lastName = LastName;
 		this.password = Password;
 		this.email = Email;
+		this.ssn = Ssn;
 		this.walletsOwned = walletsowned;
 	}
 	
@@ -47,16 +50,18 @@ public class Customer implements Account{
 	public List<String> getWalletsOwned() {
 		return walletsOwned;
 	}
-
-	@Override
-	public String toString() {
-		return new StringBuffer(" Username: ").append(this.username)
-				.append( "firstName : ").append(this.firstName)
-				.append( "lastName : ").append(this.lastName)
-				.append( "password : ").append(this.password)
-				.append( "email : ").append(this.email)
-				.append( " accessLevel : ").append(this.accessLevel)
-				.append('\n').toString();
+	
+	public void printInfo() {
+		System.out.println("Username: " + username);
+		System.out.println("FirstName: " + firstName);
+		System.out.println("LastName: " + lastName);
+		System.out.println("Email: " + email);
+		System.out.println("SSN: " + ssn);
+		System.out.println("Accounts owned:");
+		for(int i = 0; i < walletsOwned.size(); i++) {
+			System.out.println("-" + walletsOwned.get(i));
+		}
+		System.out.println("Password is not saved, the hash is: "+ password);
 	}
 	
 	
@@ -104,8 +109,30 @@ public class Customer implements Account{
 		return accessLevel;
 	}
 
-	public void setAccessLevel(Integer accessLevel) {
+	public void setAccessLevel(int accessLevel) {
 		this.accessLevel = accessLevel;
 	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive() {
+		this.active = true;
+	}
 	
+	public void setUnActive() {
+		this.active = false;
+	}
+
+	public int getSSN() {
+		return ssn;
+	}
+
+	public void setSSN(int sSN) {
+		ssn = sSN;
+	}
+
+	
+
 }

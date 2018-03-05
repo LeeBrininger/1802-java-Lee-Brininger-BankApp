@@ -1,9 +1,11 @@
 package com.revature.bank.java.Menus;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
+import com.revature.bank.java.AccountWalletFinder;
 import com.revature.bank.java.BankHub;
 import com.revature.bank.java.MemoryHub;
 import com.revature.bank.java.Users.Account;
@@ -30,13 +32,14 @@ public class MenuLoggedInInterface {
 		
 		if(activeWallet == null) {
 			System.out.println("Please select the account you want see:\n");
-			walletName = selectWallet(wallets, "", input);
+			walletName = AccountWalletFinder.selectWallet(wallets, "", input);
 			activeWallet = allWallets.get(walletName);
 		}
 		
 		System.out.println();
 		System.out.println("What would you like to do?");
-		System.out.println("1: Check Balance\n2: Withdraw Funds\n3: Deposit Funds\n4: Transfer Funds\n5: Switch Accounts\n6: Exit");
+		System.out.println("1: Check Balance\n2: Withdraw Funds\n3: Deposit Funds\n4: Transfer Funds\n"
+				+ "5: Switch Accounts\n6: Apply For Joint Account\n7: Exit");
 		choise = input.nextLine();
 		if(choise.equals("1")) {
 			System.out.println("Your Current funds are: $" + activeWallet.getMoney() + "0");
@@ -46,6 +49,7 @@ public class MenuLoggedInInterface {
 			money = Double.parseDouble(input.nextLine());
 			if(activeWallet.subtractFunds(money)){
 				System.out.println("New ammount: $" + activeWallet.getMoney());
+				MemoryHub.storeData();//Save change
 			}else {
 				System.out.println("Insufficient funds");
 			}
@@ -55,6 +59,7 @@ public class MenuLoggedInInterface {
 			money = Double.parseDouble(input.nextLine());
 			if(activeWallet.addFunds(money)) {
 				System.out.println("New ammount: $" + activeWallet.getMoney());
+				MemoryHub.storeData();//Save change
 			}else {
 				System.out.println("Needs to be positive");
 			}
@@ -67,12 +72,13 @@ public class MenuLoggedInInterface {
 				System.out.println("Needs to be positive");
 			}else {
 				System.out.println("Which account do you want to transfer to:");
-				secondName = selectWallet(wallets, activeWallet.getName(), input);
+				secondName = AccountWalletFinder.selectWallet(wallets, activeWallet.getName(), input);
 				secondWallet = allWallets.get(secondName);
 				if(activeWallet.subtractFunds(money)) {
 					secondWallet.addFunds(money);
 					System.out.println("New ammount in " + activeWallet.getName() + ": $" + activeWallet.getMoney());
 					System.out.println("New ammount in " + secondWallet.getName() + ": $" + secondWallet.getMoney());
+					MemoryHub.storeData();//Save change
 				}else {
 					System.out.println("Insufficient funds");
 				}
@@ -80,11 +86,19 @@ public class MenuLoggedInInterface {
 		}
 		else if(choise.equals("5")){
 			System.out.println("Which account would you like to transfer too?");
-			walletName = selectWallet(wallets, activeWallet.getName(), input);
+			walletName = AccountWalletFinder.selectWallet(wallets, activeWallet.getName(), input);
 			activeWallet = allWallets.get(walletName);
 			preformCustomer(user, activeWallet, input);
 			
 		}else if(choise.equals("6")){
+			System.out.println("Which account would you like to request joint access too?");
+			secondWallet = AccountWalletFinder.selectAnyWallet(input);
+			if(wallets.contains(secondWallet.getName())) {
+				System.out.println("You already have access to that account");
+			}else {
+				System.out.println("Request is logged and awaiting apprival");
+			}
+		}else if(choise.equals("7")){
 			MemoryHub.storeData();
 			BankHub.commandTree();
 		}else {
@@ -92,51 +106,69 @@ public class MenuLoggedInInterface {
 			preformCustomer(user, activeWallet, input);
 		}
 		preformCustomer(user, activeWallet, input);
-		
 	}
 	
 	public static void preformEmployee(Account user, Scanner input) {
-		HashMap<String, Wallet> allWallets = MemoryHub.getWallets();
 		Employee employee = (Employee) user;
 		String choise = "";
+		Customer viewee;
+		Wallet walletee;
 		
 		
 		MenuInterface.aesthetics();
-		System.out.println("Welcome back employee");
+		System.out.println("Welcome back Employee");
 		System.out.println("Select you action: ");
-		System.out.println("1: View Customers\n2: View accounts\n3: Approve/Deny accounts");
-		
-		
-		
-		System.out.println("employee");
-		
-		
-		
+		System.out.println("1: View Customer\n2: View Account\n3: Approve/Deny account");
+		choise = input.nextLine();
+		if(choise.equals("1")) {
+			viewee = AccountWalletFinder.selectCustomer(input);
+			System.out.println("Customer information:");
+			viewee.printInfo();
+			preformEmployee(user, input);
+		}else if(choise.equals("2")) {
+			walletee = AccountWalletFinder.selectAnyWallet(input);
+			System.out.println("Wallet information:");
+			walletee.printInfo();
+			preformEmployee(user, input);
+		}else if(choise.equals("3")) {
+			System.out.println("ToDo");
+		}
 	}
 	
 	public static void preformAdmin(Account user, Scanner input) {
 		HashMap<String, Wallet> allWallets = MemoryHub.getWallets();
-		Admin customer = (Admin) user;
-		MenuInterface.aesthetics();
-		System.out.println("admin");
-	}
-	
-	
-	public static String selectWallet(List<String> wallets, String open, Scanner input) {
-		String walletName = "";
+		Admin admin= (Admin) user;
+		String choise = "";
+		Account viewee;
+		Wallet activeWallet;
 		
-		while(!wallets.contains(walletName) || walletName.equals(open)) {
-			for(int i = 0; i < wallets.size(); i++) {
-				if(!wallets.get(i).equals(open)) {
-					//LoggingUtil.logDebug("." + wallets.get(i) + " . " + open);
-					System.out.println(wallets.get(i));
-				}
+		MenuInterface.aesthetics();
+		System.out.println("Welcome back Sir");
+		System.out.println("Please select you action: ");
+		System.out.println("1: View Customers and Employees\n2: Edit Account\n3: Approve/Deny account");
+		choise = input.nextLine();
+		if(choise.equals("1")) {
+			viewee = AccountWalletFinder.selectAnyAccount(input);
+			if(viewee instanceof Customer) {
+				System.out.println("Customer information:");
+				viewee.printInfo();
+			}else if(viewee instanceof Employee) {
+				System.out.println("Employee information:");
+				viewee.printInfo();
+			}else if(viewee instanceof Admin) {
+				System.out.println("Admin information:");
+				viewee.printInfo();
 			}
-			walletName = input.nextLine();
-			if(!wallets.contains(walletName) || walletName.equals(open)) {
-				System.out.println("That is not a valid wallet, please enter an owned wallet:");
-			}
+			preformAdmin(admin, input);
+		}else if(choise.equals("2")) {
+			System.out.println("Please select the account you want see:\n");
+			activeWallet = AccountWalletFinder.selectAnyWallet(input);
+			AccountWalletFinder.transferFundsAll(user, activeWallet, input);
+			preformAdmin(admin, input);
+		}else if(choise.equals("3")) {
+			System.out.println("ToDo");
 		}
-		return walletName;
 	}
+	
+	
 }
