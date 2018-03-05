@@ -32,7 +32,6 @@ public class MenuLogin {
 			if(user.getPassword() == hash){ //compares the hashes
 				MenuInterface.clearScreen();
 				LoggingUtil.logInfo(user.getUsername() + " logged in");
-				System.out.println(user.getAccessLevel());
 				switch(user.getAccessLevel()) {
 				case 1:
 					MenuLoggedInInterface.preformCustomer(user, null, input);
