@@ -32,6 +32,7 @@ public class MenuLoggedInInterface {
 		while(activeWallet == null) {
 			System.out.println("Please select the account you want see:\n");
 			walletName = AccountWalletFinder.selectWallet(wallets, "", input);
+			
 			activeWallet = allWallets.get(walletName);
 			if(activeWallet == null) {
 				System.out.println("Please select an account");

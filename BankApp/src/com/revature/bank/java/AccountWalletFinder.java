@@ -99,21 +99,19 @@ public class AccountWalletFinder {
 	
 	public static String selectWallet(List<String> wallets, String open, Scanner input) {
 		String walletName = "";
-		System.out.println("1- Exit");
-		while(!wallets.contains(walletName) || walletName.equals(open)) {
-			for(int i = 0; i < wallets.size(); i++) {
-				if(!wallets.get(i).equals(open)) {
-					//LoggingUtil.logDebug("." + wallets.get(i) + " . " + open);
-					System.out.println(wallets.get(i));
-				}
+		System.out.println("Type 'Exit' to exit");
+		for(int i = 0; i < wallets.size(); i++) {
+			if(!wallets.get(i).equals(open)) {
+				System.out.println(wallets.get(i));
 			}
-			walletName = input.nextLine();
-			if(walletName.equals("1")) {
-				return null;
-			}
-			if(!wallets.contains(walletName) || walletName.equals(open)) {
-				System.out.println("That is not a valid wallet, please enter an owned wallet:");
-			}
+		}
+		walletName = input.nextLine();
+		if(walletName.toLowerCase().equals("exit")) {
+			return null;
+		}
+		if(!wallets.contains(walletName) || walletName.equals(open)) {
+			System.out.println("That is not a valid wallet, please enter an owned wallet:");
+			walletName = selectWallet(wallets, open, input);
 		}
 		return walletName;
 	}

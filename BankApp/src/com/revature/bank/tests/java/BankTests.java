@@ -42,13 +42,13 @@ public class BankTests {
 		List<String> walletsowned2 = new ArrayList<String>();
 		List<String> walletsowned3 = new ArrayList<String>();
 		List<String> walletsowned4 = new ArrayList<String>();
-		walletsowned1.add("one");
+		walletsowned1.add("LeeAccount");
 		Customer c1 = new Customer("Crawdady", "Lee", "Brin", "password", "richmondbrininger@gmail.com", 888888888, walletsowned1);
 		walletsowned2.add("two");
 		Customer c2 = new Customer("NK", "Nick", "Nick", "12345", "nick@gmail.com", 999999999, walletsowned2);
-		walletsowned3.add("three");
+		walletsowned3.add("SSB");
 		Customer c3 = new Customer("SSB4", "Chris", "Wagner", "password", "youknowitsthebestSSB@gmail.com", 111111111, walletsowned3);
-		walletsowned4.add("one");
+		walletsowned4.add("LeeAccount");
 		walletsowned4.add("two");
 		Customer c4 = new Customer("Stuff", "AJ", "Williams", "pass", "morestuff@gmail.com", 343443434, walletsowned4);
 		Employee e1 = new Employee("Emp1", "John", "Cena", "54321", "dodododo@yahoo.com", 001112345);
