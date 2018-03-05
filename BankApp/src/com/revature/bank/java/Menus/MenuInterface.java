@@ -2,7 +2,6 @@ package com.revature.bank.java.Menus;
 
 import java.util.Scanner;
 
-import com.revature.bank.java.Users.Customer;
 import com.revature.bank.util.LoggingUtil;
 
 public class MenuInterface {
@@ -19,7 +18,7 @@ public class MenuInterface {
 	public static int introQuestions() {
 		String response = "";
 		System.out.println("Welcome! Please select your option: ");
-		System.out.println("1 - Log In | 2 - Create Account | 3 - Exit");
+		System.out.println("1 - Log In | 2 - Create Profile | 3 - Exit");
 		response = input.nextLine();
 		LoggingUtil.logInfo(response);
 		if(response.equals("1") || response.equals("2") || response.equals("3")) {
@@ -28,7 +27,6 @@ public class MenuInterface {
 			System.out.println("Invalid Entry, please enter a valid entry" + '\n');
 			return introQuestions();
 		}
-		
 	}
 	
 

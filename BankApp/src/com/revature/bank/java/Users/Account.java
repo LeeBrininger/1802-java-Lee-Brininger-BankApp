@@ -13,7 +13,7 @@ public interface Account extends Serializable{
 	int ssn = 0;
 	int password = 0;
 	String email = new String();
-	Integer accessLevel = 0;
+	Integer accessLevel = new Integer(0);
 	List<Integer> walletsOwned = new ArrayList<Integer>();
 	Boolean active = new Boolean(false);
 	

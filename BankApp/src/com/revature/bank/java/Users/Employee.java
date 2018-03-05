@@ -11,16 +11,16 @@ public class Employee implements Account{
 	private String lastName = new String();
 	private String email = new String();
 	int ssn = 0;
-	private int accesslevel = 2;
+	private final int accesslevel = 2;
 	private int password = 0;
 	private Boolean active = true;
 	
-	public Employee(String username, String firstname, String lastname, int password, String Email, int Ssn) {
+	public Employee(String username, String firstname, String lastname, String password, String Email, int Ssn) {
 		// TODO Auto-generated constructor stub
 		this.username = username;
 		this.firstName = firstname;
 		this.lastName = lastname;
-		this.password = password;
+		this.password = (password + "lee").hashCode();
 		this.email = Email;
 		this.ssn = Ssn;
 	}
@@ -56,8 +56,8 @@ public class Employee implements Account{
 	public int getPassword() {
 		return password;
 	}
-	public void setPassword(int password) {
-		this.password = password;
+	public void setPassword(String password) {
+		this.password = (password + "lee").hashCode();
 	}
 
 	public String getEmail() {
@@ -66,15 +66,6 @@ public class Employee implements Account{
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public void setAccesslevel(int accesslevel) {
-		this.accesslevel = accesslevel;
-	}
-
-	@Override
-	public int getAccessLevel() {
-		return accessLevel;
 	}
 
 	@Override
@@ -90,7 +81,8 @@ public class Employee implements Account{
 		this.ssn = ssn;
 	}
 
-	public int getAccesslevel() {
+	@Override
+	public int getAccessLevel() {
 		return accesslevel;
 	}
 

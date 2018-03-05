@@ -4,19 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-
-import com.revature.bank.java.Users.Account;
-import com.revature.bank.java.Users.Admin;
-import com.revature.bank.java.Users.Customer;
-import com.revature.bank.java.Users.Employee;
-import com.revature.bank.util.LoggingUtil;
 
 public class FileManipulator {
 		

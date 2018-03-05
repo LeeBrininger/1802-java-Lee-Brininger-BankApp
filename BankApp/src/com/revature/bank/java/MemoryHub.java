@@ -1,23 +1,7 @@
 package com.revature.bank.java;
 
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Objects;
-import java.util.Set;
-
 import com.revature.bank.java.Users.Account;
-import com.revature.bank.java.Users.Customer;
 import com.revature.bank.java.Users.Wallet;
 import com.revature.bank.util.LoggingUtil;
 
@@ -40,7 +24,7 @@ public class MemoryHub {
 				wallets.put(me.getKey(), (Wallet) me.getValue());
 			}
 		}
-		//LoggingUtil.logInfo(accounts.get("Crawdady").getFirstName());
+		LoggingUtil.logInfo("Data Read in");
 	}
 	
 	public static void storeData() {
@@ -54,13 +38,35 @@ public class MemoryHub {
 		}
 		
 		FileManipulator.WriteOut(allData, BankHub.getFile());
+		LoggingUtil.logInfo("Data Written to file");
+	}
+	
+	
+	public static void addAccount(Account account) {
+		accounts.put(account.getUsername(), account);
+		LoggingUtil.logInfo("Account " + account.getUsername() + " added");
+	}
+	
+	public static void removeAccount(Account account) {
+		accounts.remove(account.getUsername());
+		LoggingUtil.logInfo("Account " + account.getUsername() + " removed");
 	}
 
+	public static void addWallet(Wallet wallet) {
+		wallets.put(wallet.getName(), wallet);
+		LoggingUtil.logInfo("Wallet " + wallet.getName() + " added");
+	}
+	
+	public static void removeWallet(Wallet wallet) {
+		wallets.remove(wallet.getName());
+		LoggingUtil.logInfo("Wallet " + wallet.getName() + " removed");
+	}
+	
 	public static HashMap<String, Account> getAccounts() {
 		return accounts;
 	}
 
-
+	
 	public static void setAccounts(HashMap<String, Account> accounts) {
 		MemoryHub.accounts = accounts;
 	}

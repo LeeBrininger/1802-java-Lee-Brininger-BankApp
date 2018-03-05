@@ -3,6 +3,8 @@ package com.revature.bank.java.Users;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.revature.bank.util.LoggingUtil;
+
 public class Customer implements Account{
 	private String username = new String();
 	private String firstName = new String();
@@ -10,23 +12,38 @@ public class Customer implements Account{
 	private int password = 0;
 	int ssn = 0;
 	private String email = new String();
-	private int accessLevel = 1;
+	private final int accessLevel = 1;
 	private List<String> walletsOwned = new ArrayList<String>();
 	private Boolean active = true;
 
 
 	private static final long serialVersionUID = 1L;
 	
-	public Customer(){};
+	public Customer(){
+		LoggingUtil.logInfo("Created new blank customer");
+	};
 	
-	public Customer(String Username, String FirstName, String LastName, int Password, String Email, int Ssn, List<String> walletsowned) {
+	public Customer(String Username, String FirstName, String LastName, String Password, String Email, int Ssn) {
 		this.username = Username;
 		this.firstName = FirstName;
 		this.lastName = LastName;
-		this.password = Password;
+		this.password = (Password + "lee").hashCode();
+		this.email = Email;
+		this.ssn = Ssn;
+		LoggingUtil.logInfo("Created new Customer with:\nusername: " + username + "\nfirst name: " + firstName + 
+				"\nlast name: " + lastName + "\npassword: " + password + "\nemail: " + email + "\nSSN: " + ssn);
+	}
+	
+	public Customer(String Username, String FirstName, String LastName, String Password, String Email, int Ssn, List<String> walletsowned) {
+		this.username = Username;
+		this.firstName = FirstName;
+		this.lastName = LastName;
+		this.password = (Password + "lee").hashCode();
 		this.email = Email;
 		this.ssn = Ssn;
 		this.walletsOwned = walletsowned;
+		LoggingUtil.logInfo("Created new Customer with:\nusername: " + username + "\nfirst name: " + firstName + 
+				"\nlast name: " + lastName + "\npassword: " + password + "\nemail: " + email + "\nSSN: " + ssn);
 	}
 	
 	public Boolean addWallet(String walletName) {
@@ -70,6 +87,7 @@ public class Customer implements Account{
 	}
 
 	public void setEmail(String email) {
+		LoggingUtil.logInfo("For Account:" + username + " " + "Email set as " + email);
 		this.email = email;
 	}
 	
@@ -78,7 +96,8 @@ public class Customer implements Account{
 	}
 
 	public void setUsername(String username) {
-		this.username = username;
+		LoggingUtil.logInfo("For Account:" + username + " " + "Username set as " + username);
+		this.username = username; 
 	}
 
 	public String getFirstName() {
@@ -86,6 +105,7 @@ public class Customer implements Account{
 	}
 
 	public void setFirstName(String firstName) {
+		LoggingUtil.logInfo("For Account:" + username + " " + "firstName set as " + firstName);
 		this.firstName = firstName;
 	}
 
@@ -94,6 +114,7 @@ public class Customer implements Account{
 	}
 
 	public void setLastName(String lastName) {
+		LoggingUtil.logInfo("For Account:" + username + " " + "lastName set as " + lastName);
 		this.lastName = lastName;
 	}
 
@@ -101,16 +122,14 @@ public class Customer implements Account{
 		return password;
 	}
 
-	public void setPassword(int password) {
-		this.password = password;
+	public void setPassword(String Password) {
+		this.password = (Password + "lee").hashCode();
+		LoggingUtil.logInfo("For Account:" + username + " " + "password set as hash" + password);
 	}
 
+	@Override
 	public int getAccessLevel() {
 		return accessLevel;
-	}
-
-	public void setAccessLevel(int accessLevel) {
-		this.accessLevel = accessLevel;
 	}
 
 	public Boolean getActive() {
@@ -118,10 +137,12 @@ public class Customer implements Account{
 	}
 
 	public void setActive() {
+		LoggingUtil.logInfo("For Account:" + username + " activated");
 		this.active = true;
 	}
 	
 	public void setUnActive() {
+		LoggingUtil.logInfo("For Account:" + username + " not activated");
 		this.active = false;
 	}
 
@@ -130,6 +151,7 @@ public class Customer implements Account{
 	}
 
 	public void setSSN(int sSN) {
+		LoggingUtil.logInfo("For Account:" + username + " " + "SSN set as " + firstName);
 		ssn = sSN;
 	}
 

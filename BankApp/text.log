@@ -424,3 +424,985 @@
 2018-03-05 02:36:29 INFO  root:18 - Emp1
 2018-03-05 02:36:29 INFO  root:18 - one
 2018-03-05 02:36:49 INFO  root:18 - 2
+2018-03-05 09:00:45 INFO  root:18 - 1
+2018-03-05 09:01:31 INFO  root:18 - Admin
+2018-03-05 09:01:33 INFO  root:18 - 1
+2018-03-05 09:10:32 INFO  root:18 - -604889065
+2018-03-05 09:10:32 INFO  root:18 - Nick
+2018-03-05 09:10:32 INFO  root:18 - Emp1
+2018-03-05 09:10:32 INFO  root:18 - one
+2018-03-05 09:10:47 INFO  root:18 - 3
+2018-03-05 09:11:00 INFO  root:18 - 3
+2018-03-05 09:30:39 INFO  root:18 - 1
+2018-03-05 09:31:07 INFO  root:18 - 1
+2018-03-05 12:09:35 INFO  root:18 - Data Read in
+2018-03-05 12:09:56 INFO  root:18 - 1
+2018-03-05 12:31:17 INFO  root:18 - Data Read in
+2018-03-05 12:59:38 INFO  root:18 - Data Read in
+2018-03-05 12:59:42 INFO  root:18 - 1
+2018-03-05 12:59:59 INFO  root:18 - Data Written to file
+2018-03-05 13:00:01 INFO  root:18 - 1
+2018-03-05 13:00:14 INFO  root:18 - Data Written to file
+2018-03-05 13:00:16 INFO  root:18 - 2
+2018-03-05 13:01:39 INFO  root:18 - 
+2018-03-05 13:01:39 INFO  root:18 - Data Written to file
+2018-03-05 13:08:23 INFO  root:18 - Data Read in
+2018-03-05 13:08:27 INFO  root:18 - 2
+2018-03-05 13:12:21 INFO  root:18 - Data Read in
+2018-03-05 13:12:24 INFO  root:18 - 2
+2018-03-05 13:13:00 INFO  root:18 - 
+2018-03-05 13:13:00 INFO  root:18 - Data Written to file
+2018-03-05 13:16:59 INFO  root:18 - Data Read in
+2018-03-05 13:17:12 INFO  root:18 - 2
+2018-03-05 13:37:04 INFO  root:18 - 
+2018-03-05 13:37:04 INFO  root:18 - Data Written to file
+2018-03-05 13:40:07 INFO  root:18 - Data Read in
+2018-03-05 13:40:17 INFO  root:18 - Data Read in
+2018-03-05 13:40:19 INFO  root:18 - 1
+2018-03-05 13:44:21 INFO  root:18 - Data Read in
+2018-03-05 13:44:25 INFO  root:18 - 1
+2018-03-05 13:46:10 INFO  root:18 - Data Read in
+2018-03-05 13:49:54 INFO  root:18 - 1
+2018-03-05 13:53:31 INFO  root:18 - Data Read in
+2018-03-05 13:53:56 INFO  root:18 - 1
+2018-03-05 13:54:10 INFO  root:18 - Data Written to file
+2018-03-05 13:54:22 INFO  root:18 - Data Written to file
+2018-03-05 14:00:36 INFO  root:18 - Data Read in
+2018-03-05 14:00:38 INFO  root:18 - 1
+2018-03-05 14:07:20 INFO  root:18 - Data Read in
+2018-03-05 14:07:24 INFO  root:18 - 1
+2018-03-05 14:08:14 INFO  root:18 - Data Written to file
+2018-03-05 14:08:18 INFO  root:18 - Data Written to file
+2018-03-05 14:08:20 INFO  root:18 - 3
+2018-03-05 14:08:20 INFO  root:18 - Data Written to file
+2018-03-05 14:08:25 INFO  root:18 - Data Read in
+2018-03-05 14:08:26 INFO  root:18 - 1
+2018-03-05 14:14:12 INFO  root:18 - Data Read in
+2018-03-05 14:14:14 INFO  root:18 - 1
+2018-03-05 14:14:22 INFO  root:18 - 1
+2018-03-05 14:22:17 INFO  root:18 - Data Read in
+2018-03-05 14:22:26 INFO  root:18 - Data Read in
+2018-03-05 14:22:27 INFO  root:18 - 1
+2018-03-05 14:35:47 INFO  root:18 - Data Read in
+2018-03-05 14:35:56 INFO  root:18 - Data Read in
+2018-03-05 14:35:57 INFO  root:18 - 1
+2018-03-05 14:36:07 INFO  root:18 - Admin
+2018-03-05 14:36:09 INFO  root:18 - thebest
+2018-03-05 14:36:12 INFO  root:18 - 1
+2018-03-05 14:36:58 INFO  root:18 - Data Written to file
+2018-03-05 14:45:46 INFO  root:18 - Data Read in
+2018-03-05 14:45:51 INFO  root:18 - 1
+2018-03-05 14:46:05 INFO  root:18 - $30.0 withdrawn from one, new balance is 71.0
+2018-03-05 14:46:05 INFO  root:18 - Data Written to file
+2018-03-05 14:46:22 INFO  root:18 - $100.0 added to one, new balance is 171.0
+2018-03-05 14:46:23 INFO  root:18 - Data Written to file
+2018-03-05 14:47:13 INFO  root:18 - Data Read in
+2018-03-05 14:47:15 INFO  root:18 - 1
+2018-03-05 14:47:32 INFO  root:18 - Data Written to file
+2018-03-05 14:47:34 INFO  root:18 - $50.0 withdrawn from wallet five, new balance is 50.0
+2018-03-05 14:47:34 INFO  root:18 - $50.0 added to wallet one, new balance is 221.0
+2018-03-05 14:47:34 INFO  root:18 - Data Written to file
+2018-03-05 15:04:38 INFO  root:18 - Data Read in
+2018-03-05 15:05:11 INFO  root:18 - 1
+2018-03-05 15:05:18 INFO  root:18 - Crawdadylogged in
+2018-03-05 15:14:23 INFO  root:18 - Data Read in
+2018-03-05 15:14:26 INFO  root:18 - 1
+2018-03-05 15:14:30 INFO  root:18 - Failed password on Admin
+2018-03-05 15:14:33 INFO  root:18 - 1
+2018-03-05 15:14:37 INFO  root:18 - Admin logged in
+2018-03-05 15:14:56 INFO  root:18 - Data Written to file
+2018-03-05 15:15:09 INFO  root:18 - one deleted
+2018-03-05 15:15:09 INFO  root:18 - Wallet one removed
+2018-03-05 15:15:09 INFO  root:18 - Data Written to file
+2018-03-05 15:15:27 INFO  root:18 - -604889065
+2018-03-05 15:15:27 INFO  root:18 - Walletone created with $101.0 of type Checking
+2018-03-05 15:15:27 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 15:15:27 INFO  root:18 - Walletthree created with $10000.0 of type Savings
+2018-03-05 15:15:27 INFO  root:18 - Created new Customer with:
+ username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 15:15:27 INFO  root:18 - Created new Customer with:
+ username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 15:15:27 INFO  root:18 - Created new Customer with:
+ username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 15:15:27 INFO  root:18 - Created new Customer with:
+ username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 15:15:27 INFO  root:18 - Nick
+2018-03-05 15:15:27 INFO  root:18 - Emp1
+2018-03-05 15:15:27 INFO  root:18 - one
+2018-03-05 15:37:21 INFO  root:18 - -604889065
+2018-03-05 15:37:21 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 15:37:21 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 15:37:21 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 15:37:21 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 15:37:21 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 15:37:21 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 15:37:21 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 15:37:21 INFO  root:18 - Nick
+2018-03-05 15:37:21 INFO  root:18 - Emp1
+2018-03-05 15:38:16 INFO  root:18 - -604889065
+2018-03-05 15:38:16 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 15:38:16 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 15:38:16 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 15:38:16 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 15:38:16 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 15:38:16 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 15:38:16 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 15:38:16 INFO  root:18 - Nick
+2018-03-05 15:38:16 INFO  root:18 - Emp1
+2018-03-05 15:38:16 INFO  root:18 - LeeAccount
+2018-03-05 15:38:42 INFO  root:18 - -604889065
+2018-03-05 15:38:42 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 15:38:42 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 15:38:42 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 15:38:42 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 15:38:42 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 15:38:42 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 15:38:42 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 15:38:42 INFO  root:18 - Nick
+2018-03-05 15:38:42 INFO  root:18 - Emp1
+2018-03-05 15:38:42 INFO  root:18 - LeeAccount
+2018-03-05 15:39:40 INFO  root:18 - -604889065
+2018-03-05 15:39:40 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 15:39:40 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 15:39:40 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 15:39:40 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 15:39:40 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 15:39:40 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 15:39:40 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 15:39:40 INFO  root:18 - Nick
+2018-03-05 15:39:40 INFO  root:18 - Emp1
+2018-03-05 15:39:40 INFO  root:18 - LeeAccount
+2018-03-05 15:39:56 INFO  root:18 - -604889065
+2018-03-05 15:39:56 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 15:39:56 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 15:39:56 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 15:39:56 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 15:39:56 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 15:39:56 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 15:39:56 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 15:39:56 INFO  root:18 - Nick
+2018-03-05 15:39:56 INFO  root:18 - Emp1
+2018-03-05 15:39:56 INFO  root:18 - LeeAccount
+2018-03-05 15:40:22 INFO  root:18 - -604889065
+2018-03-05 15:40:22 INFO  root:18 - Nick
+2018-03-05 15:40:22 INFO  root:18 - Emp1
+2018-03-05 15:40:22 INFO  root:18 - LeeAccount
+2018-03-05 15:44:54 INFO  root:18 - Data Read in
+2018-03-05 15:44:54 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 15:45:11 INFO  root:18 - Data Read in
+2018-03-05 15:45:11 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 15:45:48 INFO  root:18 - Data Read in
+2018-03-05 15:45:48 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 15:45:59 INFO  root:18 - Data Read in
+2018-03-05 15:45:59 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 15:51:24 INFO  root:18 - Data Read in
+2018-03-05 15:51:24 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 15:51:31 INFO  root:18 - Data Read in
+2018-03-05 15:51:31 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 15:52:35 INFO  root:18 - Data Read in
+2018-03-05 15:52:35 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 15:52:35 INFO  root:18 - Data Read in
+2018-03-05 15:52:35 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 15:57:26 INFO  root:18 - Data Read in
+2018-03-05 15:57:26 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 15:57:26 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-05 15:57:26 INFO  root:18 - Wallet NoOwner added
+2018-03-05 15:57:26 INFO  root:18 - Data Read in
+2018-03-05 15:57:26 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 16:02:01 INFO  root:18 - Data Read in
+2018-03-05 16:02:01 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 16:02:01 INFO  root:18 - Created new Customer with:
+username: Username
+first name: FirstName
+last name: LastName
+password: 0
+email: Email
+SSN: 90909099
+2018-03-05 16:02:01 INFO  root:18 - Account Username added
+2018-03-05 16:02:01 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-05 16:02:01 INFO  root:18 - Wallet NoOwner added
+2018-03-05 16:02:01 INFO  root:18 - Data Read in
+2018-03-05 16:02:01 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 16:02:17 INFO  root:18 - Data Read in
+2018-03-05 16:02:21 INFO  root:18 - 2
+2018-03-05 16:02:21 INFO  root:18 - Created new blank customer
+2018-03-05 16:02:28 INFO  root:18 - For Account:  firstName set asBill
+2018-03-05 16:02:32 INFO  root:18 - For Account:  lastName set asBilly
+2018-03-05 16:03:31 INFO  root:18 - Data Read in
+2018-03-05 16:03:33 INFO  root:18 - 2
+2018-03-05 16:03:33 INFO  root:18 - Created new blank customer
+2018-03-05 16:03:34 INFO  root:18 - For Account: firstName set asBoll
+2018-03-05 16:03:57 INFO  root:18 - Data Read in
+2018-03-05 16:04:01 INFO  root:18 - 2
+2018-03-05 16:04:01 INFO  root:18 - Created new blank customer
+2018-03-05 16:04:08 INFO  root:18 - For Account: firstName set as Bill
+2018-03-05 16:04:12 INFO  root:18 - For Account: lastName set as Will
+2018-03-05 16:04:15 INFO  root:18 - For Account: SSN set as Bill
+2018-03-05 16:04:22 INFO  root:18 - For Account:BillWill Username set as BillWill
+2018-03-05 16:04:26 INFO  root:18 - For Account:BillWill password set as 1403757937
+2018-03-05 16:04:31 INFO  root:18 - For Account:BillWill Email set as meme@gmail.com
+2018-03-05 16:04:46 INFO  root:18 - $10000.0 added to wallet JkLol, new balance is 10000.0
+2018-03-05 16:04:46 INFO  root:18 - Wallet JkLol added
+2018-03-05 16:04:46 INFO  root:18 - 
+2018-03-05 16:04:46 INFO  root:18 - For Account:BillWill not activated
+2018-03-05 16:04:46 INFO  root:18 - Account BillWill added
+2018-03-05 16:04:46 INFO  root:18 - Data Written to file
+2018-03-05 16:04:57 INFO  root:18 - 1
+2018-03-05 16:05:04 INFO  root:18 - Admin logged in
+2018-03-05 16:05:39 INFO  root:18 - Data Written to file
+2018-03-05 16:05:49 INFO  root:18 - For Account:BillWill activated
+2018-03-05 16:05:49 INFO  root:18 - Data Written to file
+2018-03-05 16:05:53 INFO  root:18 - Data Written to file
+2018-03-05 16:05:54 INFO  root:18 - 1
+2018-03-05 16:05:59 INFO  root:18 - Failed password on BillWill
+2018-03-05 16:06:25 INFO  root:18 - 1
+2018-03-05 16:06:32 INFO  root:18 - Failed password on BillWill
+2018-03-05 16:07:20 INFO  root:18 - Data Read in
+2018-03-05 16:07:24 INFO  root:18 - 2
+2018-03-05 16:07:24 INFO  root:18 - Created new blank customer
+2018-03-05 16:07:27 INFO  root:18 - For Account: firstName set as Lee
+2018-03-05 16:07:28 INFO  root:18 - For Account: lastName set as B
+2018-03-05 16:07:38 INFO  root:18 - For Account: SSN set as Lee
+2018-03-05 16:07:43 INFO  root:18 - For Account:The Username set as The
+2018-03-05 16:07:49 INFO  root:18 - For Account:The password set as 1536027
+2018-03-05 16:07:53 INFO  root:18 - For Account:The Email set as m
+2018-03-05 16:07:59 INFO  root:18 - 
+2018-03-05 16:07:59 INFO  root:18 - For Account:The not activated
+2018-03-05 16:07:59 INFO  root:18 - Account The added
+2018-03-05 16:07:59 INFO  root:18 - Data Written to file
+2018-03-05 16:08:01 INFO  root:18 - 1
+2018-03-05 16:08:06 INFO  root:18 - Failed password on Admin
+2018-03-05 16:08:10 INFO  root:18 - 1
+2018-03-05 16:08:14 INFO  root:18 - Admin logged in
+2018-03-05 16:08:22 INFO  root:18 - For Account:The activated
+2018-03-05 16:08:22 INFO  root:18 - Data Written to file
+2018-03-05 16:08:24 INFO  root:18 - Data Written to file
+2018-03-05 16:08:25 INFO  root:18 - 1
+2018-03-05 16:08:27 INFO  root:18 - Failed Login, bad username
+2018-03-05 16:08:30 INFO  root:18 - 1
+2018-03-05 16:08:31 INFO  root:18 - Failed Login, bad username
+2018-03-05 16:08:41 INFO  root:18 - The
+2018-03-05 16:08:43 INFO  root:18 - 1
+2018-03-05 16:08:46 INFO  root:18 - Failed password on The
+2018-03-05 16:21:10 INFO  root:18 - Data Read in
+2018-03-05 16:21:14 INFO  root:18 - 2
+2018-03-05 16:21:14 INFO  root:18 - Created new blank customer
+2018-03-05 16:21:17 INFO  root:18 - For Account: firstName set as Lee
+2018-03-05 16:21:20 INFO  root:18 - For Account: lastName set as Brininger
+2018-03-05 16:21:24 INFO  root:18 - For Account: SSN set as Lee
+2018-03-05 16:21:27 INFO  root:18 - For Account:Bob Username set as Bob
+2018-03-05 16:21:31 INFO  root:18 - For Account:Bob password set as 12345
+2018-03-05 16:21:33 INFO  root:18 - For Account:Bob Email set as irgrn
+2018-03-05 16:21:38 INFO  root:18 - 
+2018-03-05 16:21:38 INFO  root:18 - For Account:Bob not activated
+2018-03-05 16:21:38 INFO  root:18 - Account Bob added
+2018-03-05 16:21:38 INFO  root:18 - Data Written to file
+2018-03-05 16:21:42 INFO  root:18 - 1
+2018-03-05 16:21:48 INFO  root:18 - 1
+2018-03-05 16:21:53 INFO  root:18 - Admin logged in
+2018-03-05 16:22:01 INFO  root:18 - For Account:Bob activated
+2018-03-05 16:22:01 INFO  root:18 - Data Written to file
+2018-03-05 16:22:03 INFO  root:18 - Data Written to file
+2018-03-05 16:22:04 INFO  root:18 - 1
+2018-03-05 16:22:09 INFO  root:18 - Failed password on Bob
+2018-03-05 16:24:12 INFO  root:18 - Data Read in
+2018-03-05 16:24:15 INFO  root:18 - 1
+2018-03-05 16:24:20 INFO  root:18 - Crawdady logged in
+2018-03-05 16:24:25 INFO  root:18 - Data Written to file
+2018-03-05 16:24:31 INFO  root:18 - 1
+2018-03-05 16:24:34 INFO  root:18 - Crawdady logged in
+2018-03-05 16:24:43 INFO  root:18 - Data Read in
+2018-03-05 16:26:14 INFO  root:18 - Data Read in
+2018-03-05 16:26:15 INFO  root:18 - 2
+2018-03-05 16:26:15 INFO  root:18 - Created new blank customer
+2018-03-05 16:26:20 INFO  root:18 - For Account: firstName set as Lee
+2018-03-05 16:26:22 INFO  root:18 - For Account: lastName set as Brin
+2018-03-05 16:26:24 INFO  root:18 - For Account: SSN set as Lee
+2018-03-05 16:26:33 INFO  root:18 - For Account:Bob Username set as Bob
+2018-03-05 16:26:38 INFO  root:18 - For Account:Bob password set as 12345
+2018-03-05 16:26:50 INFO  root:18 - For Account:Bob Email set as the@gmail.com
+2018-03-05 16:27:42 INFO  root:18 - Data Read in
+2018-03-05 16:27:46 INFO  root:18 - 2
+2018-03-05 16:27:46 INFO  root:18 - Created new blank customer
+2018-03-05 16:28:42 INFO  root:18 - For Account: firstName set as Lee
+2018-03-05 16:28:43 INFO  root:18 - For Account: lastName set as Brin
+2018-03-05 16:28:45 INFO  root:18 - For Account: SSN set as Lee
+2018-03-05 16:28:50 INFO  root:18 - For Account:Bob Username set as Bob
+2018-03-05 16:28:52 INFO  root:18 - For Account:Bob password set as hash-1861299975
+2018-03-05 16:28:53 INFO  root:18 - For Account:Bob Email set as ok
+2018-03-05 16:29:05 INFO  root:18 - $100.0 added to wallet weee, new balance is 100.0
+2018-03-05 16:29:05 INFO  root:18 - Wallet weee added
+2018-03-05 16:29:05 INFO  root:18 - 
+2018-03-05 16:29:05 INFO  root:18 - For Account:Bob not activated
+2018-03-05 16:29:05 INFO  root:18 - Account Bob added
+2018-03-05 16:29:05 INFO  root:18 - Data Written to file
+2018-03-05 16:29:07 INFO  root:18 - 1
+2018-03-05 16:29:13 INFO  root:18 - Admin logged in
+2018-03-05 16:30:44 INFO  root:18 - For Account:Bob activated
+2018-03-05 16:30:44 INFO  root:18 - Data Written to file
+2018-03-05 16:30:46 INFO  root:18 - Data Written to file
+2018-03-05 16:30:47 INFO  root:18 - 1
+2018-03-05 16:30:51 INFO  root:18 - Bob logged in
+2018-03-05 16:32:05 INFO  root:18 - Data Read in
+2018-03-05 16:32:41 INFO  root:18 - Data Read in
+2018-03-05 16:32:45 INFO  root:18 - 2
+2018-03-05 16:32:45 INFO  root:18 - Created new blank customer
+2018-03-05 16:32:49 INFO  root:18 - For Account: firstName set as Boll
+2018-03-05 16:32:51 INFO  root:18 - For Account: lastName set as Lee
+2018-03-05 16:32:53 INFO  root:18 - For Account: SSN set as Boll
+2018-03-05 16:32:56 INFO  root:18 - For Account:12345 Username set as 12345
+2018-03-05 16:33:00 INFO  root:18 - For Account:12345 password set as hash-1861299975
+2018-03-05 16:33:05 INFO  root:18 - For Account:12345 Email set as ok
+2018-03-05 16:33:19 INFO  root:18 - $100.0 added to wallet yooo, new balance is 100.0
+2018-03-05 16:33:19 INFO  root:18 - Wallet yooo added
+2018-03-05 16:33:19 INFO  root:18 - 
+2018-03-05 16:33:19 INFO  root:18 - For Account:12345 not activated
+2018-03-05 16:33:19 INFO  root:18 - Account 12345 added
+2018-03-05 16:33:19 INFO  root:18 - Data Written to file
+2018-03-05 16:33:20 INFO  root:18 - 1
+2018-03-05 16:33:26 INFO  root:18 - Admin logged in
+2018-03-05 16:34:45 INFO  root:18 - Data Read in
+2018-03-05 16:34:45 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 16:34:45 INFO  root:18 - Created new Customer with:
+username: Username
+first name: FirstName
+last name: LastName
+password: -792037285
+email: Email
+SSN: 90909099
+2018-03-05 16:34:45 INFO  root:18 - Account Username added
+2018-03-05 16:34:45 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-05 16:34:45 INFO  root:18 - Wallet NoOwner added
+2018-03-05 16:34:45 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 16:34:45 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 16:34:45 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 16:34:45 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 16:34:45 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 16:34:45 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 16:34:45 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 16:34:45 INFO  root:18 - Data Read in
+2018-03-05 16:34:45 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 16:35:17 INFO  root:18 - Data Read in
+2018-03-05 16:35:23 INFO  root:18 - 1
+2018-03-05 16:35:41 INFO  root:18 - Emp1 logged in
+2018-03-05 16:39:44 INFO  root:18 - Data Read in
+2018-03-05 16:39:46 INFO  root:18 - 1
+2018-03-05 16:39:52 INFO  root:18 - Emp1 logged in
+2018-03-05 16:40:27 INFO  root:18 - Data Read in
+2018-03-05 16:40:31 INFO  root:18 - 1
+2018-03-05 16:40:36 INFO  root:18 - Emp1 logged in
+2018-03-05 16:41:55 INFO  root:18 - Data Read in
+2018-03-05 16:41:55 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 16:41:55 INFO  root:18 - Created new Customer with:
+username: Username
+first name: FirstName
+last name: LastName
+password: -792037285
+email: Email
+SSN: 90909099
+2018-03-05 16:41:55 INFO  root:18 - Account Username added
+2018-03-05 16:41:55 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-05 16:41:55 INFO  root:18 - Wallet NoOwner added
+2018-03-05 16:41:55 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 16:41:55 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 16:41:55 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 16:41:55 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 16:41:55 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 16:41:55 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 16:41:55 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 16:41:55 INFO  root:18 - Data Read in
+2018-03-05 16:41:55 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 16:42:41 INFO  root:18 - Data Read in
+2018-03-05 16:42:41 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 16:42:41 INFO  root:18 - Created new Customer with:
+username: Username
+first name: FirstName
+last name: LastName
+password: -792037285
+email: Email
+SSN: 90909099
+2018-03-05 16:42:41 INFO  root:18 - Account Username added
+2018-03-05 16:42:41 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-05 16:42:41 INFO  root:18 - Wallet NoOwner added
+2018-03-05 16:42:41 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 16:42:41 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 16:42:41 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 16:42:41 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 16:42:41 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 16:42:41 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 16:42:41 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 16:42:41 INFO  root:18 - Data Read in
+2018-03-05 16:42:41 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 16:42:41 INFO  root:18 - Data Read in
+2018-03-05 16:42:41 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 16:42:41 INFO  root:18 - Created new Customer with:
+username: Username
+first name: FirstName
+last name: LastName
+password: -792037285
+email: Email
+SSN: 90909099
+2018-03-05 16:42:41 INFO  root:18 - Account Username added
+2018-03-05 16:42:41 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-05 16:42:41 INFO  root:18 - Wallet NoOwner added
+2018-03-05 16:42:41 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 16:42:41 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 16:42:41 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 16:42:41 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 16:42:41 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 16:42:41 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 16:42:41 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 16:42:41 INFO  root:18 - Data Read in
+2018-03-05 16:42:41 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 16:44:42 INFO  root:18 - Data Read in
+2018-03-05 16:44:42 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 16:44:42 INFO  root:18 - Created new Customer with:
+username: Username
+first name: FirstName
+last name: LastName
+password: -792037285
+email: Email
+SSN: 90909099
+2018-03-05 16:44:42 INFO  root:18 - Account Username added
+2018-03-05 16:44:42 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-05 16:44:42 INFO  root:18 - Wallet NoOwner added
+2018-03-05 16:44:42 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 16:44:42 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 16:44:42 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 16:44:42 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 16:44:42 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 16:44:42 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 16:44:42 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 16:44:42 INFO  root:18 - Data Read in
+2018-03-05 16:44:42 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 16:45:35 INFO  root:18 - Data Read in
+2018-03-05 16:45:35 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 16:45:35 INFO  root:18 - Created new Customer with:
+username: Username
+first name: FirstName
+last name: LastName
+password: -792037285
+email: Email
+SSN: 90909099
+2018-03-05 16:45:35 INFO  root:18 - Account Username added
+2018-03-05 16:45:35 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-05 16:45:35 INFO  root:18 - Wallet NoOwner added
+2018-03-05 16:45:35 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 16:45:35 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 16:45:35 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 16:45:35 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 16:45:35 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 16:45:35 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 16:45:35 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 16:45:35 INFO  root:18 - Data Read in
+2018-03-05 16:45:35 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 16:46:21 INFO  root:18 - Data Read in
+2018-03-05 16:46:21 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 16:46:21 INFO  root:18 - Created new Customer with:
+username: Username
+first name: FirstName
+last name: LastName
+password: -792037285
+email: Email
+SSN: 90909099
+2018-03-05 16:46:21 INFO  root:18 - Account Username added
+2018-03-05 16:46:21 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-05 16:46:21 INFO  root:18 - Wallet NoOwner added
+2018-03-05 16:46:21 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 16:46:21 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 16:46:21 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 16:46:21 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 16:46:21 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 16:46:21 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 16:46:21 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 16:46:21 INFO  root:18 - Data Read in
+2018-03-05 16:46:21 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 16:47:07 INFO  root:18 - Data Read in
+2018-03-05 16:47:07 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 16:47:07 INFO  root:18 - Created new Customer with:
+username: Username
+first name: FirstName
+last name: LastName
+password: -792037285
+email: Email
+SSN: 90909099
+2018-03-05 16:47:07 INFO  root:18 - Account Username added
+2018-03-05 16:47:07 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-05 16:47:07 INFO  root:18 - Wallet NoOwner added
+2018-03-05 16:47:07 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 16:47:07 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 16:47:07 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 16:47:07 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 16:47:07 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 16:47:07 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 16:47:07 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 16:47:07 INFO  root:18 - Data Read in
+2018-03-05 16:47:07 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 16:48:22 INFO  root:18 - Data Read in
+2018-03-05 16:48:22 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 16:48:22 INFO  root:18 - Created new Customer with:
+username: Username
+first name: FirstName
+last name: LastName
+password: -792037285
+email: Email
+SSN: 90909099
+2018-03-05 16:48:22 INFO  root:18 - Account Username added
+2018-03-05 16:48:22 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-05 16:48:22 INFO  root:18 - Wallet NoOwner added
+2018-03-05 16:48:22 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 16:48:22 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 16:48:22 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 16:48:22 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 16:48:22 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 16:48:22 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 16:48:22 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 16:48:22 INFO  root:18 - Data Read in
+2018-03-05 16:48:22 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 16:49:32 INFO  root:18 - Data Read in
+2018-03-05 16:49:32 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 16:49:32 INFO  root:18 - Created new Customer with:
+username: Username
+first name: FirstName
+last name: LastName
+password: -792037285
+email: Email
+SSN: 90909099
+2018-03-05 16:49:32 INFO  root:18 - Account Username added
+2018-03-05 16:49:32 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-05 16:49:32 INFO  root:18 - Wallet NoOwner added
+2018-03-05 16:49:32 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 16:49:32 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 16:49:32 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 16:49:32 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 16:49:32 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 16:49:32 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 16:49:32 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 16:49:32 INFO  root:18 - Data Read in
+2018-03-05 16:49:32 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 16:49:57 INFO  root:18 - Data Read in
+2018-03-05 16:49:57 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-05 16:49:57 INFO  root:18 - Created new Customer with:
+username: Username
+first name: FirstName
+last name: LastName
+password: -792037285
+email: Email
+SSN: 90909099
+2018-03-05 16:49:57 INFO  root:18 - Account Username added
+2018-03-05 16:49:57 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-05 16:49:57 INFO  root:18 - Wallet NoOwner added
+2018-03-05 16:49:57 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-05 16:49:57 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-05 16:49:57 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-05 16:49:57 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-05 16:49:57 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-05 16:49:57 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-05 16:49:57 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-05 16:49:57 INFO  root:18 - Data Read in
+2018-03-05 16:49:57 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-05 16:50:05 INFO  root:18 - Data Read in

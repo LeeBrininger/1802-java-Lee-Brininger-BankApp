@@ -1,10 +1,8 @@
 package com.revature.bank.java;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 import com.revature.bank.java.Menus.MenuInterface;
-import com.revature.bank.util.LoggingUtil;
 
 public class BankHub {
 	static Scanner input = new Scanner(System.in);
@@ -38,9 +36,6 @@ public class BankHub {
 		default:
 			System.out.println("Please enter one of the options");
 			commandTree();
+		}	
 	}
-		
-}
-	
-	
 }

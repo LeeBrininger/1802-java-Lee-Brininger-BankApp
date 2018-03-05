@@ -6,6 +6,7 @@ import java.util.Scanner;
 import com.revature.bank.java.BankHub;
 import com.revature.bank.java.MemoryHub;
 import com.revature.bank.java.Users.Account;
+import com.revature.bank.util.LoggingUtil;
 
 public class MenuLogin {
 	
@@ -21,7 +22,7 @@ public class MenuLogin {
 		int hash = 0;
 
 		
-		if(users.containsKey(username)) {
+		if(users.containsKey(username) && users.get(username).getActive()) {
 			Account user = users.get(username);
 			System.out.println("Welcome back " + username);
 			System.out.println("Please enter your password: ");
@@ -30,6 +31,8 @@ public class MenuLogin {
 			hash = password.hashCode();
 			if(user.getPassword() == hash){ //compares the hashes
 				MenuInterface.clearScreen();
+				LoggingUtil.logInfo(user.getUsername() + " logged in");
+				System.out.println(user.getAccessLevel());
 				switch(user.getAccessLevel()) {
 				case 1:
 					MenuLoggedInInterface.preformCustomer(user, null, input);
@@ -43,10 +46,15 @@ public class MenuLogin {
 				}
 			}else {
 				System.out.println("Password does not match");
+				LoggingUtil.logInfo("Failed password on " + user.getUsername());
 				BankHub.commandTree();
 			}
+		}else if(users.containsKey(username)){
+			System.out.println("Account is awaiting initalization");
+			BankHub.commandTree();
 		}else {
 			System.out.println("Username not Found");
+			LoggingUtil.logInfo("Failed Login, bad username");
 			BankHub.commandTree();
 		}
 		

@@ -32,6 +32,27 @@ public class AccountWalletFinder {
 		return wallet;
 	}
 	
+	public static Wallet selectNonActiveWallet(Customer active, Scanner input) {
+		HashMap<String, Wallet> allWallets = MemoryHub.getWallets();
+		String selectedWallet = "";
+		Wallet wallet;
+		
+		System.out.println("Existing Wallets:\n");
+		for(HashMap.Entry<String, Wallet> acc : allWallets.entrySet()) {
+			if(!active.getWalletsOwned().contains(acc.getKey())) {
+				System.out.println(acc.getKey());
+			}
+		}
+		selectedWallet = input.nextLine();
+		if(allWallets.containsKey(selectedWallet)&& !active.getWalletsOwned().contains(selectedWallet)) {
+			wallet = (Wallet) allWallets.get(selectedWallet);
+			return wallet;
+		}else {
+			System.out.println("Please enter a valid wallet");
+			wallet = selectAnyWallet(input);
+		}
+		return wallet;
+	}
 	
 	
 	public static Customer selectCustomer(Scanner input) {
@@ -41,12 +62,12 @@ public class AccountWalletFinder {
 		
 		System.out.println("Existing Customers:\n");
 		for(HashMap.Entry<String, Account> acc : allCustomers.entrySet()) {
-			if(acc.getValue() instanceof Customer) {
+			if(acc.getValue() instanceof Customer && acc.getValue().getActive()) {
 				System.out.println(acc.getKey());
 			}
 		}
 		selectedCustomer = input.nextLine();
-		if(allCustomers.containsKey(selectedCustomer) && allCustomers.get(selectedCustomer) instanceof Customer) {
+		if(allCustomers.containsKey(selectedCustomer) && allCustomers.get(selectedCustomer) instanceof Customer && allCustomers.get(selectedCustomer).getActive()) {
 			customer = (Customer) allCustomers.get(selectedCustomer);
 			return customer;
 		}else {
@@ -78,7 +99,7 @@ public class AccountWalletFinder {
 	
 	public static String selectWallet(List<String> wallets, String open, Scanner input) {
 		String walletName = "";
-		
+		System.out.println("1- Exit");
 		while(!wallets.contains(walletName) || walletName.equals(open)) {
 			for(int i = 0; i < wallets.size(); i++) {
 				if(!wallets.get(i).equals(open)) {
@@ -87,14 +108,15 @@ public class AccountWalletFinder {
 				}
 			}
 			walletName = input.nextLine();
+			if(walletName.equals("1")) {
+				return null;
+			}
 			if(!wallets.contains(walletName) || walletName.equals(open)) {
 				System.out.println("That is not a valid wallet, please enter an owned wallet:");
 			}
 		}
 		return walletName;
 	}
-	
-	
 	
 	public static void transferFundsAll(Account user, Wallet activeWallet, Scanner input) {
 		HashMap<String, Wallet> allWallets = MemoryHub.getWallets();
@@ -103,7 +125,6 @@ public class AccountWalletFinder {
 		String secondName;
 		Wallet secondWallet;
 		
-		@SuppressWarnings("unchecked")
 		List<String> wallets = new ArrayList<String>(MemoryHub.getWallets().keySet());
 		
 		System.out.println();

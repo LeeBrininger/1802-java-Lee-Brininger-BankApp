@@ -10,17 +10,17 @@ public class Admin implements Account{
 	private String firstName = new String();
 	private String lastName = new String();
 	private String email = new String();
-	private int accessLevel = 3;
+	private final int accessLevel = 3;
 	private int password = 0;
 	private int ssn = 0;
 	private Boolean active = true;
 
-	public Admin(String username, String firstname, String lastname, int password,  String Email, int Ssn) {
+	public Admin(String username, String firstname, String lastname, String password,  String Email, int Ssn) {
 		// TODO Auto-generated constructor stub
 		this.username = username;
 		this.firstName = firstname;
 		this.lastName = lastname;
-		this.password = password;
+		this.password = (password + "lee").hashCode();
 		this.email = Email;
 		this.ssn = Ssn;
 	}
@@ -56,19 +56,14 @@ public class Admin implements Account{
 	public int getPassword() {
 		return password;
 	}
-	public void setPassword(int password) {
-		this.password = password;
+	public void setPassword(String password) {
+		this.password = (password + "lee").hashCode();
 	}
 
+	@Override
 	public int getAccessLevel() {
 		return accessLevel;
 	}
-
-	public void setAccessLevel(int accessLevel) {
-		this.accessLevel = accessLevel;
-	}
-	
-	
 
 	public void setEmail(String email) {
 		this.email = email;
