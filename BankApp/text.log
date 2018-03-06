@@ -1577,3 +1577,229 @@ SSN: 343443434
 2018-03-05 17:37:31 INFO  root:18 - 1
 2018-03-05 17:37:36 INFO  root:18 - Crawdady logged in
 2018-03-05 17:37:52 INFO  root:18 - Data Written to file
+2018-03-06 01:08:30 INFO  root:18 - Data Read in
+2018-03-06 01:08:37 INFO  root:18 - 1
+2018-03-06 01:08:54 INFO  root:18 - Crawdady logged in
+2018-03-06 01:09:03 INFO  root:18 - Data Written to file
+2018-03-06 01:09:04 INFO  root:18 - 2
+2018-03-06 01:09:04 INFO  root:18 - Created new blank customer
+2018-03-06 01:10:48 INFO  root:18 - Data Read in
+2018-03-06 01:10:50 INFO  root:18 - 2
+2018-03-06 01:10:50 INFO  root:18 - Created new blank customer
+2018-03-06 01:13:03 INFO  root:18 - Data Read in
+2018-03-06 01:13:25 INFO  root:18 - 2
+2018-03-06 01:13:25 INFO  root:18 - Created new blank customer
+2018-03-06 01:13:28 INFO  root:18 - 2
+2018-03-06 01:13:28 INFO  root:18 - Created new blank customer
+2018-03-06 01:13:30 INFO  root:18 - For Account: firstName set as lee
+2018-03-06 01:13:33 INFO  root:18 - For Account: lastName set as brining
+2018-03-06 01:13:35 INFO  root:18 - For Account: SSN set as lee
+2018-03-06 01:13:37 INFO  root:18 - 2
+2018-03-06 01:13:37 INFO  root:18 - Created new blank customer
+2018-03-06 01:13:39 INFO  root:18 - For Account: firstName set as o
+2018-03-06 01:13:39 INFO  root:18 - For Account: lastName set as 
+2018-03-06 01:13:48 INFO  root:18 - Data Read in
+2018-03-06 01:13:50 INFO  root:18 - 2
+2018-03-06 01:13:50 INFO  root:18 - Created new blank customer
+2018-03-06 01:13:52 INFO  root:18 - For Account: firstName set as Lee
+2018-03-06 01:13:55 INFO  root:18 - For Account: lastName set as Brininger
+2018-03-06 01:13:56 INFO  root:18 - For Account: SSN set as Lee
+2018-03-06 01:13:59 INFO  root:18 - For Account:oo Username set as oo
+2018-03-06 01:14:02 INFO  root:18 - For Account:oo password set as hash-1282546100
+2018-03-06 01:14:03 INFO  root:18 - For Account:oo Email set as popo
+2018-03-06 01:18:03 INFO  root:18 - Data Read in
+2018-03-06 01:18:05 INFO  root:18 - 2
+2018-03-06 01:18:05 INFO  root:18 - Created new blank customer
+2018-03-06 01:18:07 INFO  root:18 - For Account: firstName set as o
+2018-03-06 01:18:07 INFO  root:18 - For Account: lastName set as o
+2018-03-06 01:18:09 INFO  root:18 - For Account: SSN set as o
+2018-03-06 01:18:09 INFO  root:18 - For Account:o Username set as o
+2018-03-06 01:18:10 INFO  root:18 - For Account:o password set as hash3413821
+2018-03-06 01:18:11 INFO  root:18 - For Account:o Email set as o
+2018-03-06 01:18:41 INFO  root:18 - Data Read in
+2018-03-06 01:18:42 INFO  root:18 - 2
+2018-03-06 01:18:42 INFO  root:18 - Created new blank customer
+2018-03-06 01:18:43 INFO  root:18 - For Account: firstName set as o
+2018-03-06 01:18:43 INFO  root:18 - For Account: lastName set as o
+2018-03-06 01:18:44 INFO  root:18 - For Account: SSN set as o
+2018-03-06 01:18:45 INFO  root:18 - For Account:o Username set as o
+2018-03-06 01:18:46 INFO  root:18 - For Account:o password set as hash3413821
+2018-03-06 01:18:47 INFO  root:18 - For Account:o Email set as o
+2018-03-06 01:18:51 INFO  root:18 - 2
+2018-03-06 01:18:51 INFO  root:18 - Created new blank customer
+2018-03-06 01:18:51 INFO  root:18 - For Account: firstName set as o
+2018-03-06 01:18:52 INFO  root:18 - For Account: lastName set as o
+2018-03-06 01:18:56 INFO  root:18 - Data Read in
+2018-03-06 01:18:57 INFO  root:18 - o
+2018-03-06 01:19:00 INFO  root:18 - 2
+2018-03-06 01:19:00 INFO  root:18 - Created new blank customer
+2018-03-06 01:19:01 INFO  root:18 - For Account: firstName set as o
+2018-03-06 01:19:02 INFO  root:18 - For Account: lastName set as o
+2018-03-06 01:19:03 INFO  root:18 - For Account: SSN set as o
+2018-03-06 01:19:03 INFO  root:18 - For Account:o Username set as o
+2018-03-06 01:19:04 INFO  root:18 - For Account:o password set as hash3413821
+2018-03-06 01:19:05 INFO  root:18 - For Account:o Email set as o
+2018-03-06 01:26:06 INFO  root:18 - Data Read in
+2018-03-06 01:26:18 INFO  root:18 - 1
+2018-03-06 01:26:20 INFO  root:18 - Failed Login, bad username
+2018-03-06 01:26:23 INFO  root:18 - 3
+2018-03-06 01:26:23 INFO  root:18 - Data Written to file
+2018-03-06 01:26:25 INFO  root:18 - Data Read in
+2018-03-06 01:26:26 INFO  root:18 - 2
+2018-03-06 01:26:26 INFO  root:18 - Created new blank customer
+2018-03-06 01:26:32 INFO  root:18 - 1
+2018-03-06 01:26:37 INFO  root:18 - Failed password on Admin
+2018-03-06 01:27:08 INFO  root:18 - 1
+2018-03-06 01:27:14 INFO  root:18 - Admin logged in
+2018-03-06 01:36:51 INFO  root:18 - Data Read in
+2018-03-06 01:37:13 INFO  root:18 - Data Read in
+2018-03-06 01:37:19 INFO  root:18 - 1
+2018-03-06 01:37:22 INFO  root:18 - Admin logged in
+2018-03-06 09:04:51 INFO  root:18 - Data Read in
+2018-03-06 09:05:13 INFO  root:18 - 2
+2018-03-06 09:05:13 INFO  root:18 - Created new blank customer
+2018-03-06 09:05:24 INFO  root:18 - 1
+2018-03-06 09:05:30 INFO  root:18 - Admin logged in
+2018-03-06 09:05:46 INFO  root:18 - 1
+2018-03-06 09:05:50 INFO  root:18 - Admin logged in
+2018-03-06 09:13:13 INFO  root:18 - Data Read in
+2018-03-06 09:13:16 INFO  root:18 - 1
+2018-03-06 09:13:25 INFO  root:18 - Crawdady logged in
+2018-03-06 09:14:20 INFO  root:18 - Data Read in
+2018-03-06 09:14:22 INFO  root:18 - 1
+2018-03-06 09:14:29 INFO  root:18 - Crawdady logged in
+2018-03-06 09:18:21 INFO  root:18 - Data Read in
+2018-03-06 09:18:23 INFO  root:18 - 1
+2018-03-06 09:18:28 INFO  root:18 - Crawdady logged in
+2018-03-06 09:58:18 INFO  root:18 - Data Read in
+2018-03-06 09:58:22 INFO  root:18 - 1
+2018-03-06 09:58:29 INFO  root:18 - Crawdady logged in
+2018-03-06 11:00:46 INFO  root:18 - Data Read in
+2018-03-06 11:09:54 INFO  root:18 - Data Read in
+2018-03-06 11:10:02 INFO  root:18 - 1
+2018-03-06 11:10:05 INFO  root:18 - Admin logged in
+2018-03-06 11:20:50 INFO  root:18 - Data Read in
+2018-03-06 11:20:51 INFO  root:18 - 1
+2018-03-06 11:20:56 INFO  root:18 - Admin logged in
+2018-03-06 11:22:24 INFO  root:18 - Data Read in
+2018-03-06 11:22:26 INFO  root:18 - 1
+2018-03-06 11:22:30 INFO  root:18 - Admin logged in
+2018-03-06 11:24:26 INFO  root:18 - Data Read in
+2018-03-06 11:24:27 INFO  root:18 - 1
+2018-03-06 11:24:31 INFO  root:18 - Admin logged in
+2018-03-06 11:28:20 INFO  root:18 - Data Read in
+2018-03-06 11:28:22 INFO  root:18 - 1
+2018-03-06 11:28:25 INFO  root:18 - Admin logged in
+2018-03-06 11:28:43 INFO  root:18 - Data Written to file
+2018-03-06 11:28:46 INFO  root:18 - Data Written to file
+2018-03-06 11:29:02 INFO  root:18 - Data Written to file
+2018-03-06 11:29:19 INFO  root:18 - Data Written to file
+2018-03-06 11:29:20 INFO  root:18 - Data Written to file
+2018-03-06 11:29:21 INFO  root:18 - Data Written to file
+2018-03-06 11:29:22 INFO  root:18 - Data Written to file
+2018-03-06 11:29:47 INFO  root:18 - Data Written to file
+2018-03-06 11:29:55 INFO  root:18 - Data Written to file
+2018-03-06 11:29:56 INFO  root:18 - Data Written to file
+2018-03-06 11:29:57 INFO  root:18 - Data Written to file
+2018-03-06 11:29:58 INFO  root:18 - Data Written to file
+2018-03-06 11:29:59 INFO  root:18 - Data Written to file
+2018-03-06 11:30:58 INFO  root:18 - Data Read in
+2018-03-06 11:31:11 INFO  root:18 - Data Read in
+2018-03-06 11:31:12 INFO  root:18 - 1
+2018-03-06 11:31:16 INFO  root:18 - Admin logged in
+2018-03-06 11:31:23 INFO  root:18 - Data Written to file
+2018-03-06 11:31:37 INFO  root:18 - Data Written to file
+2018-03-06 11:33:10 INFO  root:18 - Data Written to file
+2018-03-06 11:33:12 INFO  root:18 - 1
+2018-03-06 11:37:23 INFO  root:18 - Data Read in
+2018-03-06 11:37:23 INFO  root:18 - $10.0 added to wallet SSB, new balance is 10010.0
+2018-03-06 11:37:23 INFO  root:18 - Created new Customer with:
+username: Username
+first name: FirstName
+last name: LastName
+password: -792037285
+email: Email
+SSN: 90909099
+2018-03-06 11:37:23 INFO  root:18 - Account Username added
+2018-03-06 11:37:23 INFO  root:18 - WalletNoOwner created with $10000.0 of type savings
+2018-03-06 11:37:23 INFO  root:18 - Wallet NoOwner added
+2018-03-06 11:37:23 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-06 11:37:23 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-06 11:37:23 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-06 11:37:23 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: Brin
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-06 11:37:23 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-06 11:37:23 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-06 11:37:23 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-06 11:37:23 INFO  root:18 - Data Read in
+2018-03-06 11:37:23 INFO  root:18 - $10.0 withdrawn from wallet LeeAccount, new balance is 91.0
+2018-03-06 11:47:42 INFO  root:18 - Data Read in
+2018-03-06 11:47:47 INFO  root:18 - 1
+2018-03-06 11:48:09 INFO  root:18 - Emp1 logged in
+2018-03-06 12:24:57 INFO  root:18 - 
+2018-03-06 12:24:59 INFO  root:18 - 1
+2018-03-06 12:25:04 INFO  root:18 - Emp1 logged in
+2018-03-06 12:29:45 INFO  root:18 - Data Read in
+2018-03-06 12:30:44 INFO  root:18 - 1
+2018-03-06 12:30:47 INFO  root:18 - Emp1 logged in
+2018-03-06 12:34:30 INFO  root:18 - Data Read in
+2018-03-06 12:34:33 INFO  root:18 - 1
+2018-03-06 12:34:37 INFO  root:18 - Emp1 logged in
+2018-03-06 12:54:08 INFO  root:18 - Data Written to file
+2018-03-06 12:54:10 INFO  root:18 - 1
+2018-03-06 12:54:39 INFO  root:18 - Crawdady logged in
+2018-03-06 12:54:50 INFO  root:18 - Data Written to file
+2018-03-06 12:54:52 INFO  root:18 - 1
+2018-03-06 12:54:55 INFO  root:18 - Admin logged in
+2018-03-06 12:57:49 INFO  root:18 - Data Written to file
+2018-03-06 12:57:50 INFO  root:18 - 1
+2018-03-06 12:57:57 INFO  root:18 - Crawdady logged in
+2018-03-06 13:23:22 INFO  root:18 - Data Read in
+2018-03-06 13:23:28 INFO  root:18 - 1
+2018-03-06 13:23:35 INFO  root:18 - Crawdady logged in
+2018-03-06 13:40:04 INFO  root:18 - Data Read in
+2018-03-06 13:40:05 INFO  root:18 - 1
+2018-03-06 13:40:11 INFO  root:18 - Admin logged in
+2018-03-06 13:40:27 INFO  root:18 - Data Written to file
+2018-03-06 13:40:51 INFO  root:18 - Data Read in
+2018-03-06 13:40:54 INFO  root:18 - Admin
+2018-03-06 13:40:58 INFO  root:18 - 1
+2018-03-06 13:41:02 INFO  root:18 - Admin logged in
+2018-03-06 13:45:18 INFO  root:18 - Data Read in
+2018-03-06 13:45:26 INFO  root:18 - 1
+2018-03-06 13:45:32 INFO  root:18 - Admin logged in
+2018-03-06 13:48:15 INFO  root:18 - Data Read in
+2018-03-06 13:48:17 INFO  root:18 - 1
+2018-03-06 13:50:30 INFO  root:18 - Failed password on Admin
+2018-03-06 13:50:35 INFO  root:18 - Admin
+2018-03-06 13:50:37 INFO  root:18 - thebest
+2018-03-06 13:50:39 INFO  root:18 - 1
+2018-03-06 13:50:42 INFO  root:18 - Admin logged in
+2018-03-06 13:52:12 INFO  root:18 - Data Read in
+2018-03-06 13:52:17 INFO  root:18 - 1
+2018-03-06 13:52:24 INFO  root:18 - Crawdady logged in
+2018-03-06 13:52:38 INFO  root:18 - 1
+2018-03-06 13:52:42 INFO  root:18 - Crawdady logged in

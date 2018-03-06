@@ -23,6 +23,7 @@ public class MenuLoggedInInterface {
 		String walletName = "";
 		String secondName = "";
 		Wallet secondWallet;
+		String selection = "";
 		int choise = 0;
 		double money = 0.0;
 		
@@ -32,7 +33,9 @@ public class MenuLoggedInInterface {
 		while(activeWallet == null) {
 			System.out.println("Please select the account you want see:\n");
 			walletName = AccountWalletFinder.selectWallet(wallets, "", input);
-			
+			if(walletName.equals("")) {
+				BankHub.commandTree(); 
+			}
 			activeWallet = allWallets.get(walletName);
 			if(activeWallet == null) {
 				System.out.println("Please select an account");
@@ -49,7 +52,16 @@ public class MenuLoggedInInterface {
 		}
 		else if(choise == 2) {
 			System.out.println("How much do you want to withdraw: ");
-			money = Double.parseDouble(input.nextLine());
+			selection = input.nextLine();
+			if(selection.equals("exit")) {
+				preformCustomer(user, activeWallet, input);
+			}
+			if(!selection.matches("-?\\d+(\\.\\d+)?")) {
+				System.out.println("Needs to be a number");
+				preformCustomer(user, activeWallet, input);
+			}
+			money = Double.parseDouble(selection);
+			System.out.println(money);
 			if(activeWallet.subtractFunds(money)){
 				System.out.println("New ammount: $" + activeWallet.getMoney());
 				MemoryHub.storeData();//Save change
@@ -59,7 +71,15 @@ public class MenuLoggedInInterface {
 		}
 		else if(choise == 3) {
 			System.out.println("How much do you want to deposit: ");
-			money = Double.parseDouble(input.nextLine());
+			selection = input.nextLine();
+			if(selection.equals("exit")) {
+				preformCustomer(user, activeWallet, input);
+			}
+			if(!selection.matches("-?\\d+(\\.\\d+)?")) {
+				System.out.println("Needs to be a number");
+				preformCustomer(user, activeWallet, input);
+			}
+			money = Double.parseDouble(selection);
 			if(activeWallet.addFunds(money)) {
 				System.out.println("New ammount: $" + activeWallet.getMoney());
 				MemoryHub.storeData();//Save change
@@ -69,7 +89,15 @@ public class MenuLoggedInInterface {
 		}
 		else if(choise == 4) {
 			System.out.println("How much do you want to transfer out: ");
-			money = Double.parseDouble(input.nextLine());
+			selection = input.nextLine();
+			if(selection.equals("exit")) {
+				preformCustomer(user, activeWallet, input);
+			}
+			if(!selection.matches("-?\\d+(\\.\\d+)?")) {
+				System.out.println("Needs to be a number");
+				preformCustomer(user, activeWallet, input);
+			}
+			money = Double.parseDouble(selection);
 			MemoryHub.storeData();
 			if(money < 0) {
 				System.out.println("Needs to be positive");
@@ -98,7 +126,10 @@ public class MenuLoggedInInterface {
 		}else if(choise == 6){
 			System.out.println("Which account would you like to request joint access too?");
 			secondWallet = AccountWalletFinder.selectNonActiveWallet(customer, input);
-			if(wallets.contains(secondWallet.getName())) {
+			if(secondWallet == null) {
+				System.out.println("No account joined");
+			}
+			else if(wallets.contains(secondWallet.getName())) {
 				System.out.println("You already have access to that account");
 			}else {
 				System.out.println("You now have access to this account");
@@ -129,10 +160,16 @@ public class MenuLoggedInInterface {
 		choise = input.nextLine();
 		if(choise.equals("1")) {
 			viewee = AccountWalletFinder.selectCustomer(input);
+			if(viewee == null) {
+				preformEmployee(user, input);
+			}
 			System.out.println("Customer information:");
 			viewee.printInfo();
 		}else if(choise.equals("2")) {
 			walletee = AccountWalletFinder.selectAnyWallet(input);
+			if(walletee == null) {
+				preformEmployee(user, input);
+			}
 			System.out.println("Wallet information:");
 			walletee.printInfo();
 		}else if(choise.equals("3")) {
@@ -171,12 +208,18 @@ public class MenuLoggedInInterface {
 		}else if(choise.equals("2")) {
 			System.out.println("Please select the account you want see:\n");
 			activeWallet = AccountWalletFinder.selectAnyWallet(input);
+			if(activeWallet == null) {
+				preformAdmin(admin, input);
+			}
 			AccountWalletFinder.transferFundsAll(user, activeWallet, input);
 		}else if(choise.equals("3")) {
 			MenuApproveAccount.approveAccount(input);
 		}else if(choise.equals("4")) {
 			System.out.println("Please select the user that you want to delete");
 			viewee = AccountWalletFinder.selectAnyAccount(input);
+			if(viewee == null) {
+				preformAdmin(admin, input);
+			}
 			if(viewee instanceof Customer || viewee instanceof Employee) {
 				System.out.println("User information:");
 				viewee.printInfo();
@@ -201,6 +244,9 @@ public class MenuLoggedInInterface {
 		}else if(choise.equals("5")) {
 			System.out.println("Please select the account that you want to delete");
 			activeWallet = AccountWalletFinder.selectAnyWallet(input);
+			if(activeWallet == null) {
+				preformAdmin(admin, input);
+			}
 			System.out.println("Account information:");
 			activeWallet.printInfo();
 			System.out.println("Are you sure you want to delete this account: (yes or no)");

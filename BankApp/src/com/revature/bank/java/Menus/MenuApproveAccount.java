@@ -14,6 +14,7 @@ public class MenuApproveAccount {
 		Customer customer;
 		String selection = "";
 		System.out.println("Please select the applied user you want to view:");
+		System.out.println("Type 'Exit' to exit");
 		customer = selectApprovalNeededCustomer(input);
 		if(customer == null) {
 			return;
@@ -44,14 +45,14 @@ public class MenuApproveAccount {
 		String selectedCustomer = "";
 		Customer customer;
 		
-		System.out.println("Customers waiting for approval: (Enter 1 to exit)\n");
+		System.out.println("Customers waiting for approval:");
 		for(HashMap.Entry<String, Account> acc : allCustomers.entrySet()) {
 			if(acc.getValue() instanceof Customer && !acc.getValue().getActive()) {
 				System.out.println(acc.getKey());
 			}
 		}
 		selectedCustomer = input.nextLine();
-		if(selectedCustomer.equals("1")) {
+		if(selectedCustomer.toLowerCase().equals("exit")) {
 			return null;
 		}
 		if(allCustomers.containsKey(selectedCustomer) && allCustomers.get(selectedCustomer) instanceof Customer && !allCustomers.get(selectedCustomer).getActive()) {

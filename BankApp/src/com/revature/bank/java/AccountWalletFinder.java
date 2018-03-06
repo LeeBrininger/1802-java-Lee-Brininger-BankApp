@@ -12,16 +12,39 @@ import com.revature.bank.java.Users.Wallet;
 
 public class AccountWalletFinder {
 
+	
+	public static String selectWallet(List<String> wallets, String open, Scanner input) {
+		String walletName = "";
+		System.out.println("Type 'Exit' to exit");
+		for(int i = 0; i < wallets.size(); i++) {
+			if(!wallets.get(i).equals(open)) {
+				System.out.println(wallets.get(i));
+			}
+		}
+		walletName = input.nextLine();
+		if(walletName.toLowerCase().equals("exit")) {
+			return "";
+		}
+		if(!wallets.contains(walletName) || walletName.equals(open)) {
+			System.out.println("That is not a valid wallet, please enter an owned wallet:");
+			walletName = selectWallet(wallets, open, input);
+		}
+		return walletName;
+	}
+	
 	public static Wallet selectAnyWallet(Scanner input) {
 		HashMap<String, Wallet> allWallets = MemoryHub.getWallets();
 		String selectedWallet = "";
 		Wallet wallet;
 		
-		System.out.println("Existing Wallets:\n");
+		System.out.println("Existing Wallets: (Type exit to exit)");
 		for(HashMap.Entry<String, Wallet> acc : allWallets.entrySet()) {
 			System.out.println(acc.getKey());
 		}
 		selectedWallet = input.nextLine();
+		if(selectedWallet.toLowerCase().equals("exit")) {
+			return null;
+		}
 		if(allWallets.containsKey(selectedWallet)) {
 			wallet = (Wallet) allWallets.get(selectedWallet);
 			return wallet;
@@ -37,13 +60,16 @@ public class AccountWalletFinder {
 		String selectedWallet = "";
 		Wallet wallet;
 		
-		System.out.println("Existing Wallets:\n");
+		System.out.println("Existing Wallets: (Type Exit to exit)");
 		for(HashMap.Entry<String, Wallet> acc : allWallets.entrySet()) {
 			if(!active.getWalletsOwned().contains(acc.getKey())) {
 				System.out.println(acc.getKey());
 			}
 		}
 		selectedWallet = input.nextLine();
+		if(selectedWallet.toLowerCase().equals("exit")) {
+			return null;
+		}
 		if(allWallets.containsKey(selectedWallet)&& !active.getWalletsOwned().contains(selectedWallet)) {
 			wallet = (Wallet) allWallets.get(selectedWallet);
 			return wallet;
@@ -60,13 +86,16 @@ public class AccountWalletFinder {
 		String selectedCustomer = "";
 		Customer customer;
 		
-		System.out.println("Existing Customers:\n");
+		System.out.println("Existing Customers: (Type Exit to exit)");
 		for(HashMap.Entry<String, Account> acc : allCustomers.entrySet()) {
 			if(acc.getValue() instanceof Customer && acc.getValue().getActive()) {
 				System.out.println(acc.getKey());
 			}
 		}
 		selectedCustomer = input.nextLine();
+		if(selectedCustomer.toLowerCase().equals("exit")) {
+			return null;
+		}
 		if(allCustomers.containsKey(selectedCustomer) && allCustomers.get(selectedCustomer) instanceof Customer && allCustomers.get(selectedCustomer).getActive()) {
 			customer = (Customer) allCustomers.get(selectedCustomer);
 			return customer;
@@ -82,11 +111,14 @@ public class AccountWalletFinder {
 		String selectedCustomer = "";
 		Account account;
 		
-		System.out.println("Existing Users:\n");
+		System.out.println("Existing Users: (Type Exit to exit)");
 		for(HashMap.Entry<String, Account> acc : allCustomers.entrySet()) {
 			System.out.println(acc.getKey());
 		}
 		selectedCustomer = input.nextLine();
+		if(selectedCustomer.toLowerCase().equals("exit")) {
+			return null;
+		}
 		if(allCustomers.containsKey(selectedCustomer)) {
 			account = allCustomers.get(selectedCustomer);
 			return account;
@@ -97,32 +129,14 @@ public class AccountWalletFinder {
 		return account;
 	}
 	
-	public static String selectWallet(List<String> wallets, String open, Scanner input) {
-		String walletName = "";
-		System.out.println("Type 'Exit' to exit");
-		for(int i = 0; i < wallets.size(); i++) {
-			if(!wallets.get(i).equals(open)) {
-				System.out.println(wallets.get(i));
-			}
-		}
-		walletName = input.nextLine();
-		if(walletName.toLowerCase().equals("exit")) {
-			return null;
-		}
-		if(!wallets.contains(walletName) || walletName.equals(open)) {
-			System.out.println("That is not a valid wallet, please enter an owned wallet:");
-			walletName = selectWallet(wallets, open, input);
-		}
-		return walletName;
-	}
 	
 	public static void transferFundsAll(Account user, Wallet activeWallet, Scanner input) {
 		HashMap<String, Wallet> allWallets = MemoryHub.getWallets();
 		String choise = "";
+		String selection = "";
 		Double money = 0.0;
 		String secondName;
 		Wallet secondWallet;
-		
 		List<String> wallets = new ArrayList<String>(MemoryHub.getWallets().keySet());
 		
 		System.out.println();
@@ -134,7 +148,15 @@ public class AccountWalletFinder {
 		}
 		else if(choise.equals("2")) {
 			System.out.println("How much do you want to withdraw: ");
-			money = Double.parseDouble(input.nextLine());
+			selection = input.nextLine();
+			if(selection.equals("exit")) {
+				transferFundsAll(user, activeWallet, input);
+			}
+			if(!selection.matches("-?\\d+(\\.\\d+)?")) {
+				System.out.println("Needs to be a number");
+				transferFundsAll(user, activeWallet, input);
+			}
+			money = Double.parseDouble(selection);
 			if(activeWallet.subtractFunds(money)){
 				System.out.println("New ammount: $" + activeWallet.getMoney());
 			}else {
@@ -143,7 +165,15 @@ public class AccountWalletFinder {
 		}
 		else if(choise.equals("3")) {
 			System.out.println("How much do you want to deposit: ");
-			money = Double.parseDouble(input.nextLine());
+			selection = input.nextLine();
+			if(selection.equals("exit")) {
+				transferFundsAll(user, activeWallet, input);
+			}
+			if(!selection.matches("-?\\d+(\\.\\d+)?")) {
+				System.out.println("Needs to be a number");
+				transferFundsAll(user, activeWallet, input);
+			}
+			money = Double.parseDouble(selection);
 			if(activeWallet.addFunds(money)) {
 				System.out.println("New ammount: $" + activeWallet.getMoney());
 			}else {
@@ -153,7 +183,15 @@ public class AccountWalletFinder {
 		}
 		else if(choise.equals("4")) {
 			System.out.println("How much do you want to transfer out: ");
-			money = Double.parseDouble(input.nextLine());
+			selection = input.nextLine();
+			if(selection.equals("exit")) {
+				transferFundsAll(user, activeWallet, input);
+			}
+			if(!selection.matches("-?\\d+(\\.\\d+)?")) {
+				System.out.println("Needs to be a number");
+				transferFundsAll(user, activeWallet, input);
+			}
+			money = Double.parseDouble(selection);
 			if(money < 0) {
 				System.out.println("Needs to be positive");
 			}else {
@@ -170,10 +208,9 @@ public class AccountWalletFinder {
 			}
 		}else if(choise.equals("5")){
 			MemoryHub.storeData();
-			MenuLoggedInInterface.preformAdmin(user, input);
+			return;
 		}else {
 			System.out.println("Please enter a valid choise");
-			transferFundsAll(user, activeWallet, input);
 		}
 		transferFundsAll(user, activeWallet, input);
 	}
