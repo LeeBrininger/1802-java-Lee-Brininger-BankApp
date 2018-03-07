@@ -10,7 +10,7 @@ public class Customer implements Account{
 	private String firstName = new String();
 	private String lastName = new String();
 	private int password = 0;
-	int ssn = 0;
+	private int ssn = 0;
 	private String email = new String();
 	private final int accessLevel = 1;
 	private List<String> walletsOwned = new ArrayList<String>();

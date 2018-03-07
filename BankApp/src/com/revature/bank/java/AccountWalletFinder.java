@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
-import com.revature.bank.java.Menus.MenuLoggedInInterface;
+import com.revature.bank.java.Menus.MenuCreateNewAccount;
 import com.revature.bank.java.Users.Account;
 import com.revature.bank.java.Users.Customer;
 import com.revature.bank.java.Users.Wallet;
@@ -13,21 +13,33 @@ import com.revature.bank.java.Users.Wallet;
 public class AccountWalletFinder {
 
 	
-	public static String selectWallet(List<String> wallets, String open, Scanner input) {
+	public static String selectWallet(Customer activeAccount, List<String> wallets, String open, Scanner input) {
 		String walletName = "";
+		String response = "";
+		System.out.println("Please select the account you want see:");
 		System.out.println("Type 'Exit' to exit");
 		for(int i = 0; i < wallets.size(); i++) {
 			if(!wallets.get(i).equals(open)) {
 				System.out.println(wallets.get(i));
 			}
 		}
-		walletName = input.nextLine();
-		if(walletName.toLowerCase().equals("exit")) {
-			return "";
-		}
-		if(!wallets.contains(walletName) || walletName.equals(open)) {
-			System.out.println("That is not a valid wallet, please enter an owned wallet:");
-			walletName = selectWallet(wallets, open, input);
+		if(wallets.size() == 0) {
+			System.out.println("You do not have any accounts, type exit to exit or type anything else to make a new one");
+			response = input.nextLine();
+			if(response.equals("exit")) {
+				return "";
+			}
+			walletName = MenuCreateNewAccount.createNewWallet(input).getName();
+			activeAccount.addWallet(walletName);
+		}else {
+			walletName = input.nextLine();
+			if(walletName.toLowerCase().equals("exit")) {
+				return "";
+			}
+			if(!wallets.contains(walletName) || walletName.equals(open)) {
+				System.out.println("That is not a valid account, please enter an owned account:");
+				walletName = selectWallet(activeAccount, wallets, open, input);
+			}
 		}
 		return walletName;
 	}
@@ -37,7 +49,7 @@ public class AccountWalletFinder {
 		String selectedWallet = "";
 		Wallet wallet;
 		
-		System.out.println("Existing Wallets: (Type exit to exit)");
+		System.out.println("Existing Accounts: (Type exit to exit)");
 		for(HashMap.Entry<String, Wallet> acc : allWallets.entrySet()) {
 			System.out.println(acc.getKey());
 		}
@@ -60,7 +72,7 @@ public class AccountWalletFinder {
 		String selectedWallet = "";
 		Wallet wallet;
 		
-		System.out.println("Existing Wallets: (Type Exit to exit)");
+		System.out.println("Existing Accounts: (Type Exit to exit)");
 		for(HashMap.Entry<String, Wallet> acc : allWallets.entrySet()) {
 			if(!active.getWalletsOwned().contains(acc.getKey())) {
 				System.out.println(acc.getKey());
@@ -74,7 +86,7 @@ public class AccountWalletFinder {
 			wallet = (Wallet) allWallets.get(selectedWallet);
 			return wallet;
 		}else {
-			System.out.println("Please enter a valid wallet");
+			System.out.println("Please enter a valid account");
 			wallet = selectAnyWallet(input);
 		}
 		return wallet;
@@ -196,7 +208,7 @@ public class AccountWalletFinder {
 				System.out.println("Needs to be positive");
 			}else {
 				System.out.println("Which account do you want to transfer to:");
-				secondName = selectWallet(wallets, activeWallet.getName(), input);
+				secondName = selectWallet(null, wallets, activeWallet.getName(), input);
 				secondWallet = allWallets.get(secondName);
 				if(activeWallet.subtractFunds(money)) {
 					secondWallet.addFunds(money);

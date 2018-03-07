@@ -3,12 +3,14 @@ package com.revature.bank.tests.java;
 import com.revature.bank.java.BankHub;
 import com.revature.bank.java.FileManipulator;
 import com.revature.bank.java.MemoryHub;
+import com.revature.bank.java.Users.Account;
 import com.revature.bank.java.Users.Admin;
 import com.revature.bank.java.Users.Customer;
 import com.revature.bank.java.Users.Employee;
 import com.revature.bank.java.Users.Wallet;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ import org.junit.Test;
 public class BankTests {
 
 	public static final BankHub bankHub = new BankHub(); 
-	
+	static String defaultFile = "BankInfo.txt";
 	/*
 	 * Interface Tests
 	 */
@@ -43,7 +45,7 @@ public class BankTests {
 		List<String> walletsowned3 = new ArrayList<String>();
 		List<String> walletsowned4 = new ArrayList<String>();
 		walletsowned1.add("LeeAccount");
-		Customer c1 = new Customer("Crawdady", "Lee", "Brin", "password", "richmondbrininger@gmail.com", 888888888, walletsowned1);
+		Customer c1 = new Customer("Crawdady", "Lee", "B", "password", "richmondbrininger@gmail.com", 888888888, walletsowned1);
 		walletsowned2.add("two");
 		Customer c2 = new Customer("NK", "Nick", "Nick", "12345", "nick@gmail.com", 999999999, walletsowned2);
 		walletsowned3.add("SSB");
@@ -53,7 +55,7 @@ public class BankTests {
 		Customer c4 = new Customer("Stuff", "AJ", "Williams", "pass", "morestuff@gmail.com", 343443434, walletsowned4);
 		Employee e1 = new Employee("Emp1", "John", "Cena", "54321", "dodododo@yahoo.com", 001112345);
 		Employee e2 = new Employee("Emp2", "Cowman", "Sad", "lol", "penguinz0@gmail.com", 954674433);
-		Admin a1 = new Admin("Admin", "Richmond", "Brininger", "thebest", "youknowitsthebestSSB@gmail.com", 987345765);
+		Admin a1 = new Admin("Admin", "Richmond", "Brininger", "thebest", "importantstuff@gmail.com", 987345765);
 		
 
 		test.put(c1.getUsername(), c1);
@@ -66,7 +68,7 @@ public class BankTests {
 		test.put(w1.getName(), w1);
 		test.put(w2.getName(),w2);
 		test.put(w3.getName(),w3);
-		FileManipulator.WriteOut(test, "BankInfo.ser");
+		FileManipulator.WriteOut(test, defaultFile);
 	}
 
 	/*
@@ -74,29 +76,28 @@ public class BankTests {
 	 */
 	@Test
 	public void testFileObjectReadCustomer() {
-		HashMap<String, Object> c1 = FileManipulator.ReadIn("BankInfo.ser");
+		HashMap<String, Object> c1 = FileManipulator.ReadIn(defaultFile);
 		Customer in1 = (Customer) c1.get("NK");
 		assertEquals("Nick", in1.getFirstName());
 	}
 	
 	@Test
 	public void testFileObjectReadEmployee() {
-		HashMap<String, Object> c1 = FileManipulator.ReadIn("BankInfo.ser");
+		HashMap<String, Object> c1 = FileManipulator.ReadIn(defaultFile);
 		Employee in1 = (Employee) c1.get("Emp1");
-		System.out.println("=====" + in1.getAccessLevel());
 		assertEquals("Emp1", in1.getUsername());
 	}
 	
 	@Test
 	public void testFileObjectReadAdmin() {
-		HashMap<String, Object> c1 = FileManipulator.ReadIn("BankInfo.ser");
+		HashMap<String, Object> c1 = FileManipulator.ReadIn(defaultFile);
 		Admin in1 = (Admin) c1.get("Admin");
 		assertEquals("Brininger", in1.getLastName());
 	}
 	
 	@Test
 	public void testFileObjectReadWallet() {
-		HashMap<String, Object> c1 = FileManipulator.ReadIn("BankInfo.ser");
+		HashMap<String, Object> c1 = FileManipulator.ReadIn(defaultFile);
 		Wallet in1 = (Wallet) c1.get("LeeAccount");
 		assertEquals("LeeAccount", in1.getName());
 	}
@@ -106,7 +107,7 @@ public class BankTests {
 	 */
 	@Test
 	public void testAddingFunds(){
-		MemoryHub.readStored("BankInfo.ser");
+		MemoryHub.readStored(defaultFile);
 		Wallet testW = MemoryHub.getWallets().get("SSB");
 		double inital = testW.getMoney();
 		testW.addFunds(10);
@@ -115,7 +116,7 @@ public class BankTests {
 	
 	@Test
 	public void testSubtractingFunds(){
-		MemoryHub.readStored("BankInfo.ser");
+		MemoryHub.readStored(defaultFile);
 		Wallet testW = MemoryHub.getWallets().get("LeeAccount");
 		double inital = testW.getMoney();
 		testW.subtractFunds(10);
@@ -131,6 +132,13 @@ public class BankTests {
 		MemoryHub.addWallet(NoOwner);
 		assertTrue(MemoryHub.getWallets().containsKey("NoOwner"));
 	}
+	
+	@Test
+	public void testDeleteWallet(){
+		Wallet temp = MemoryHub.getWallets().get("LeeAccount");
+		MemoryHub.removeWallet(temp);
+		assertFalse(MemoryHub.getWallets().containsKey("LeeAccount"));
+	}
 
 	/*
 	 * Test account and wallet creation and deletion
@@ -140,5 +148,12 @@ public class BankTests {
 		Customer TestCustomer = new Customer("Username", "FirstName", "LastName", "pass" , "Email", 90909099);
 		MemoryHub.addAccount(TestCustomer);
 		assertTrue(MemoryHub.getAccounts().containsKey("Username"));
+	}
+	
+	@Test
+	public void testDeleteAccount(){
+		Account TestCustomer = MemoryHub.getAccounts().get("Crawdady");
+		MemoryHub.removeAccount(TestCustomer);
+		assertFalse(MemoryHub.getAccounts().containsKey("Crawdady"));
 	}
 }

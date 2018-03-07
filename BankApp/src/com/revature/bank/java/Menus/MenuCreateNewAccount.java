@@ -15,6 +15,7 @@ public class MenuCreateNewAccount {
 		Customer newCust = new Customer();
 		int choise = 0;
 		String statement = "";
+		Wallet newW = null;
 		
 		System.out.println("Thank You for Choosing the First Bank of Richmond");
 		System.out.println("Please follow the prompts below to set up your account.\n");
@@ -33,15 +34,25 @@ public class MenuCreateNewAccount {
 		newCust.setLastName(statement);
 		System.out.println("Please Enter your SSN: ");
 		statement = input.nextLine();
-		if(statement.toLowerCase().equals("exit")) {
-			BankHub.commandTree();
+		while(!statement.matches("-?\\d+(\\.\\d+)?")) {
+			if(statement.equals("exit")) {
+				BankHub.commandTree();
+			}
+		System.out.println("Needs to be a number");
+		statement = input.nextLine();
 		}
-		//Add number checker
 		newCust.setSSN(Integer.parseInt(statement));
 		System.out.println("Please Set your Username: ");
 		statement = input.nextLine();
 		if(statement.toLowerCase().equals("exit")) {
 			BankHub.commandTree();
+		}
+		while(MemoryHub.getAccounts().containsKey(statement)) {
+			System.out.println("That username is already taken, please enter a different one");
+			statement = input.nextLine();
+			if(statement.toLowerCase().equals("exit")) {
+				BankHub.commandTree();
+			}
 		}
 		newCust.setUsername(statement);
 		System.out.println("Please Set your Password: ");
@@ -56,7 +67,7 @@ public class MenuCreateNewAccount {
 			BankHub.commandTree();
 		}
 		newCust.setEmail(statement);
-		System.out.println("\nWould you like to add a new account or access an existing one?\n1: New Acount\n2: Access Existing Account");
+		System.out.println("\nWould you like to add a new account or access an existing one?\n1: New Account\n2: Access Existing Account");
 		statement = input.nextLine();
 		if(statement.toLowerCase().equals("exit")) {
 			BankHub.commandTree();
@@ -67,7 +78,11 @@ public class MenuCreateNewAccount {
 			newCust.addWallet(createNewWallet(input).getName());
 			break;
 		case 2:
-			newCust.addWallet(AccountWalletFinder.selectAnyWallet(input).getName());
+			newW = AccountWalletFinder.selectAnyWallet(input);
+			if(newW == null){
+				BankHub.commandTree();
+			}
+			newCust.addWallet(newW.getName());
 			break;
 		}
 		LoggingUtil.logInfo("");
@@ -99,7 +114,7 @@ public class MenuCreateNewAccount {
 		if(response.toLowerCase().equals("exit")) {
 			BankHub.commandTree();
 		}
-		while(MemoryHub.getWallets().containsKey("response")) {
+		while(MemoryHub.getWallets().containsKey(response)) {
 			if(response.toLowerCase().equals("exit")) {
 				BankHub.commandTree();
 			}
@@ -108,10 +123,15 @@ public class MenuCreateNewAccount {
 		}
 		newWallet.setName(response);
 		System.out.println("Please deposit your inital funds(minimum of $50):");
-		if(response.toLowerCase().equals("exit")) {
-			BankHub.commandTree();
+		response = input.nextLine();
+		while(!response.matches("-?\\d+(\\.\\d+)?")) {
+			if(response.toLowerCase().equals("exit")) {
+				BankHub.commandTree();
+			}
+			System.out.println("Needs to be a number");
+			response = input.nextLine();
 		}
-		moneyR = Double.parseDouble(input.nextLine());
+		moneyR = Double.parseDouble(response);
 		while(moneyR < 50.0) {
 			System.out.println("Thats not enough, please enter a proper ammount:");
 			moneyR = Double.parseDouble(input.nextLine());
@@ -120,6 +140,7 @@ public class MenuCreateNewAccount {
 			}
 		}
 		newWallet.addFunds(moneyR);
+		LoggingUtil.logInfo(newWallet.getInfo());
 		MemoryHub.addWallet(newWallet);
 		return newWallet;
 	}

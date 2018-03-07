@@ -1,13 +1,55 @@
  package com.revature.bank.java.Menus;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import com.revature.bank.java.MemoryHub;
 import com.revature.bank.java.Users.Account;
 import com.revature.bank.java.Users.Customer;
+import com.revature.bank.java.Users.Wallet;
 
 public class MenuApproveAccount {
+	
+	
+	
+	public static void checkIfAccountRequested(Customer customer, Scanner input) {
+		
+		Map<String, Wallet> allWallets= MemoryHub.getWallets();
+		List<String> walletName = customer.getWalletsOwned();
+		Wallet found = null;
+		String response = "";
+		
+		
+		for(int i = 0; i < walletName.size(); i++) {
+			found = allWallets.get(walletName.get(i));
+			if(found.getRequested() != null){
+				break;
+			}
+		}
+		if(found.getRequested() == null) {
+			return;
+		}
+		System.out.println("User " + found.getRequested().getUsername() + " has requested access to account " + found.getName());
+		while(!response.equals("accept") && !response.equals("deny")) {
+			System.out.println("Would you like to accept or deny access? (enter exit to skip)");
+			response = input.nextLine();
+			if(response.equals("exit")) {
+				return;
+			}else if(response.equals("accept")) {
+				found.confirmRequested();
+			}else if(response.equals("deny")) {
+				found.denyRequested();
+			}else {
+				System.out.println("Please input a valid response");
+			}
+		}
+	}
+	
+	
+	
+	
 	
 	
 	public static void approveAccount(Scanner input) {

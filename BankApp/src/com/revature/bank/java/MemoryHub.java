@@ -24,7 +24,7 @@ public class MemoryHub {
 				wallets.put(me.getKey(), (Wallet) me.getValue());
 			}
 		}
-		LoggingUtil.logInfo("Data Read in");
+		LoggingUtil.logInfo("Data Read in from file");
 	}
 	
 	public static void storeData() {

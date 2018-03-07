@@ -13,6 +13,7 @@ public class Wallet implements Serializable{
 	private double money = 0;
 	private String name;
 	private String type;
+	private Customer requested = null;
 	
 	public Wallet() {}
 	
@@ -27,6 +28,11 @@ public class Wallet implements Serializable{
 		System.out.println("Account name: " + name);
 		System.out.println("Account money: " + money);
 		System.out.println("Account type: " + type);
+	}
+	
+	public String getInfo() {
+		String info = "Account name: " + name + " Account money: " + money + " Account type: " + type;
+		return info;
 	}
 
 	public boolean addFunds(double ammount) {
@@ -52,6 +58,23 @@ public class Wallet implements Serializable{
 		}
 	}
 
+	public Customer getRequested() {
+		return requested;
+	}
+	
+	public void setRequested(Customer requested) {
+		this.requested = requested;
+	}
+	
+	public void confirmRequested() {
+		this.requested.addWallet(this.name);
+		this.requested = null;
+	}
+	
+	public void denyRequested() {
+		this.requested = null;
+	}
+	
 	public double getMoney() {
 		return money;
 	}

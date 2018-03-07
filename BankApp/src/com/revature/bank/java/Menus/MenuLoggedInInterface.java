@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
+import com.revature.bank.java.AccountWalletDelete;
 import com.revature.bank.java.AccountWalletFinder;
 import com.revature.bank.java.BankHub;
 import com.revature.bank.java.MemoryHub;
@@ -21,24 +22,22 @@ public class MenuLoggedInInterface {
 		Customer customer = (Customer) user;
 		List<String> wallets = customer.getWalletsOwned();
 		String walletName = "";
-		String secondName = "";
 		Wallet secondWallet;
 		String selection = "";
 		int choise = 0;
-		double money = 0.0;
 		
 		MenuInterface.aesthetics();
 		System.out.println("Hello " + customer.getFirstName() + " " + customer.getLastName() + "\n");
+		MenuApproveAccount.checkIfAccountRequested(customer, input);
 		
 		while(activeWallet == null) {
-			System.out.println("Please select the account you want see:\n");
-			walletName = AccountWalletFinder.selectWallet(wallets, "", input);
+			walletName = AccountWalletFinder.selectWallet(customer, wallets, "", input);
 			if(walletName.equals("")) {
 				BankHub.commandTree(); 
 			}
 			activeWallet = allWallets.get(walletName);
 			if(activeWallet == null) {
-				System.out.println("Please select an account");
+				System.out.println("Please select a valid account");
 			}
 		}
 		
@@ -46,84 +45,33 @@ public class MenuLoggedInInterface {
 		System.out.println("What would you like to do?");
 		System.out.println("1: Check Balance\n2: Withdraw Funds\n3: Deposit Funds\n4: Transfer Funds\n"
 				+ "5: Switch Accounts\n6: Apply For Joint Account\n7: Create New Account\n8: Exit");
-		choise = Integer.parseInt(input.nextLine());
-		if(choise == 1) {
+		selection = input.nextLine();
+		while(!selection.equals("1") && !selection.equals("2") && !selection.equals("3") && !selection.equals("4") && !selection.equals("5") && !selection.equals("6") && !selection.equals("7") && !selection.equals("8")) {
+			System.out.println("Please enter a valid input");
+			selection = input.nextLine();
+		}
+		choise = Integer.parseInt(selection);
+		switch(choise) {
+		case 1:
 			System.out.println("Your Current funds are: $" + activeWallet.getMoney() + "0");
-		}
-		else if(choise == 2) {
-			System.out.println("How much do you want to withdraw: ");
-			selection = input.nextLine();
-			if(selection.equals("exit")) {
-				preformCustomer(user, activeWallet, input);
-			}
-			if(!selection.matches("-?\\d+(\\.\\d+)?")) {
-				System.out.println("Needs to be a number");
-				preformCustomer(user, activeWallet, input);
-			}
-			money = Double.parseDouble(selection);
-			System.out.println(money);
-			if(activeWallet.subtractFunds(money)){
-				System.out.println("New ammount: $" + activeWallet.getMoney());
-				MemoryHub.storeData();//Save change
-			}else {
-				System.out.println("Insufficient funds");
-			}
-		}
-		else if(choise == 3) {
-			System.out.println("How much do you want to deposit: ");
-			selection = input.nextLine();
-			if(selection.equals("exit")) {
-				preformCustomer(user, activeWallet, input);
-			}
-			if(!selection.matches("-?\\d+(\\.\\d+)?")) {
-				System.out.println("Needs to be a number");
-				preformCustomer(user, activeWallet, input);
-			}
-			money = Double.parseDouble(selection);
-			if(activeWallet.addFunds(money)) {
-				System.out.println("New ammount: $" + activeWallet.getMoney());
-				MemoryHub.storeData();//Save change
-			}else {
-				System.out.println("Needs to be positive");
-			}
-		}
-		else if(choise == 4) {
-			System.out.println("How much do you want to transfer out: ");
-			selection = input.nextLine();
-			if(selection.equals("exit")) {
-				preformCustomer(user, activeWallet, input);
-			}
-			if(!selection.matches("-?\\d+(\\.\\d+)?")) {
-				System.out.println("Needs to be a number");
-				preformCustomer(user, activeWallet, input);
-			}
-			money = Double.parseDouble(selection);
-			MemoryHub.storeData();
-			if(money < 0) {
-				System.out.println("Needs to be positive");
-			}else {
-				System.out.println("Which account do you want to transfer to:");
-				secondName = AccountWalletFinder.selectWallet(wallets, activeWallet.getName(), input);
-				if(secondName == null) {
-					preformCustomer(user, activeWallet, input);
-				}
-				secondWallet = allWallets.get(secondName);
-				if(activeWallet.subtractFunds(money)) {
-					secondWallet.addFunds(money);
-					System.out.println("New ammount in " + activeWallet.getName() + ": $" + activeWallet.getMoney());
-					System.out.println("New ammount in " + secondWallet.getName() + ": $" + secondWallet.getMoney());
-					MemoryHub.storeData();//Save change
-				}else {
-					System.out.println("Insufficient funds");
-				}
-			}
-		}
-		else if(choise == 5){
+			break;
+		case 2:
+			MenuMoneyTransfers.withdrawMoney(user, activeWallet, input);
+			break;
+		case 3:
+			MenuMoneyTransfers.addMoney(user, activeWallet, input);
+			break;
+		case 4:
+			MenuMoneyTransfers.transferMoneyBetweenAccounts(customer, wallets, activeWallet, input);
+		case 5:
 			System.out.println("Which account would you like to transfer too?");
-			walletName = AccountWalletFinder.selectWallet(wallets, activeWallet.getName(), input);
-			activeWallet = allWallets.get(walletName);
-			MemoryHub.storeData();
-		}else if(choise == 6){
+			walletName = AccountWalletFinder.selectWallet(customer, wallets, activeWallet.getName(), input);
+			if(!walletName.equals("")) {
+				activeWallet = allWallets.get(walletName);
+				MemoryHub.storeData();
+			}
+			break;
+		case 6:
 			System.out.println("Which account would you like to request joint access too?");
 			secondWallet = AccountWalletFinder.selectNonActiveWallet(customer, input);
 			if(secondWallet == null) {
@@ -132,49 +80,63 @@ public class MenuLoggedInInterface {
 			else if(wallets.contains(secondWallet.getName())) {
 				System.out.println("You already have access to that account");
 			}else {
-				System.out.println("You now have access to this account");
-				customer.addWallet(secondWallet.getName());
+				secondWallet.setRequested(customer);
+				System.out.println("The request has been sent to the accound owners for approval");
+				LoggingUtil.logInfo(customer.getUsername() + " requested access to account " + secondWallet);
 			}
 			MemoryHub.storeData();
-		}else if(choise == 7) {
+			break;
+		case 7:
 			customer.addWallet(MenuCreateNewAccount.createNewWallet(input).getName());
-		}
-		else if(choise == 8){
+			break;
+		case 8:
+			LoggingUtil.logInfo(customer.getUsername() + " logged out");
 			MemoryHub.storeData();
 			BankHub.commandTree();
-		}else {
+			break;
+		default:
 			System.out.println("Please enter a valid choise");
 		}
 		preformCustomer(user, activeWallet, input);
 	}
 	
 	public static void preformEmployee(Account user, Scanner input) {
-		String choise = "";
+		int choise = 0;
 		Customer viewee;
 		Wallet walletee;
+		String selection = "";
 		
 		MenuInterface.aesthetics();
 		System.out.println("Welcome back Employee");
 		System.out.println("Select you action: ");
 		System.out.println("1: View Customer\n2: View Account\n3: Approve/Deny account\n4: Exit");
-		choise = input.nextLine();
-		if(choise.equals("1")) {
+		selection = input.nextLine();
+		while(!selection.equals("1") && !selection.equals("2") && !selection.equals("3") && !selection.equals("4")) {
+			System.out.println("Please enter a valid input");
+			selection = input.nextLine();
+		}
+		choise = Integer.parseInt(selection);
+		switch(choise) {
+		case 1:
 			viewee = AccountWalletFinder.selectCustomer(input);
 			if(viewee == null) {
 				preformEmployee(user, input);
 			}
 			System.out.println("Customer information:");
 			viewee.printInfo();
-		}else if(choise.equals("2")) {
+			break;
+		case 2:
 			walletee = AccountWalletFinder.selectAnyWallet(input);
 			if(walletee == null) {
 				preformEmployee(user, input);
 			}
-			System.out.println("Wallet information:");
+			System.out.println("Account information:");
 			walletee.printInfo();
-		}else if(choise.equals("3")) {
+			break;
+		case 3:
 			MenuApproveAccount.approveAccount(input);
-		}else{
+		default:
+			LoggingUtil.logInfo(user.getUsername() + " logged out");
 			MemoryHub.storeData();
 			BankHub.commandTree();
 		}
@@ -183,17 +145,23 @@ public class MenuLoggedInInterface {
 	
 	public static void preformAdmin(Account user, Scanner input) {
 		Admin admin= (Admin) user;
-		String choise = "";
-		String yesorno = "";
+		int choise = 0;
 		Account viewee;
 		Wallet activeWallet;
+		String selection = "";
 		
 		MenuInterface.aesthetics();
 		System.out.println("Welcome back Sir");
 		System.out.println("Please select you action: ");
 		System.out.println("1: View Customers and Employees\n2: Edit Account\n3: Approve/Deny account\n4: Cancel User\n5: Cancel Account\n6: Exit");
-		choise = input.nextLine();
-		if(choise.equals("1")) {
+		selection = input.nextLine();
+		while(!selection.equals("1") && !selection.equals("2") && !selection.equals("3") && !selection.equals("4") && !selection.equals("5") && !selection.equals("6")) {
+			System.out.println("Please enter a valid input");
+			selection = input.nextLine();
+		}
+		choise = Integer.parseInt(selection);
+		switch(choise) {
+		case 1:
 			viewee = AccountWalletFinder.selectAnyAccount(input);
 			if(viewee instanceof Customer) {
 				System.out.println("Customer information:");
@@ -205,66 +173,26 @@ public class MenuLoggedInInterface {
 				System.out.println("Admin information:");
 				viewee.printInfo();
 			}
-		}else if(choise.equals("2")) {
+			break;
+		case 2:
 			System.out.println("Please select the account you want see:\n");
 			activeWallet = AccountWalletFinder.selectAnyWallet(input);
 			if(activeWallet == null) {
 				preformAdmin(admin, input);
 			}
 			AccountWalletFinder.transferFundsAll(user, activeWallet, input);
-		}else if(choise.equals("3")) {
+			break;
+		case 3:
 			MenuApproveAccount.approveAccount(input);
-		}else if(choise.equals("4")) {
-			System.out.println("Please select the user that you want to delete");
-			viewee = AccountWalletFinder.selectAnyAccount(input);
-			if(viewee == null) {
-				preformAdmin(admin, input);
-			}
-			if(viewee instanceof Customer || viewee instanceof Employee) {
-				System.out.println("User information:");
-				viewee.printInfo();
-				System.out.println("Are you sure you want to delete this user: (yes or no)");
-				yesorno = input.nextLine();
-				yesorno.toLowerCase();
-				while(yesorno.equals("yes") && yesorno.equals("no")) {
-					System.out.println("Please enter a valid response");
-				}
-				if(yesorno.equals("yes")) {
-					LoggingUtil.logInfo(viewee.getUsername() + " deleted");
-					MemoryHub.removeAccount(viewee);
-					System.out.println("User deleted");
-					MemoryHub.storeData();
-				}
-				else {
-					System.out.println("user not deleted");
-				}
-			}else {
-				System.out.println("Admins cannot be deleted");
-			}
-		}else if(choise.equals("5")) {
-			System.out.println("Please select the account that you want to delete");
-			activeWallet = AccountWalletFinder.selectAnyWallet(input);
-			if(activeWallet == null) {
-				preformAdmin(admin, input);
-			}
-			System.out.println("Account information:");
-			activeWallet.printInfo();
-			System.out.println("Are you sure you want to delete this account: (yes or no)");
-			yesorno = input.nextLine();
-			yesorno.toLowerCase();
-			while(yesorno.equals("yes") && yesorno.equals("no")) {
-				System.out.println("Please enter a valid response");
-			}
-			if(yesorno.equals("yes")) {
-				LoggingUtil.logInfo(activeWallet.getName() + " deleted");
-				MemoryHub.removeWallet(activeWallet);
-				System.out.println("Account deleted");
-				MemoryHub.storeData();
-			}
-			else {
-				System.out.println("Account not deleted");
-			}
-		}else{
+			break;
+		case 4:
+			AccountWalletDelete.deleteUser(input);
+			break;
+		case 5:
+			AccountWalletDelete.deleteWallet(input);
+			break;
+		default:
+			LoggingUtil.logInfo(admin.getUsername() + " logged out");
 			MemoryHub.storeData();
 			BankHub.commandTree();
 		}

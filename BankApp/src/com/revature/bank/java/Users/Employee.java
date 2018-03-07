@@ -10,7 +10,7 @@ public class Employee implements Account{
 	private String firstName = new String();
 	private String lastName = new String();
 	private String email = new String();
-	int ssn = 0;
+	private int ssn = 0;
 	private final int accesslevel = 2;
 	private int password = 0;
 	private Boolean active = true;
