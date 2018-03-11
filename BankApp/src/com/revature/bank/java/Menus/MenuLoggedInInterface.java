@@ -25,7 +25,7 @@ public class MenuLoggedInInterface {
 		Wallet secondWallet;
 		String selection = "";
 		int choise = 0;
-		
+
 		MenuInterface.aesthetics();
 		System.out.println("Hello " + customer.getFirstName() + " " + customer.getLastName() + "\n");
 		MenuApproveAccount.checkIfAccountRequested(customer, input);

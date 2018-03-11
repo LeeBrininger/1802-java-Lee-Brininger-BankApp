@@ -1,4 +1,4 @@
-package com.revature.bank.java.Users;
+ package com.revature.bank.java.Users;
 
 import java.io.Serializable;
 

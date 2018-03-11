@@ -15,7 +15,7 @@ public class MenuMoneyTransfers {
 	public static void withdrawMoney(Account user, Wallet activeWallet, Scanner input) {
 		String selection = "";
 		double money = 0;
-		
+	
 		System.out.println("How much do you want to withdraw: ");
 		selection = input.nextLine();
 		if(selection.equals("exit")) {

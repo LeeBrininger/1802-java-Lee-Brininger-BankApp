@@ -38,8 +38,8 @@ public class MenuCreateNewAccount {
 			if(statement.equals("exit")) {
 				BankHub.commandTree();
 			}
-		System.out.println("Needs to be a number");
-		statement = input.nextLine();
+			System.out.println("Needs to be a number");
+			statement = input.nextLine();
 		}
 		newCust.setSSN(Integer.parseInt(statement));
 		System.out.println("Please Set your Username: ");

@@ -1,5 +1,5 @@
 package com.revature.bank.util;
-
+ 
 import org.apache.log4j.Logger;
 
 public class LoggingUtil {
@@ -23,7 +23,6 @@ public class LoggingUtil {
 	public static void logTrace(String s) {
 		log.trace(s);
 	}
-
 	
 	
 	public static void main(String[] args) {

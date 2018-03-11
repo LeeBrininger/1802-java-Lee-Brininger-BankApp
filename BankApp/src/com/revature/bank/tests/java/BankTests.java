@@ -27,7 +27,7 @@ public class BankTests {
 	/*
 	 * Interface Tests
 	 */
-	
+
 	/*
 	 * Test the storage and inialize base accounts
 	 */
@@ -140,9 +140,7 @@ public class BankTests {
 		assertFalse(MemoryHub.getWallets().containsKey("LeeAccount"));
 	}
 
-	/*
-	 * Test account and wallet creation and deletion
-	 */
+
 	@Test
 	public void testNewAccount(){
 		Customer TestCustomer = new Customer("Username", "FirstName", "LastName", "pass" , "Email", 90909099);

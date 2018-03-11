@@ -21,7 +21,7 @@ public class MenuLogin {
 		String password = "";
 		int hash = 0;
 
-		
+	
 		if(users.containsKey(username) && users.get(username).getActive()) {
 			Account user = users.get(username);
 			System.out.println("Welcome back " + username);

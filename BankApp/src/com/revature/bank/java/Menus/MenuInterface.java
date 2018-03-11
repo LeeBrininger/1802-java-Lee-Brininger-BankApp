@@ -40,7 +40,6 @@ public class MenuInterface {
 		clearScreen();
 	}
 	
-	
 	public static void aesthetics() {
 		System.out.println("--------------------------------------------------------------");
 		System.out.println("First Bank of Richmond");

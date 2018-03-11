@@ -1,8 +1,13 @@
 package com.revature.bank.java;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
 import com.revature.bank.java.Menus.MenuInterface;
+import com.revature.bank.util.ConnectionFactory;
 import com.revature.bank.util.LoggingUtil;
 
 public class BankHub {
@@ -16,12 +21,17 @@ public class BankHub {
 	}
 	
 	public static void main(String[] args) {
+		
+		
+		//displaySql();
+		
+		
 		LoggingUtil.logInfo("System opened");
 		MemoryHub.readStored(defaultDataFile);
 		commandTree();
 	}
 	
-
+	
 	public static void commandTree() {
 		double option = MenuInterface.runOpen();
 		
@@ -41,4 +51,33 @@ public class BankHub {
 			commandTree();
 		}	
 	}
+	
+	
+	
+public static void displaySql(){
+        
+        try {
+            Connection conn = ConnectionFactory.getInstance().getConnection();
+            System.out.println("Connected");
+            String sql = "SELECT * FROM EMPLOYEE";
+            Statement stmt = conn.createStatement();
+            
+            ResultSet rs= stmt.executeQuery(sql);
+            
+            while(rs.next()) {
+                System.out.println(rs.getRow());
+                System.out.println(rs.getString(3));
+
+                
+            }
+            stmt.close();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        
+    }
 }
