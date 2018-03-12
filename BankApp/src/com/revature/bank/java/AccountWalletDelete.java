@@ -3,10 +3,10 @@ package com.revature.bank.java;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import com.revature.bank.java.Users.Account;
-import com.revature.bank.java.Users.Customer;
-import com.revature.bank.java.Users.Employee;
-import com.revature.bank.java.Users.Wallet;
+import com.revature.bank.pojo.Account;
+import com.revature.bank.pojo.Customer;
+import com.revature.bank.pojo.Employee;
+import com.revature.bank.pojo.Wallet;
 import com.revature.bank.util.LoggingUtil;
 
 public class AccountWalletDelete {
@@ -31,7 +31,7 @@ public class AccountWalletDelete {
 				LoggingUtil.logInfo(viewee.getUsername() + " deleted");
 				MemoryHub.removeAccount(viewee);
 				System.out.println("User deleted");
-				MemoryHub.storeData();
+				//MemoryHub.storeData();
 			}
 			else {
 				System.out.println("user not deleted");
@@ -71,7 +71,7 @@ public class AccountWalletDelete {
 			}
 			MemoryHub.removeWallet(activeWallet);
 			System.out.println("Account deleted");
-			MemoryHub.storeData();
+			//MemoryHub.storeData();
 		}
 		else {
 			System.out.println("Account not deleted");

@@ -1,29 +1,33 @@
 package com.revature.bank.tests.java;
 
-import com.revature.bank.java.BankHub;
-import com.revature.bank.java.FileManipulator;
-import com.revature.bank.java.MemoryHub;
-import com.revature.bank.java.Users.Account;
-import com.revature.bank.java.Users.Admin;
-import com.revature.bank.java.Users.Customer;
-import com.revature.bank.java.Users.Employee;
-import com.revature.bank.java.Users.Wallet;
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
+
+import com.revature.bank.dao.AccountDao;
+import com.revature.bank.dao.AccountDaoImpl;
+import com.revature.bank.dao.WalletDao;
+import com.revature.bank.dao.WalletDaoImpl;
+import com.revature.bank.java.BankHub;
+import com.revature.bank.pojo.Account;
+import com.revature.bank.pojo.Admin;
+import com.revature.bank.pojo.Customer;
+import com.revature.bank.pojo.Employee;
+import com.revature.bank.pojo.Wallet;
 
 
 public class BankTests {
 
 	public static final BankHub bankHub = new BankHub(); 
 	static String defaultFile = "BankInfo.txt";
+	AccountDao ad = new AccountDaoImpl();
+	WalletDao wd = new WalletDaoImpl();
 	/*
 	 * Interface Tests
 	 */
@@ -32,13 +36,11 @@ public class BankTests {
 	 * Test the storage and inialize base accounts
 	 */
 	
-	@Test
-	public void testFileObjectWrite() {
-		HashMap<String, Object> test = new HashMap<String, Object>();
-		
-		Wallet w1 = new Wallet(101.00, "LeeAccount", "Checking");
-		Wallet w2 = new Wallet(500.00, "two", "Savings");
-		Wallet w3 = new Wallet(10000.00, "SSB", "Savings");
+	@BeforeClass
+	public static void createAccount() {
+		Wallet w1 = new Wallet("LeeAccount", 101.00,  "Checking");
+		Wallet w2 = new Wallet("two", 500.00,  "Savings");
+		Wallet w3 = new Wallet("SSB", 10000.00, "Savings");
 		
 		List<String> walletsowned1 = new ArrayList<String>();
 		List<String> walletsowned2 = new ArrayList<String>();
@@ -57,23 +59,22 @@ public class BankTests {
 		Employee e2 = new Employee("Emp2", "Cowman", "Sad", "lol", "penguinz0@gmail.com", 954674433);
 		Admin a1 = new Admin("Admin", "Richmond", "Brininger", "thebest", "importantstuff@gmail.com", 987345765);
 		
-
-		test.put(c1.getUsername(), c1);
-		test.put(c2.getUsername(), c2);
-		test.put(c3.getUsername(), c3);
-		test.put(c4.getUsername(), c4);
-		test.put(e1.getUsername(), e1);
-		test.put(e2.getUsername(), e2);
-		test.put(a1.getUsername(), a1);
-		test.put(w1.getName(), w1);
-		test.put(w2.getName(),w2);
-		test.put(w3.getName(),w3);
-		FileManipulator.WriteOut(test, defaultFile);
+		//ad.createAccount(c1);
+		//ad.createAccount(c2);
+		//ad.createAccount(c3);
+		//ad.createAccount(c4);
+		//ad.createAccount(e1);
+		//ad.createAccount(e2);
+		//ad.createAccount(a1);
+		//wd.createWallet(w1);
+		//wd.createWallet(w2);
+		//wd.createWallet(w3);
 	}
 
 	/*
-	 * Tests the reading from file
+	 * Tests the reading from file (LEGACY TESTS)
 	 */
+	/*
 	@Test
 	public void testFileObjectReadCustomer() {
 		HashMap<String, Object> c1 = FileManipulator.ReadIn(defaultFile);
@@ -102,9 +103,10 @@ public class BankTests {
 		assertEquals("LeeAccount", in1.getName());
 	}
 	
-	/*
-	 * Tests account manipulation
-	 */
+	
+	
+	 //Tests account manipulation
+	 
 	@Test
 	public void testAddingFunds(){
 		MemoryHub.readStored(defaultFile);
@@ -122,36 +124,85 @@ public class BankTests {
 		testW.subtractFunds(10);
 		assertTrue(Math.abs((inital-10) - testW.getMoney()) < 1);
 	}
+	*/
+
 	
-	/*
-	 * Test account and wallet creation and deletion
-	 */
 	@Test
-	public void testNewWallet(){
-		Wallet NoOwner = new Wallet(10000, "NoOwner", "savings");
-		MemoryHub.addWallet(NoOwner);
-		assertTrue(MemoryHub.getWallets().containsKey("NoOwner"));
+	public void testWalletCreation() {
+		//Wallet test = new Wallet("test", 1000, "Checking");
+		//WalletDao.createWallet(test);
 	}
+	
+	@Test
+	public void testGetWalletByName() {
+		Wallet test = wd.retrieveWalletByName("LeeAccount");
+		assertEquals(test.getName(), "LeeAccount");
+	}
+	
+	@Test
+	public void testGetAllWallets() {
+		Map<String, Wallet> testList = wd.retrieveAllWallets();
+		assertEquals(testList.get("LeeAccount").getType(), "Checking");
+	}
+	
+	@Test
+	public void testUpdateMoney() {
+		Wallet test = wd.retrieveWalletByName("LeeAccount");
+		double inital = test.getMoney();
+		test.addFunds(234);
+		wd.updateWalletMoney(test);
+		test = wd.retrieveWalletByName("LeeAccount");
+		assertEquals(test.getMoney(), inital+234, 0.1);
+	}
+	
 	
 	@Test
 	public void testDeleteWallet(){
-		Wallet temp = MemoryHub.getWallets().get("LeeAccount");
-		MemoryHub.removeWallet(temp);
-		assertFalse(MemoryHub.getWallets().containsKey("LeeAccount"));
+		Wallet test = new Wallet("test", 1000, "Checking");
+		//wd.createWallet(test);
+		//assertTrue(wd.deleteWallet(test));
 	}
-
+	
 
 	@Test
-	public void testNewAccount(){
-		Customer TestCustomer = new Customer("Username", "FirstName", "LastName", "pass" , "Email", 90909099);
-		MemoryHub.addAccount(TestCustomer);
-		assertTrue(MemoryHub.getAccounts().containsKey("Username"));
+	public void testAccountCreation() {
+		Customer customer = new Customer("TestDude", "Lea", "Kree", "password", "brininger@gmail.com", 888888887);
+		//assertTrue(ad.createAccount(customer));
+	}
+	
+	
+	@Test
+	public void testGetAccountByUsername() {
+		Account test = ad.retrieveAccountByUsername("Stuff");
+		assertEquals(test.getFirstName(), "AJ");
 	}
 	
 	@Test
-	public void testDeleteAccount(){
-		Account TestCustomer = MemoryHub.getAccounts().get("Crawdady");
-		MemoryHub.removeAccount(TestCustomer);
-		assertFalse(MemoryHub.getAccounts().containsKey("Crawdady"));
+	public void testGetAllAccounts() {
+		Map<String, Account> testList = ad.retrieveAllAccounts();
+		assertEquals(testList.get("Crawdady").getLastName(), "B");
 	}
+
+	@Test
+	public void testDeleteAccount() {
+		//Account test = ad.retrieveAccountByUsername("TestDude");
+		//assertTrue(ad.deleteAccount(test));
+	}
+	
+	
+	@Test
+	public void getWalletsOwned() {
+		Account customer = ad.retrieveAccountByUsername("Stuff");
+		List<String> walletList = ad.getWalletsOwned(customer);
+		assertEquals(walletList.get(0), "LeeAccount");
+	}
+	
+	@Test
+	public void addWalletToAccount() {
+		Account customer = ad.retrieveAccountByUsername("NK");
+		Wallet test = wd.retrieveWalletByName("LeeAccount");
+		//ad.addWalletToOwned(customer, test);
+	}
+
+
 }

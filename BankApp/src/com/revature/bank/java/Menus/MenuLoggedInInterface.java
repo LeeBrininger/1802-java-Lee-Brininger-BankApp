@@ -8,11 +8,11 @@ import com.revature.bank.java.AccountWalletDelete;
 import com.revature.bank.java.AccountWalletFinder;
 import com.revature.bank.java.BankHub;
 import com.revature.bank.java.MemoryHub;
-import com.revature.bank.java.Users.Account;
-import com.revature.bank.java.Users.Admin;
-import com.revature.bank.java.Users.Customer;
-import com.revature.bank.java.Users.Employee;
-import com.revature.bank.java.Users.Wallet;
+import com.revature.bank.pojo.Account;
+import com.revature.bank.pojo.Admin;
+import com.revature.bank.pojo.Customer;
+import com.revature.bank.pojo.Employee;
+import com.revature.bank.pojo.Wallet;
 import com.revature.bank.util.LoggingUtil;
 
 public class MenuLoggedInInterface {
@@ -28,7 +28,7 @@ public class MenuLoggedInInterface {
 
 		MenuInterface.aesthetics();
 		System.out.println("Hello " + customer.getFirstName() + " " + customer.getLastName() + "\n");
-		MenuApproveAccount.checkIfAccountRequested(customer, input);
+		///////////////////////////////MenuApproveAccount.checkIfAccountRequested(customer, input);
 		
 		while(activeWallet == null) {
 			walletName = AccountWalletFinder.selectWallet(customer, wallets, "", input);
@@ -68,7 +68,7 @@ public class MenuLoggedInInterface {
 			walletName = AccountWalletFinder.selectWallet(customer, wallets, activeWallet.getName(), input);
 			if(!walletName.equals("")) {
 				activeWallet = allWallets.get(walletName);
-				MemoryHub.storeData();
+				//MemoryHub.storeData();
 			}
 			break;
 		case 6:
@@ -84,14 +84,14 @@ public class MenuLoggedInInterface {
 				System.out.println("The request has been sent to the accound owners for approval");
 				LoggingUtil.logInfo(customer.getUsername() + " requested access to account " + secondWallet);
 			}
-			MemoryHub.storeData();
+			//MemoryHub.storeData();
 			break;
 		case 7:
 			customer.addWallet(MenuCreateNewAccount.createNewWallet(input).getName());
 			break;
 		case 8:
 			LoggingUtil.logInfo(customer.getUsername() + " logged out");
-			MemoryHub.storeData();
+			//MemoryHub.storeData();
 			BankHub.commandTree();
 			break;
 		default:
@@ -137,7 +137,7 @@ public class MenuLoggedInInterface {
 			MenuApproveAccount.approveAccount(input);
 		default:
 			LoggingUtil.logInfo(user.getUsername() + " logged out");
-			MemoryHub.storeData();
+			//MemoryHub.storeData();
 			BankHub.commandTree();
 		}
 		preformEmployee(user, input);
@@ -193,7 +193,7 @@ public class MenuLoggedInInterface {
 			break;
 		default:
 			LoggingUtil.logInfo(admin.getUsername() + " logged out");
-			MemoryHub.storeData();
+			//MemoryHub.storeData();
 			BankHub.commandTree();
 		}
 		preformAdmin(admin, input);

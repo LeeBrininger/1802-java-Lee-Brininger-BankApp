@@ -1,4 +1,7 @@
-package com.revature.bank.java.Users;
+package com.revature.bank.pojo;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Employee implements Account{
 	
@@ -11,9 +14,31 @@ public class Employee implements Account{
 	private String lastName = new String();
 	private String email = new String();
 	private int ssn = 0;
-	private final int accesslevel = 2;
+	private int accessLevel = 2;
 	private int password = 0;
 	private Boolean active = true;
+	
+	
+	public Employee(ResultSet rs) {
+		 try {
+				this.username = rs.getString(1);
+				this.firstName = rs.getString(2);
+				this.lastName = rs.getString(3);
+				this.password = rs.getInt(4);
+				this.ssn = rs.getInt(5);
+				this.email = rs.getString(6);
+				this.accessLevel = rs.getInt(7);
+				if(rs.getInt(9) == 0) {
+					this.active = false;
+				}else {
+					this.active = true;
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	}
+	
 	
 	public Employee(String username, String firstname, String lastname, String password, String Email, int Ssn) {
 		// TODO Auto-generated constructor stub
@@ -83,11 +108,17 @@ public class Employee implements Account{
 
 	@Override
 	public int getAccessLevel() {
-		return accesslevel;
+		return accessLevel;
 	}
 
 	public void setActive(Boolean active) {
 		this.active = active;
+	}
+
+	@Override
+	public int getSSN() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	

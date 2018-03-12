@@ -21,13 +21,9 @@ public class BankHub {
 	}
 	
 	public static void main(String[] args) {
-		
-		
-		//displaySql();
-		
-		
+
 		LoggingUtil.logInfo("System opened");
-		MemoryHub.readStored(defaultDataFile);
+		//MemoryHub.readStored(defaultDataFile);
 		commandTree();
 	}
 	
@@ -43,7 +39,7 @@ public class BankHub {
 			MenuInterface.runCreateNew();
 			break;
 		case 3:
-			MemoryHub.storeData();
+			//MemoryHub.storeData();
 			LoggingUtil.logInfo("System closed");
 			System.exit(0);
 		default:
@@ -51,33 +47,4 @@ public class BankHub {
 			commandTree();
 		}	
 	}
-	
-	
-	
-public static void displaySql(){
-        
-        try {
-            Connection conn = ConnectionFactory.getInstance().getConnection();
-            System.out.println("Connected");
-            String sql = "SELECT * FROM EMPLOYEE";
-            Statement stmt = conn.createStatement();
-            
-            ResultSet rs= stmt.executeQuery(sql);
-            
-            while(rs.next()) {
-                System.out.println(rs.getRow());
-                System.out.println(rs.getString(3));
-
-                
-            }
-            stmt.close();
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-        catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-        
-    }
 }

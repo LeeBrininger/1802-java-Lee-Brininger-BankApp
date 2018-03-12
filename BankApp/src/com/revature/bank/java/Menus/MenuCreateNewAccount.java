@@ -5,8 +5,8 @@ import java.util.Scanner;
 import com.revature.bank.java.AccountWalletFinder;
 import com.revature.bank.java.BankHub;
 import com.revature.bank.java.MemoryHub;
-import com.revature.bank.java.Users.Customer;
-import com.revature.bank.java.Users.Wallet;
+import com.revature.bank.pojo.Customer;
+import com.revature.bank.pojo.Wallet;
 import com.revature.bank.util.LoggingUtil;
 
 public class MenuCreateNewAccount {  
@@ -89,7 +89,7 @@ public class MenuCreateNewAccount {
 		System.out.println("Thank you, your account is awaiting approval.");
 		newCust.setUnActive();
 		MemoryHub.addAccount(newCust);
-		MemoryHub.storeData();
+		//MemoryHub.storeData();
 		BankHub.commandTree();
 	}
 	

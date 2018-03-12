@@ -1,7 +1,11 @@
- package com.revature.bank.java.Users;
+ package com.revature.bank.pojo;
 
 import java.io.Serializable;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
+import com.revature.bank.util.ConnectionFactory;
 import com.revature.bank.util.LoggingUtil;
 
 public class Wallet implements Serializable{
@@ -17,11 +21,25 @@ public class Wallet implements Serializable{
 	
 	public Wallet() {}
 	
-	public Wallet(double d, String Name, String Type) {
+	public Wallet(String Name, double d, String Type) {
 		this.money = d;
 		this.name = Name;
 		this.type = Type;
 		LoggingUtil.logInfo("Wallet" + name + " created with $" + money + " of type " + type);
+	}
+	
+	
+	public Wallet(ResultSet rs) {
+		
+	    try {
+			this.name = rs.getString(1);
+			this.money = rs.getDouble(2);
+			this.type = rs.getString(3);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 	public void printInfo() {

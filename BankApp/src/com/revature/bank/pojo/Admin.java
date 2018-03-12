@@ -1,4 +1,7 @@
-package com.revature.bank.java.Users;
+package com.revature.bank.pojo;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Admin implements Account{
 
@@ -10,11 +13,32 @@ public class Admin implements Account{
 	private String firstName = new String();
 	private String lastName = new String();
 	private String email = new String();
-	private final int accessLevel = 3;
+	private int accessLevel = 3;
 	private int password = 0;
 	private int ssn = 0;
 	private Boolean active = true;
 
+	
+	public Admin(ResultSet rs) {
+		 try {
+				this.username = rs.getString(1);
+				this.firstName = rs.getString(2);
+				this.lastName = rs.getString(3);
+				this.password = rs.getInt(4);
+				this.ssn = rs.getInt(5);
+				this.email = rs.getString(6);
+				this.accessLevel = rs.getInt(7);
+				if(rs.getInt(9) == 0) {
+					this.active = false;
+				}else {
+					this.active = true;
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	}
+	
 	public Admin(String username, String firstname, String lastname, String password,  String Email, int Ssn) {
 		// TODO Auto-generated constructor stub
 		this.username = username;
@@ -89,5 +113,11 @@ public class Admin implements Account{
 	@Override
 	public String getEmail() {
 		return email;
+	}
+
+	@Override
+	public int getSSN() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

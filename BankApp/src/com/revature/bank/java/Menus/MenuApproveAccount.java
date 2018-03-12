@@ -6,9 +6,9 @@ import java.util.Map;
 import java.util.Scanner;
 
 import com.revature.bank.java.MemoryHub;
-import com.revature.bank.java.Users.Account;
-import com.revature.bank.java.Users.Customer;
-import com.revature.bank.java.Users.Wallet;
+import com.revature.bank.pojo.Account;
+import com.revature.bank.pojo.Customer;
+import com.revature.bank.pojo.Wallet;
 
 public class MenuApproveAccount {
 	
@@ -77,7 +77,7 @@ public class MenuApproveAccount {
 			MemoryHub.removeAccount(customer);
 			System.out.println("Account denied");
 		}
-		MemoryHub.storeData();
+		//MemoryHub.storeData();
 		return;
 	}
 	

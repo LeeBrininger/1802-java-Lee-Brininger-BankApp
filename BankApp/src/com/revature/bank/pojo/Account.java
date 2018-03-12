@@ -1,4 +1,4 @@
-package com.revature.bank.java.Users;
+package com.revature.bank.pojo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -29,6 +29,8 @@ public interface Account extends Serializable{
 	public String getFirstName();
 	
 	public String getLastName();
+	
+	public int getSSN();
 	
 	public int getPassword();
 	

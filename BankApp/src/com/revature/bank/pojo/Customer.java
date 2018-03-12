@@ -1,5 +1,7 @@
-package com.revature.bank.java.Users;
+package com.revature.bank.pojo;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +14,7 @@ public class Customer implements Account{
 	private int password = 0;
 	private int ssn = 0;
 	private String email = new String();
-	private final int accessLevel = 1;
+	private int accessLevel = 1;
 	private List<String> walletsOwned = new ArrayList<String>();
 	private Boolean active = true;
 
@@ -22,6 +24,27 @@ public class Customer implements Account{
 	public Customer(){
 		LoggingUtil.logInfo("Created new blank customer");
 	};
+	
+	
+	public Customer(ResultSet rs) {
+		 try {
+				this.username = rs.getString(1);
+				this.firstName = rs.getString(2);
+				this.lastName = rs.getString(3);
+				this.ssn = rs.getInt(4);
+				this.password = rs.getInt(5);
+				this.email = rs.getString(6);
+				this.accessLevel = rs.getInt(7);
+				if(rs.getInt(9) == 0) {
+					this.active = false;
+				}else {
+					this.active = true;
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	}
 	
 	public Customer(String Username, String FirstName, String LastName, String Password, String Email, int Ssn) {
 		this.username = Username;

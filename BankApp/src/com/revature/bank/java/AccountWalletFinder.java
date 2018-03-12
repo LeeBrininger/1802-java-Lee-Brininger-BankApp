@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.revature.bank.java.Menus.MenuCreateNewAccount;
-import com.revature.bank.java.Users.Account;
-import com.revature.bank.java.Users.Customer;
-import com.revature.bank.java.Users.Wallet;
+import com.revature.bank.pojo.Account;
+import com.revature.bank.pojo.Customer;
+import com.revature.bank.pojo.Wallet;
 
 public class AccountWalletFinder {
 
@@ -219,7 +219,7 @@ public class AccountWalletFinder {
 				}
 			}
 		}else if(choise.equals("5")){
-			MemoryHub.storeData();
+			//MemoryHub.storeData();
 			return;
 		}else {
 			System.out.println("Please enter a valid choise");

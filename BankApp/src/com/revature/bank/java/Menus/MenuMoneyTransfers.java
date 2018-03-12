@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 import com.revature.bank.java.AccountWalletFinder;
 import com.revature.bank.java.MemoryHub;
-import com.revature.bank.java.Users.Account;
-import com.revature.bank.java.Users.Customer;
-import com.revature.bank.java.Users.Wallet;
+import com.revature.bank.pojo.Account;
+import com.revature.bank.pojo.Customer;
+import com.revature.bank.pojo.Wallet;
 
 public class MenuMoneyTransfers {
 	
@@ -29,7 +29,7 @@ public class MenuMoneyTransfers {
 		System.out.println(money);
 		if(activeWallet.subtractFunds(money)){
 			System.out.println("New ammount: $" + activeWallet.getMoney());
-			MemoryHub.storeData();//Save change
+			MemoryHub.storeFundsChange(activeWallet);	//store moneyChange to database after it is validated
 		}else {
 			System.out.println("Insufficient funds");
 		}
@@ -51,7 +51,7 @@ public class MenuMoneyTransfers {
 		money = Double.parseDouble(selection);
 		if(activeWallet.addFunds(money)) {
 			System.out.println("New ammount: $" + activeWallet.getMoney());
-			MemoryHub.storeData();//Save change
+			MemoryHub.storeFundsChange(activeWallet);	//store moneyChange to database after it is validated
 		}else {
 			System.out.println("Needs to be positive");
 		}
@@ -75,7 +75,7 @@ public class MenuMoneyTransfers {
 			return;
 		}
 		money = Double.parseDouble(selection);
-		MemoryHub.storeData();
+		//MemoryHub.storeData();
 		if(money < 0) {
 			System.out.println("Needs to be positive");
 		}else {
@@ -89,7 +89,8 @@ public class MenuMoneyTransfers {
 				secondWallet.addFunds(money);
 				System.out.println("New ammount in " + activeWallet.getName() + ": $" + activeWallet.getMoney());
 				System.out.println("New ammount in " + secondWallet.getName() + ": $" + secondWallet.getMoney());
-				MemoryHub.storeData();//Save change
+				MemoryHub.storeFundsChange(activeWallet);	//store moneyChange to database after it is validated
+				MemoryHub.storeFundsChange(secondWallet);	//store moneyChange to database after it is validated
 			}else {
 				System.out.println("Insufficient funds");
 			}

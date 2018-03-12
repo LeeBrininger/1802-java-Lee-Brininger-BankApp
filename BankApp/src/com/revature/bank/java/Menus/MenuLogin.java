@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import com.revature.bank.java.BankHub;
 import com.revature.bank.java.MemoryHub;
-import com.revature.bank.java.Users.Account;
+import com.revature.bank.pojo.Account;
 import com.revature.bank.util.LoggingUtil;
 
 public class MenuLogin {
@@ -32,8 +32,12 @@ public class MenuLogin {
 			if(user.getPassword() == hash){ //compares the hashes
 				MenuInterface.clearScreen();
 				LoggingUtil.logInfo(user.getUsername() + " logged in");
+				
+				System.out.println(user.getUsername() + " . " + user.getAccessLevel());
+				
 				switch(user.getAccessLevel()) {
 				case 1:
+					System.out.println("customer");
 					MenuLoggedInInterface.preformCustomer(user, null, input);
 					break;
 				case 2:
