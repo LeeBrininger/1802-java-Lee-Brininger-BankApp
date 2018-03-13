@@ -28,9 +28,7 @@ public class MenuLoggedInInterface {
 
 		MenuInterface.aesthetics();
 		System.out.println("Hello " + customer.getFirstName() + " " + customer.getLastName() + "\n");
-		///////////////////////////////MenuApproveAccount.checkIfAccountRequested(customer, input);
-		
-		System.out.println(allWallets.size());
+		//MenuApproveAccount.checkIfAccountRequested(customer, input);
 		
 		while(activeWallet == null) {
 			walletName = AccountWalletFinder.selectWallet(customer, wallets, "", input);
@@ -137,7 +135,6 @@ public class MenuLoggedInInterface {
 			MenuApproveAccount.approveAccount(input);
 		default:
 			LoggingUtil.logInfo(user.getUsername() + " logged out");
-			//MemoryHub.storeData();
 			BankHub.commandTree();
 		}
 		preformEmployee(user, input);
@@ -193,7 +190,6 @@ public class MenuLoggedInInterface {
 			break;
 		default:
 			LoggingUtil.logInfo(admin.getUsername() + " logged out");
-			//MemoryHub.storeData();
 			BankHub.commandTree();
 		}
 		preformAdmin(admin, input);

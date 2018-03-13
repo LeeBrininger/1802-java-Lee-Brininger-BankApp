@@ -17,8 +17,8 @@ public class Employee implements Account{
 	private int accessLevel = 2;
 	private int password = 0;
 	private int active = 1;
-	
-	
+	 
+
 	public Employee(ResultSet rs) {
 		 try {
 				this.username = rs.getString(1);

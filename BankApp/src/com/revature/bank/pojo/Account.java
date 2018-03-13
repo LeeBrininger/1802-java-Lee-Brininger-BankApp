@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface Account extends Serializable{
-	
+
 
 	String username = new String();
 	String FirstName = new String();
@@ -16,7 +16,7 @@ public interface Account extends Serializable{
 	Integer accessLevel = new Integer(0);
 	List<Integer> walletsOwned = new ArrayList<Integer>();
 	Boolean active = new Boolean(false);
-	
+
 	@Override
 	public String toString();
 	

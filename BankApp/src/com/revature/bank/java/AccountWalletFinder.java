@@ -22,7 +22,7 @@ public class AccountWalletFinder {
 			if(!wallets.get(i).equals(open)) {
 				System.out.println(wallets.get(i));
 			}
-		}
+		} 
 		if(wallets.size() == 0) {
 			System.out.println("You do not have any accounts, type exit to exit or type anything else to make a new one");
 			response = input.nextLine();

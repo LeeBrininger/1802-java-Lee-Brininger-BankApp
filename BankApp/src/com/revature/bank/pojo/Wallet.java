@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.revature.bank.java.MemoryHub;
 import com.revature.bank.util.ConnectionFactory;
 import com.revature.bank.util.LoggingUtil;
 
@@ -18,7 +19,7 @@ public class Wallet implements Serializable{
 	private String name;
 	private String type;
 	private Customer requested = null;
-	
+
 	public Wallet() {}
 	
 	public Wallet(String Name, double d, String Type) {
@@ -27,7 +28,7 @@ public class Wallet implements Serializable{
 		this.type = Type;
 		LoggingUtil.logInfo("Wallet" + name + " created with $" + money + " of type " + type);
 	}
-	
+
 	
 	public Wallet(ResultSet rs) {
 		

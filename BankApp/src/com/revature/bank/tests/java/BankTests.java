@@ -15,6 +15,7 @@ import com.revature.bank.dao.AccountDaoImpl;
 import com.revature.bank.dao.WalletDao;
 import com.revature.bank.dao.WalletDaoImpl;
 import com.revature.bank.java.BankHub;
+import com.revature.bank.java.MemoryHub;
 import com.revature.bank.pojo.Account;
 import com.revature.bank.pojo.Admin;
 import com.revature.bank.pojo.Customer;
@@ -203,6 +204,10 @@ public class BankTests {
 		Wallet test = wd.retrieveWalletByName("LeeAccount");
 		//ad.addWalletToOwned(customer, test);
 	}
-
+	
+	@Test
+	public void addLog() {
+		MemoryHub.logToDatabase("Test Log");
+	}
 
 }

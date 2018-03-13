@@ -1,6 +1,5 @@
 package com.revature.bank.java.Menus;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
@@ -25,12 +24,11 @@ public class MenuMoneyTransfers {
 		if(!selection.matches("-?\\d+(\\.\\d+)?")) {
 			System.out.println("Needs to be a number");
 			return;
-		}
+		} 
 		money = Double.parseDouble(selection);
 		System.out.println(money);
 		if(activeWallet.subtractFunds(money)){
 			System.out.println("New ammount: $" + activeWallet.getMoney());
-			System.out.println("nondatabase finished");
 			MemoryHub.storeFundsChange(activeWallet);	//store moneyChange to database after it is validated
 		}else {
 			System.out.println("Insufficient funds");

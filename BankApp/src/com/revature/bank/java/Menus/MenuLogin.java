@@ -21,7 +21,7 @@ public class MenuLogin {
 		String password = "";
 		int hash = 0;
 
-	
+		
 		if(users.containsKey(username) && users.get(username).getActive() == 1) {
 			Account user = users.get(username);
 			System.out.println("Welcome back " + username);
@@ -32,10 +32,9 @@ public class MenuLogin {
 			if(user.getPassword() == hash){ //compares the hashes
 				MenuInterface.clearScreen();
 				LoggingUtil.logInfo(user.getUsername() + " logged in");
-				
 				switch(user.getAccessLevel()) {
 				case 1:
-					System.out.println("customer");
+					//System.out.println("customer");
 					MenuLoggedInInterface.preformCustomer(user, null, input);
 					break;
 				case 2:

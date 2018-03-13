@@ -19,12 +19,13 @@ public class BankHub {
 	public static String getFile() {
 		return defaultDataFile;
 	}
-	
+
 	public static void main(String[] args) {
 		LoggingUtil.logInfo("System opened");
+		MemoryHub.logToDatabase("System opened");
 		commandTree();
 	}
-	
+
 	
 	public static void commandTree() {
 		double option = MenuInterface.runOpen();
@@ -37,8 +38,8 @@ public class BankHub {
 			MenuInterface.runCreateNew();
 			break;
 		case 3:
-			//MemoryHub.storeData();
 			LoggingUtil.logInfo("System closed");
+			MemoryHub.logToDatabase("System closed");
 			System.exit(0);
 		default:
 			System.out.println("Please enter one of the options");

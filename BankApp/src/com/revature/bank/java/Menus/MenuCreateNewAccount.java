@@ -16,7 +16,7 @@ public class MenuCreateNewAccount {
 		int choise = 0;
 		String statement = "";
 		Wallet newW = null;
-		
+
 		System.out.println("Thank You for Choosing the First Bank of Richmond");
 		System.out.println("Please follow the prompts below to set up your account.\n");
 		System.out.println("Type 'Exit' at any time to cancel account and exit");
@@ -87,7 +87,7 @@ public class MenuCreateNewAccount {
 			MemoryHub.addWalletOwned(newCust, newW);
 			break;
 		}
-		LoggingUtil.logInfo("");
+		LoggingUtil.logInfo("Account created and pending");
 		System.out.println("Thank you, your account is awaiting approval.");
 		newCust.setUnActive();
 		BankHub.commandTree();

@@ -8239,3 +8239,232 @@ SSN: 888888887
 2018-03-13 01:06:55 INFO  root:18 - Wallettest created with $1000.0 of type Checking
 2018-03-13 01:06:59 INFO  root:18 - System opened
 2018-03-13 01:07:11 INFO  root:18 - Crawdady logged in
+2018-03-13 01:49:04 INFO  root:18 - System opened
+2018-03-13 01:50:58 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-13 01:50:58 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-13 01:50:58 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-13 01:50:58 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: B
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-13 01:50:58 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-13 01:50:58 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-13 01:50:58 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-13 01:50:58 INFO  root:18 - Created new Customer with:
+username: TestDude
+first name: Lea
+last name: Kree
+password: 1403788689
+email: brininger@gmail.com
+SSN: 888888887
+2018-03-13 01:50:59 INFO  root:18 - $234.0 added to wallet LeeAccount, new balance is 4313.0
+2018-03-13 01:51:00 INFO  root:18 - Wallettest created with $1000.0 of type Checking
+2018-03-13 01:51:13 INFO  root:18 - WalletLeeAccount created with $101.0 of type Checking
+2018-03-13 01:51:13 INFO  root:18 - Wallettwo created with $500.0 of type Savings
+2018-03-13 01:51:13 INFO  root:18 - WalletSSB created with $10000.0 of type Savings
+2018-03-13 01:51:13 INFO  root:18 - Created new Customer with:
+username: Crawdady
+first name: Lee
+last name: B
+password: 1403788689
+email: richmondbrininger@gmail.com
+SSN: 888888888
+2018-03-13 01:51:13 INFO  root:18 - Created new Customer with:
+username: NK
+first name: Nick
+last name: Nick
+password: -1861299975
+email: nick@gmail.com
+SSN: 999999999
+2018-03-13 01:51:13 INFO  root:18 - Created new Customer with:
+username: SSB4
+first name: Chris
+last name: Wagner
+password: 1403788689
+email: youknowitsthebestSSB@gmail.com
+SSN: 111111111
+2018-03-13 01:51:13 INFO  root:18 - Created new Customer with:
+username: Stuff
+first name: AJ
+last name: Williams
+password: -792037285
+email: morestuff@gmail.com
+SSN: 343443434
+2018-03-13 01:51:13 INFO  root:18 - Created new Customer with:
+username: TestDude
+first name: Lea
+last name: Kree
+password: 1403788689
+email: brininger@gmail.com
+SSN: 888888887
+2018-03-13 01:51:15 INFO  root:18 - $234.0 added to wallet LeeAccount, new balance is 4547.0
+2018-03-13 01:51:16 INFO  root:18 - Wallettest created with $1000.0 of type Checking
+2018-03-13 02:38:12 INFO  root:18 - System opened
+2018-03-13 02:38:29 INFO  root:18 - Crawdady logged in
+2018-03-13 02:38:44 INFO  root:18 - $79.0 withdrawn from wallet two, new balance is 421.0
+2018-03-13 02:39:04 INFO  root:18 - Crawdady logged out
+2018-03-13 02:39:06 INFO  root:18 - Created new blank customer
+2018-03-13 02:39:14 INFO  root:18 - For Account: firstName set as jonny
+2018-03-13 02:39:17 INFO  root:18 - For Account: lastName set as walker
+2018-03-13 02:39:19 INFO  root:18 - For Account: SSN set as jonny
+2018-03-13 02:39:27 INFO  root:18 - For Account:JW Username set as JW
+2018-03-13 02:39:30 INFO  root:18 - For Account:JW password set as hash-792037285
+2018-03-13 02:39:32 INFO  root:18 - For Account:JW Email set as uyu
+2018-03-13 02:39:32 INFO  root:18 - Account JW added
+2018-03-13 02:39:56 INFO  root:18 - $100.0 added to wallet test, new balance is 100.0
+2018-03-13 02:39:56 INFO  root:18 - Account name: test Account money: 100.0 Account type: savings
+2018-03-13 02:39:56 INFO  root:18 - Wallet test added
+2018-03-13 02:39:57 INFO  root:18 - Account created and pending
+2018-03-13 02:39:57 INFO  root:18 - For Account:JW not activated
+2018-03-13 02:40:08 INFO  root:18 - Failed Login, bad username
+2018-03-13 02:40:38 INFO  root:18 - Admin logged in
+2018-03-13 02:47:07 INFO  root:18 - System opened
+2018-03-13 02:47:15 INFO  root:18 - System opened
+2018-03-13 02:47:31 INFO  root:18 - Crawdady logged in
+2018-03-13 02:47:43 INFO  root:18 - $79.0 withdrawn from wallet two, new balance is 342.0
+2018-03-13 02:48:09 INFO  root:18 - Crawdady logged out
+2018-03-13 02:48:17 INFO  root:18 - Failed Login, bad username
+2018-03-13 02:48:18 INFO  root:18 - Created new blank customer
+2018-03-13 02:48:31 INFO  root:18 - For Account: firstName set as arnie
+2018-03-13 02:48:33 INFO  root:18 - For Account: lastName set as join
+2018-03-13 02:48:37 INFO  root:18 - For Account: SSN set as arnie
+2018-03-13 02:48:40 INFO  root:18 - For Account:ok Username set as ok
+2018-03-13 02:48:44 INFO  root:18 - For Account:ok password set as hash-792037285
+2018-03-13 02:48:46 INFO  root:18 - For Account:ok Email set as r
+2018-03-13 02:48:47 INFO  root:18 - Account ok added
+2018-03-13 02:49:04 INFO  root:18 - $455.0 added to wallet ok, new balance is 455.0
+2018-03-13 02:49:04 INFO  root:18 - Account name: ok Account money: 455.0 Account type: savings
+2018-03-13 02:49:16 INFO  root:18 - System opened
+2018-03-13 09:03:06 INFO  root:18 - System opened
+2018-03-13 09:03:21 INFO  root:18 - Admin logged in
+2018-03-13 09:03:51 INFO  root:18 - testacc deleted
+2018-03-13 09:03:53 INFO  root:18 - Wallet testacc removed
+2018-03-13 09:04:38 INFO  root:18 - test deleted
+2018-03-13 09:04:39 INFO  root:18 - Wallet test removed
+2018-03-13 09:04:44 INFO  root:18 - y deleted
+2018-03-13 09:04:45 INFO  root:18 - Account y removed
+2018-03-13 09:04:56 INFO  root:18 - test deleted
+2018-03-13 09:04:56 INFO  root:18 - Account test removed
+2018-03-13 09:05:09 INFO  root:18 - ok deleted
+2018-03-13 09:05:09 INFO  root:18 - Account ok removed
+2018-03-13 09:05:30 INFO  root:18 - p deleted
+2018-03-13 09:05:30 INFO  root:18 - Account p removed
+2018-03-13 09:06:48 INFO  root:18 - Admin logged out
+2018-03-13 09:06:49 INFO  root:18 - Created new blank customer
+2018-03-13 09:07:18 INFO  root:18 - For Account: firstName set as Joe
+2018-03-13 09:07:21 INFO  root:18 - For Account: lastName set as Bob
+2018-03-13 09:07:25 INFO  root:18 - For Account: SSN set as Joe
+2018-03-13 09:08:01 INFO  root:18 - For Account:SimpleMan Username set as SimpleMan
+2018-03-13 09:08:07 INFO  root:18 - For Account:SimpleMan password set as hash-1861299975
+2018-03-13 09:08:19 INFO  root:18 - For Account:SimpleMan Email set as generic@gmail.com
+2018-03-13 09:08:22 INFO  root:18 - Account SimpleMan added
+2018-03-13 09:08:43 INFO  root:18 - $450.0 added to wallet SimpleWallet, new balance is 450.0
+2018-03-13 09:08:43 INFO  root:18 - Account name: SimpleWallet Account money: 450.0 Account type: savings
+2018-03-13 09:08:44 INFO  root:18 - Wallet SimpleWallet added
+2018-03-13 09:08:44 INFO  root:18 - Account created and pending
+2018-03-13 09:08:44 INFO  root:18 - For Account:SimpleMan not activated
+2018-03-13 09:13:44 INFO  root:18 - System opened
+2018-03-13 09:14:31 INFO  root:18 - Admin logged in
+2018-03-13 09:15:18 INFO  root:18 - test2 deleted
+2018-03-13 09:15:18 INFO  root:18 - Account test2 removed
+2018-03-13 09:15:20 INFO  root:18 - Admin logged out
+2018-03-13 09:15:29 INFO  root:18 - Admin logged in
+2018-03-13 09:18:45 INFO  root:18 - System opened
+2018-03-13 09:20:41 INFO  root:18 - System opened
+2018-03-13 09:21:02 INFO  root:18 - System opened
+2018-03-13 09:23:53 INFO  root:18 - System opened
+2018-03-13 09:24:15 INFO  root:18 - System opened
+2018-03-13 09:24:24 INFO  root:18 - System opened
+2018-03-13 09:26:09 INFO  root:18 - System opened
+2018-03-13 09:26:22 INFO  root:18 - Created new blank customer
+2018-03-13 09:26:29 INFO  root:18 - For Account: firstName set as YOU
+2018-03-13 09:26:34 INFO  root:18 - For Account: lastName set as HERE
+2018-03-13 09:26:41 INFO  root:18 - For Account: SSN set as YOU
+2018-03-13 09:27:19 INFO  root:18 - For Account:purchase Username set as purchase
+2018-03-13 09:27:23 INFO  root:18 - For Account:purchase password set as hash1003425250
+2018-03-13 09:28:36 INFO  root:18 - For Account:purchase Email set as buynowyourname@gmail.com
+2018-03-13 09:28:36 INFO  root:18 - Account purchase added
+2018-03-13 09:28:59 INFO  root:18 - $1234.0 added to wallet Pay, new balance is 1234.0
+2018-03-13 09:28:59 INFO  root:18 - Account name: Pay Account money: 1234.0 Account type: checking
+2018-03-13 09:28:59 INFO  root:18 - Wallet Pay added
+2018-03-13 09:28:59 INFO  root:18 - Account created and pending
+2018-03-13 09:28:59 INFO  root:18 - For Account:purchase not activated
+2018-03-13 09:29:44 INFO  root:18 - Failed Login, bad username
+2018-03-13 09:40:21 INFO  root:18 - System opened
+2018-03-13 09:45:34 INFO  root:18 - Failed Login, bad username
+2018-03-13 09:45:36 INFO  root:18 - Created new blank customer
+2018-03-13 09:45:44 INFO  root:18 - For Account: firstName set as Good
+2018-03-13 09:46:19 INFO  root:18 - For Account: lastName set as Opportunity
+2018-03-13 09:46:36 INFO  root:18 - For Account: SSN set as Good
+2018-03-13 09:46:44 INFO  root:18 - For Account:YOURNAME Username set as YOURNAME
+2018-03-13 09:46:46 INFO  root:18 - For Account:YOURNAME password set as hash811043868
+2018-03-13 09:47:01 INFO  root:18 - For Account:YOURNAME Email set as buytodayitsgreat@gmail.com
+2018-03-13 09:47:01 INFO  root:18 - Account YOURNAME added
+2018-03-13 09:47:10 INFO  root:18 - Account created and pending
+2018-03-13 09:47:10 INFO  root:18 - For Account:YOURNAME not activated
+2018-03-13 09:56:58 INFO  root:18 - System opened
+2018-03-13 10:10:29 INFO  root:18 - Failed Login, bad username
+2018-03-13 10:10:51 INFO  root:18 - Failed Login, bad username
+2018-03-13 10:11:00 INFO  root:18 - Admin logged in
+2018-03-13 10:11:11 INFO  root:18 - System opened
+2018-03-13 10:21:50 INFO  root:18 - Failed password on Crawdady
+2018-03-13 10:22:47 INFO  root:18 - Created new blank customer
+2018-03-13 10:22:59 INFO  root:18 - For Account: firstName set as Mr
+2018-03-13 10:23:01 INFO  root:18 - For Account: lastName set as Man
+2018-03-13 10:23:04 INFO  root:18 - For Account: SSN set as Mr
+2018-03-13 10:23:17 INFO  root:18 - For Account:MrMan Username set as MrMan
+2018-03-13 10:23:21 INFO  root:18 - For Account:MrMan password set as hash1403788689
+2018-03-13 10:23:23 INFO  root:18 - For Account:MrMan Email set as r
+2018-03-13 10:23:23 INFO  root:18 - Account MrMan added
+2018-03-13 10:23:28 INFO  root:18 - Account created and pending
+2018-03-13 10:23:28 INFO  root:18 - For Account:MrMan not activated
+2018-03-13 10:23:50 INFO  root:18 - Failed password on Admin
+2018-03-13 10:24:04 INFO  root:18 - Admin logged in
+2018-03-13 10:24:44 INFO  root:18 - Admin logged out
+2018-03-13 10:24:52 INFO  root:18 - MrMan logged in
+2018-03-13 10:25:01 INFO  root:18 - $30.0 withdrawn from wallet two, new balance is 312.0
+2018-03-13 10:26:23 INFO  root:18 - System opened
+2018-03-13 10:26:32 INFO  root:18 - Crawdady logged in
+2018-03-13 10:27:24 INFO  root:18 - System opened
+2018-03-13 10:27:35 INFO  root:18 - Crawdady logged in
+2018-03-13 10:28:34 INFO  root:18 - System opened
+2018-03-13 10:28:58 INFO  root:18 - Crawdady logged in
+2018-03-13 10:31:31 INFO  root:18 - System opened
+2018-03-13 10:32:11 INFO  root:18 - Crawdady logged in
+2018-03-13 10:32:17 INFO  root:18 - $50.0 withdrawn from wallet two, new balance is 262.0
+2018-03-13 10:40:18 INFO  root:18 - System opened
+2018-03-13 10:40:28 INFO  root:18 - Crawdady logged in
+2018-03-13 10:40:35 INFO  root:18 - $400.0 added to wallet two, new balance is 662.0
+2018-03-13 10:41:24 INFO  root:18 - Crawdady logged out
+2018-03-13 10:42:00 INFO  root:18 - System opened
+2018-03-13 10:47:02 INFO  root:18 - System opened
+2018-03-13 10:54:41 INFO  root:18 - Admin logged in
+2018-03-13 10:55:37 INFO  root:18 - System opened
+2018-03-13 11:05:47 INFO  root:18 - System opened
+2018-03-13 11:13:11 INFO  root:18 - System opened
+2018-03-13 11:13:38 INFO  root:18 - System opened
+2018-03-13 11:19:03 INFO  root:18 - Admin logged in
+2018-03-13 11:19:23 INFO  root:18 - Admin logged out
+2018-03-13 11:19:29 INFO  root:18 - Failed password on YOURNAME
+2018-03-13 11:19:49 INFO  root:18 - Admin logged in

@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.revature.bank.java.MemoryHub;
 import com.revature.bank.util.LoggingUtil;
 
 public class Customer implements Account{

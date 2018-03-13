@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.revature.bank.java.MemoryHub;
 import com.revature.bank.pojo.Account;
 import com.revature.bank.pojo.Admin;
 import com.revature.bank.pojo.Customer;
@@ -23,7 +24,7 @@ public class AccountDaoImpl implements AccountDao{
 
 	
 	public Boolean createAccount(Account account) {
-			
+		
 			Connection conn = ConnectionFactory.getInstance().getConnection();
 			
 			try {
@@ -32,6 +33,7 @@ public class AccountDaoImpl implements AccountDao{
 				String sql = "INSERT INTO ACCOUNT VALUES('" +account.getUsername()+"', '"+account.getFirstName()+"', '" + account.getLastName() + "', " +account.getSSN()+", "+account.getPassword()+", '" + account.getEmail()+ "', "+account.getAccessLevel()+", " + 0 + ")";
 				statement.executeUpdate(sql);
 				conn.commit();
+				 MemoryHub.logToDatabase("Wallet " + account.getUsername() + " deleted");
 				return true;
 				
 			} catch (SQLException e) {
@@ -40,7 +42,7 @@ public class AccountDaoImpl implements AccountDao{
 			}
 			return false;
 	}
-	
+
 	public Account retrieveAccountByUsername(String name) {
 		
 		try {
@@ -110,14 +112,9 @@ public class AccountDaoImpl implements AccountDao{
 		CallableStatement callableStatement = null;
 		List<String> walletsOwned = new ArrayList<String>();
 		ResultSet rs = null;
+		
 		try {
             Connection conn = ConnectionFactory.getInstance().getConnection();
-            //String sql = "SELECT W1.WALLETNAME FROM WALLET W1 JOIN ACCOUNT_WALLET AW1"
-            //		+" ON W1.WALLETNAME LIKE AW1.WALLETNAME JOIN ACCOUNT A1 ON A1.USERNAME LIKE" 
-            //		+" AW1.USERNAME WHERE A1.USERNAME LIKE '" + account.getUsername() + "'";
-            //ResultSet rs= stmt.executeQuery(sql);
-            
-
             String sql2 = "{CALL GET_ACCOUNTS_WALLETS(?,?)}";
             
             callableStatement = conn.prepareCall(sql2);
@@ -150,6 +147,7 @@ public class AccountDaoImpl implements AccountDao{
             stmt.executeQuery(sql);
             stmt.close();
             conn.commit();
+            MemoryHub.logToDatabase("Account " + account.getUsername() + " now owns " + wallet.getName());
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -169,6 +167,7 @@ public class AccountDaoImpl implements AccountDao{
             stmt.executeQuery(sql);
             stmt.close();
             conn.commit();
+            MemoryHub.logToDatabase("Account " + account.getUsername() + " deleted");
             return true;
         }
         catch (SQLException e) {
@@ -189,6 +188,7 @@ public class AccountDaoImpl implements AccountDao{
             stmt.executeQuery(sql);
             stmt.close();
             conn.commit();
+            MemoryHub.logToDatabase("Account " + account.getUsername() + " activated");
             return true;
         }
         catch (SQLException e) {

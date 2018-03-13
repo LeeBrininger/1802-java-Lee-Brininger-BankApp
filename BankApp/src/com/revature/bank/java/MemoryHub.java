@@ -1,20 +1,15 @@
 package com.revature.bank.java;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import com.revature.bank.dao.AccountDao;
 import com.revature.bank.dao.AccountDaoImpl;
+import com.revature.bank.dao.LogDao;
+import com.revature.bank.dao.LogDaoImpl;
 import com.revature.bank.dao.WalletDao;
 import com.revature.bank.dao.WalletDaoImpl;
 import com.revature.bank.pojo.Account;
 import com.revature.bank.pojo.Wallet;
-import com.revature.bank.util.ConnectionFactory;
 import com.revature.bank.util.LoggingUtil;
 
 public class MemoryHub {
@@ -22,13 +17,12 @@ public class MemoryHub {
 	
 	static AccountDao ad = new AccountDaoImpl();
 	static WalletDao wd = new WalletDaoImpl();
+	static LogDao ld = new LogDaoImpl();
 	
 	
 	
 	public static void storeFundsChange(Wallet wallet) {
 		wd.updateWalletMoney(wallet);
-		wd.commit();
-		System.out.println("Wallet stored;");
 	}
 	
 	
@@ -70,6 +64,10 @@ public class MemoryHub {
 	
 	public static void swapToActiveAccount(Account account) {
 		ad.swapToActiveAccount(account);
+	}
+
+	public static void logToDatabase(String info) {
+		ld.storeLog(info);
 	}
 	
 }

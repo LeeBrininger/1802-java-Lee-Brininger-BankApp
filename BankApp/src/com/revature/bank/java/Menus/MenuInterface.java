@@ -11,8 +11,8 @@ public class MenuInterface {
 		aesthetics();
 		return introQuestions();
 	}
-		
-
+	
+	
 	public static int introQuestions() {
 		String response = "";
 		System.out.println("Welcome! Please select your option: ");
@@ -42,8 +42,8 @@ public class MenuInterface {
 	
 	public static void aesthetics() {
 		System.out.println("--------------------------------------------------------------");
-		System.out.println("First Bank of Richmond");
-		System.out.println("'Where your money is as safe as multiple interface extention'");
+		System.out.println("First Bank of YOUR NAME HERE");
+		System.out.println("GET YOUR NAME HERE! (Call 208-891-6716 now!)");
 		System.out.println("--------------------------------------------------------------\n");
 	}
 	

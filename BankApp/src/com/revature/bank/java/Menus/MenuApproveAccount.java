@@ -20,7 +20,7 @@ public class MenuApproveAccount {
 		List<String> walletName = customer.getWalletsOwned();
 		Wallet found = null;
 		String response = "";
-		
+	
 		
 		for(int i = 0; i < walletName.size(); i++) {
 			found = allWallets.get(walletName.get(i));
@@ -75,7 +75,7 @@ public class MenuApproveAccount {
 		}
 		return;
 	}
-	
+
 	
 	private static Customer selectApprovalNeededCustomer(Scanner input) {
 		HashMap<String, Account> allCustomers = MemoryHub.getAccounts();

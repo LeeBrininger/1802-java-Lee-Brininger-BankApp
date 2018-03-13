@@ -18,7 +18,7 @@ public class Admin implements Account{
 	private int ssn = 0;
 	private int active = 1;
 
-	
+ 
 	public Admin(ResultSet rs) {
 		 try {
 				this.username = rs.getString(1);

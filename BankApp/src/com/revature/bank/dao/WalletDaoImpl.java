@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 
+import com.revature.bank.java.MemoryHub;
 import com.revature.bank.pojo.Wallet;
 import com.revature.bank.util.ConnectionFactory;
 
@@ -14,14 +15,15 @@ public class WalletDaoImpl implements WalletDao{
 	public Boolean createWallet(Wallet wallet) {
 		
 		Connection conn = ConnectionFactory.getInstance().getConnection();
-		
+	
 		try {
 			Statement statement = conn.createStatement();
 			
 			String sql = "INSERT INTO WALLET (WALLETNAME, MONEY_CONTAINED, TYPE) VALUES('"+wallet.getName()+"', '"+wallet.getMoney()+"', '" + wallet.getType() + "')";
-			
+			MemoryHub.logToDatabase("DataBase Altered");
 			statement.executeUpdate(sql);
 			conn.commit();
+			 MemoryHub.logToDatabase("Wallet " + wallet.getName() + " created");
 			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -29,7 +31,7 @@ public class WalletDaoImpl implements WalletDao{
 		}
 		return false;
 	}
-
+	
 	public Wallet retrieveWalletByName(String name) {
 		
 		try {
@@ -40,6 +42,7 @@ public class WalletDaoImpl implements WalletDao{
             rs.next();
             Wallet nextWallet = new Wallet(rs);
             stmt.close();
+            MemoryHub.logToDatabase("DataBase Altered");
             return nextWallet;
         }
         catch (SQLException e) {
@@ -85,7 +88,7 @@ public class WalletDaoImpl implements WalletDao{
             stmt.executeQuery(sql);
             stmt.close();
             conn.commit();
-            //System.out.println("stored " + wallet.getMoney());
+            MemoryHub.logToDatabase(wallet.getName() + "funds set to " + wallet.getMoney());
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -104,6 +107,7 @@ public class WalletDaoImpl implements WalletDao{
             stmt.executeQuery(sql);
             stmt.close();
             conn.commit();
+            MemoryHub.logToDatabase("Wallet " + wallet.getName() + " deleted");
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -114,22 +118,4 @@ public class WalletDaoImpl implements WalletDao{
 		return true;
 
 	}
-	
-	public void commit() {
-		
-		try {
-            Connection conn = ConnectionFactory.getInstance().getConnection();
-            String sql = "COMMIT";
-            Statement stmt = conn.createStatement();
-            stmt.executeQuery(sql);
-            stmt.close();
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-        catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-	}
-
 }
