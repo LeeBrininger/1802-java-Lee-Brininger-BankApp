@@ -27,6 +27,7 @@ public class AccountWalletFinder {
 			System.out.println("You do not have any accounts, type exit to exit or type anything else to make a new one");
 			response = input.nextLine();
 			if(response.equals("exit")) {
+				
 				return "";
 			}
 			walletName = MenuCreateNewAccount.createNewWallet(input).getName();
@@ -100,7 +101,7 @@ public class AccountWalletFinder {
 		
 		System.out.println("Existing Customers: (Type Exit to exit)");
 		for(HashMap.Entry<String, Account> acc : allCustomers.entrySet()) {
-			if(acc.getValue() instanceof Customer && acc.getValue().getActive()) {
+			if(acc.getValue() instanceof Customer && acc.getValue().getActive() == 1) {
 				System.out.println(acc.getKey());
 			}
 		}
@@ -108,7 +109,7 @@ public class AccountWalletFinder {
 		if(selectedCustomer.toLowerCase().equals("exit")) {
 			return null;
 		}
-		if(allCustomers.containsKey(selectedCustomer) && allCustomers.get(selectedCustomer) instanceof Customer && allCustomers.get(selectedCustomer).getActive()) {
+		if(allCustomers.containsKey(selectedCustomer) && allCustomers.get(selectedCustomer) instanceof Customer && allCustomers.get(selectedCustomer).getActive() == 1) {
 			customer = (Customer) allCustomers.get(selectedCustomer);
 			return customer;
 		}else {
@@ -171,6 +172,7 @@ public class AccountWalletFinder {
 			money = Double.parseDouble(selection);
 			if(activeWallet.subtractFunds(money)){
 				System.out.println("New ammount: $" + activeWallet.getMoney());
+				MemoryHub.storeFundsChange(activeWallet);
 			}else {
 				System.out.println("Insufficient funds");
 			}
@@ -179,15 +181,16 @@ public class AccountWalletFinder {
 			System.out.println("How much do you want to deposit: ");
 			selection = input.nextLine();
 			if(selection.equals("exit")) {
-				transferFundsAll(user, activeWallet, input);
+				return;
 			}
 			if(!selection.matches("-?\\d+(\\.\\d+)?")) {
 				System.out.println("Needs to be a number");
-				transferFundsAll(user, activeWallet, input);
+				return;
 			}
 			money = Double.parseDouble(selection);
 			if(activeWallet.addFunds(money)) {
 				System.out.println("New ammount: $" + activeWallet.getMoney());
+				MemoryHub.storeFundsChange(activeWallet);
 			}else {
 				System.out.println("Needs to be positive");
 			}
@@ -209,11 +212,16 @@ public class AccountWalletFinder {
 			}else {
 				System.out.println("Which account do you want to transfer to:");
 				secondName = selectWallet(null, wallets, activeWallet.getName(), input);
+				if(secondName.equals("")) {
+					return;
+				}
 				secondWallet = allWallets.get(secondName);
 				if(activeWallet.subtractFunds(money)) {
 					secondWallet.addFunds(money);
 					System.out.println("New ammount in " + activeWallet.getName() + ": $" + activeWallet.getMoney());
 					System.out.println("New ammount in " + secondWallet.getName() + ": $" + secondWallet.getMoney());
+					MemoryHub.storeFundsChange(activeWallet);
+					MemoryHub.storeFundsChange(secondWallet);
 				}else {
 					System.out.println("Insufficient funds");
 				}

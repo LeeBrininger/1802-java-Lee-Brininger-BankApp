@@ -16,7 +16,7 @@ public class Employee implements Account{
 	private int ssn = 0;
 	private int accessLevel = 2;
 	private int password = 0;
-	private Boolean active = true;
+	private int active = 1;
 	
 	
 	public Employee(ResultSet rs) {
@@ -24,15 +24,10 @@ public class Employee implements Account{
 				this.username = rs.getString(1);
 				this.firstName = rs.getString(2);
 				this.lastName = rs.getString(3);
-				this.password = rs.getInt(4);
-				this.ssn = rs.getInt(5);
+				this.ssn = rs.getInt(4);
+				this.password = rs.getInt(5);
 				this.email = rs.getString(6);
 				this.accessLevel = rs.getInt(7);
-				if(rs.getInt(9) == 0) {
-					this.active = false;
-				}else {
-					this.active = true;
-				}
 				
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -94,7 +89,7 @@ public class Employee implements Account{
 	}
 
 	@Override
-	public Boolean getActive() {
+	public int getActive() {
 		return active;
 	}
 
@@ -111,7 +106,7 @@ public class Employee implements Account{
 		return accessLevel;
 	}
 
-	public void setActive(Boolean active) {
+	public void setActive(int active) {
 		this.active = active;
 	}
 

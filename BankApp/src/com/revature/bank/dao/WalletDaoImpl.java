@@ -85,6 +85,7 @@ public class WalletDaoImpl implements WalletDao{
             stmt.executeQuery(sql);
             stmt.close();
             conn.commit();
+            //System.out.println("stored " + wallet.getMoney());
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -92,7 +93,6 @@ public class WalletDaoImpl implements WalletDao{
         catch (NullPointerException e) {
             e.printStackTrace();
         }
-
 	}
 
 	public Boolean deleteWallet(Wallet wallet) {
@@ -113,6 +113,23 @@ public class WalletDaoImpl implements WalletDao{
         }
 		return true;
 
+	}
+	
+	public void commit() {
+		
+		try {
+            Connection conn = ConnectionFactory.getInstance().getConnection();
+            String sql = "COMMIT";
+            Statement stmt = conn.createStatement();
+            stmt.executeQuery(sql);
+            stmt.close();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+        }
 	}
 
 }

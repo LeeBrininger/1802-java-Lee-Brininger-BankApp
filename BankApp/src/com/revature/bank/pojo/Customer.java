@@ -16,7 +16,7 @@ public class Customer implements Account{
 	private String email = new String();
 	private int accessLevel = 1;
 	private List<String> walletsOwned = new ArrayList<String>();
-	private Boolean active = true;
+	private int active = 0;
 
 
 	private static final long serialVersionUID = 1L;
@@ -35,39 +35,24 @@ public class Customer implements Account{
 				this.password = rs.getInt(5);
 				this.email = rs.getString(6);
 				this.accessLevel = rs.getInt(7);
-				if(rs.getInt(9) == 0) {
-					this.active = false;
-				}else {
-					this.active = true;
-				}
-				
+				this.active = rs.getInt(8);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 	}
 	
-	public Customer(String Username, String FirstName, String LastName, String Password, String Email, int Ssn) {
+	public Customer(String Username, String FirstName, String LastName, String Password, String Email, int Ssn, int Active) {
 		this.username = Username;
 		this.firstName = FirstName;
 		this.lastName = LastName;
 		this.password = (Password + "lee").hashCode();
 		this.email = Email;
 		this.ssn = Ssn;
+		this.active = Active;
 		LoggingUtil.logInfo("Created new Customer with:\nusername: " + username + "\nfirst name: " + firstName + 
 				"\nlast name: " + lastName + "\npassword: " + password + "\nemail: " + email + "\nSSN: " + ssn);
 	}
 	
-	public Customer(String Username, String FirstName, String LastName, String Password, String Email, int Ssn, List<String> walletsowned) {
-		this.username = Username;
-		this.firstName = FirstName;
-		this.lastName = LastName;
-		this.password = (Password + "lee").hashCode();
-		this.email = Email;
-		this.ssn = Ssn;
-		this.walletsOwned = walletsowned;
-		LoggingUtil.logInfo("Created new Customer with:\nusername: " + username + "\nfirst name: " + firstName + 
-				"\nlast name: " + lastName + "\npassword: " + password + "\nemail: " + email + "\nSSN: " + ssn);
-	}
 	
 	public Boolean addWallet(String walletName) {
 		if(walletsOwned.contains(walletName)) {
@@ -155,18 +140,18 @@ public class Customer implements Account{
 		return accessLevel;
 	}
 
-	public Boolean getActive() {
+	public int getActive() {
 		return active;
 	}
 
-	public void setActive() {
-		LoggingUtil.logInfo("For Account:" + username + " activated");
-		this.active = true;
-	}
+	//public void setActive() {
+	//	LoggingUtil.logInfo("For Account:" + username + " activated");
+	//	this.active = 1;
+	//}
 	
 	public void setUnActive() {
 		LoggingUtil.logInfo("For Account:" + username + " not activated");
-		this.active = false;
+		this.active = 0;
 	}
 
 	public int getSSN() {

@@ -22,7 +22,7 @@ public class MenuLogin {
 		int hash = 0;
 
 	
-		if(users.containsKey(username) && users.get(username).getActive()) {
+		if(users.containsKey(username) && users.get(username).getActive() == 1) {
 			Account user = users.get(username);
 			System.out.println("Welcome back " + username);
 			System.out.println("Please enter your password: ");
@@ -32,8 +32,6 @@ public class MenuLogin {
 			if(user.getPassword() == hash){ //compares the hashes
 				MenuInterface.clearScreen();
 				LoggingUtil.logInfo(user.getUsername() + " logged in");
-				
-				System.out.println(user.getUsername() + " . " + user.getAccessLevel());
 				
 				switch(user.getAccessLevel()) {
 				case 1:

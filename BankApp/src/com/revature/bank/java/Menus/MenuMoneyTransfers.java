@@ -1,5 +1,6 @@
 package com.revature.bank.java.Menus;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
@@ -29,6 +30,7 @@ public class MenuMoneyTransfers {
 		System.out.println(money);
 		if(activeWallet.subtractFunds(money)){
 			System.out.println("New ammount: $" + activeWallet.getMoney());
+			System.out.println("nondatabase finished");
 			MemoryHub.storeFundsChange(activeWallet);	//store moneyChange to database after it is validated
 		}else {
 			System.out.println("Insufficient funds");
@@ -75,13 +77,12 @@ public class MenuMoneyTransfers {
 			return;
 		}
 		money = Double.parseDouble(selection);
-		//MemoryHub.storeData();
 		if(money < 0) {
 			System.out.println("Needs to be positive");
 		}else {
 			System.out.println("Which account do you want to transfer to:");
 			secondName = AccountWalletFinder.selectWallet(customer, wallets, activeWallet.getName(), input);
-			if(secondName == null) {
+			if(secondName.equals("")) {
 				return;
 			}
 			secondWallet = allWallets.get(secondName);

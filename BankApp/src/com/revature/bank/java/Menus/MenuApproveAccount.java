@@ -47,11 +47,7 @@ public class MenuApproveAccount {
 		}
 	}
 	
-	
-	
-	
-	
-	
+
 	public static void approveAccount(Scanner input) {
 		Customer customer;
 		String selection = "";
@@ -71,13 +67,12 @@ public class MenuApproveAccount {
 		}
 		selection.toLowerCase();
 		if(selection.equals("accept")) {
-			customer.setActive();
+			MemoryHub.swapToActiveAccount(customer);
 			System.out.println("Account approved");
 		}else if(selection.equals("deny")) {
 			MemoryHub.removeAccount(customer);
 			System.out.println("Account denied");
 		}
-		//MemoryHub.storeData();
 		return;
 	}
 	
@@ -89,7 +84,7 @@ public class MenuApproveAccount {
 		
 		System.out.println("Customers waiting for approval:");
 		for(HashMap.Entry<String, Account> acc : allCustomers.entrySet()) {
-			if(acc.getValue() instanceof Customer && !acc.getValue().getActive()) {
+			if(acc.getValue() instanceof Customer && acc.getValue().getActive() == 0) {
 				System.out.println(acc.getKey());
 			}
 		}
@@ -97,7 +92,7 @@ public class MenuApproveAccount {
 		if(selectedCustomer.toLowerCase().equals("exit")) {
 			return null;
 		}
-		if(allCustomers.containsKey(selectedCustomer) && allCustomers.get(selectedCustomer) instanceof Customer && !allCustomers.get(selectedCustomer).getActive()) {
+		if(allCustomers.containsKey(selectedCustomer) && allCustomers.get(selectedCustomer) instanceof Customer && allCustomers.get(selectedCustomer).getActive() == 0) {
 			customer = (Customer) allCustomers.get(selectedCustomer);
 			return customer;
 		}else {

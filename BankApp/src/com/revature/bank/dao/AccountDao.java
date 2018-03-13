@@ -19,4 +19,6 @@ public interface AccountDao {
 	public void addWalletToOwned(Account account, Wallet wallet);
 
 	public Boolean deleteAccount(Account account);
+
+	public Boolean swapToActiveAccount(Account account);
 }

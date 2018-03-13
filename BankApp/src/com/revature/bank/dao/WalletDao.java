@@ -15,4 +15,6 @@ public interface WalletDao {
 	public void updateWalletMoney(Wallet wallet);
 	
 	public  Boolean deleteWallet(Wallet wallet);
+
+	public void commit();
 }

@@ -20,7 +20,7 @@ public interface Account extends Serializable{
 	@Override
 	public String toString();
 	
-	public Boolean getActive();
+	public int getActive();
 	
 	public void printInfo();
 

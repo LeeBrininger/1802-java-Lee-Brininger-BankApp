@@ -26,8 +26,8 @@ public class BankTests {
 
 	public static final BankHub bankHub = new BankHub(); 
 	static String defaultFile = "BankInfo.txt";
-	AccountDao ad = new AccountDaoImpl();
-	WalletDao wd = new WalletDaoImpl();
+	static AccountDao ad = new AccountDaoImpl();
+	static WalletDao wd = new WalletDaoImpl();
 	/*
 	 * Interface Tests
 	 */
@@ -47,14 +47,14 @@ public class BankTests {
 		List<String> walletsowned3 = new ArrayList<String>();
 		List<String> walletsowned4 = new ArrayList<String>();
 		walletsowned1.add("LeeAccount");
-		Customer c1 = new Customer("Crawdady", "Lee", "B", "password", "richmondbrininger@gmail.com", 888888888, walletsowned1);
+		Customer c1 = new Customer("Crawdady", "Lee", "B", "password", "richmondbrininger@gmail.com", 888888888, 1);
 		walletsowned2.add("two");
-		Customer c2 = new Customer("NK", "Nick", "Nick", "12345", "nick@gmail.com", 999999999, walletsowned2);
+		Customer c2 = new Customer("NK", "Nick", "Nick", "12345", "nick@gmail.com", 999999999, 1);
 		walletsowned3.add("SSB");
-		Customer c3 = new Customer("SSB4", "Chris", "Wagner", "password", "youknowitsthebestSSB@gmail.com", 111111111, walletsowned3);
+		Customer c3 = new Customer("SSB4", "Chris", "Wagner", "password", "youknowitsthebestSSB@gmail.com", 111111111, 1);
 		walletsowned4.add("LeeAccount");
 		walletsowned4.add("two");
-		Customer c4 = new Customer("Stuff", "AJ", "Williams", "pass", "morestuff@gmail.com", 343443434, walletsowned4);
+		Customer c4 = new Customer("Stuff", "AJ", "Williams", "pass", "morestuff@gmail.com", 343443434, 1);
 		Employee e1 = new Employee("Emp1", "John", "Cena", "54321", "dodododo@yahoo.com", 001112345);
 		Employee e2 = new Employee("Emp2", "Cowman", "Sad", "lol", "penguinz0@gmail.com", 954674433);
 		Admin a1 = new Admin("Admin", "Richmond", "Brininger", "thebest", "importantstuff@gmail.com", 987345765);
@@ -166,7 +166,7 @@ public class BankTests {
 
 	@Test
 	public void testAccountCreation() {
-		Customer customer = new Customer("TestDude", "Lea", "Kree", "password", "brininger@gmail.com", 888888887);
+		Customer customer = new Customer("TestDude", "Lea", "Kree", "password", "brininger@gmail.com", 888888887, 1);
 		//assertTrue(ad.createAccount(customer));
 	}
 	

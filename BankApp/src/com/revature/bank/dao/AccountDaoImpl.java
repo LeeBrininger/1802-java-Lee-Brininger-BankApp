@@ -1,5 +1,6 @@
 package com.revature.bank.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,6 +17,8 @@ import com.revature.bank.pojo.Employee;
 import com.revature.bank.pojo.Wallet;
 import com.revature.bank.util.ConnectionFactory;
 
+import oracle.jdbc.OracleTypes;
+
 public class AccountDaoImpl implements AccountDao{
 
 	
@@ -26,7 +29,7 @@ public class AccountDaoImpl implements AccountDao{
 			try {
 				Statement statement = conn.createStatement();
 				
-				String sql = "INSERT INTO ACCOUNT VALUES('" +account.getUsername()+"', '"+account.getFirstName()+"', '" + account.getLastName() + "', " +account.getSSN()+", "+account.getPassword()+", '" + account.getEmail()+ "', "+account.getAccessLevel()+", "+ 0 +", " + 1 + ")";
+				String sql = "INSERT INTO ACCOUNT VALUES('" +account.getUsername()+"', '"+account.getFirstName()+"', '" + account.getLastName() + "', " +account.getSSN()+", "+account.getPassword()+", '" + account.getEmail()+ "', "+account.getAccessLevel()+", " + 0 + ")";
 				statement.executeUpdate(sql);
 				conn.commit();
 				return true;
@@ -103,21 +106,30 @@ public class AccountDaoImpl implements AccountDao{
 	}
 
 	
-	public List<String> getWalletsOwned(Account account) {
-		
+	public List<String> getWalletsOwned(Account account){
+		CallableStatement callableStatement = null;
 		List<String> walletsOwned = new ArrayList<String>();
+		ResultSet rs = null;
 		try {
             Connection conn = ConnectionFactory.getInstance().getConnection();
-            String sql = "SELECT W1.WALLETNAME FROM WALLET W1 JOIN ACCOUNT_WALLET AW1"
-            		+" ON W1.WALLETNAME LIKE AW1.WALLETNAME JOIN ACCOUNT A1 ON A1.USERNAME LIKE" 
-            		+" AW1.USERNAME WHERE A1.USERNAME LIKE '" + account.getUsername() + "'";
-            Statement stmt = conn.createStatement();
-            ResultSet rs= stmt.executeQuery(sql);
+            //String sql = "SELECT W1.WALLETNAME FROM WALLET W1 JOIN ACCOUNT_WALLET AW1"
+            //		+" ON W1.WALLETNAME LIKE AW1.WALLETNAME JOIN ACCOUNT A1 ON A1.USERNAME LIKE" 
+            //		+" AW1.USERNAME WHERE A1.USERNAME LIKE '" + account.getUsername() + "'";
+            //ResultSet rs= stmt.executeQuery(sql);
+            
+
+            String sql2 = "{CALL GET_ACCOUNTS_WALLETS(?,?)}";
+            
+            callableStatement = conn.prepareCall(sql2);
+            callableStatement.setString(1, account.getUsername());
+            callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
+            callableStatement.executeUpdate();
+            rs = (ResultSet) callableStatement.getObject(2);
             while(rs.next()) {
             	walletsOwned.add(rs.getString(1));
+            	 System.out.println(rs.getString(1));
             }
-            
-            stmt.close();
+            rs.close();
             return walletsOwned;
         }
         catch (SQLException e) {
@@ -167,5 +179,26 @@ public class AccountDaoImpl implements AccountDao{
         }
 		return false;
 	}
+	
+	public Boolean swapToActiveAccount(Account account) {
+		
+		try {
+            Connection conn = ConnectionFactory.getInstance().getConnection();
+            String sql = "UPDATE ACCOUNT SET ACTIVEKEY = 1 WHERE USERNAME LIKE '" + account.getUsername() + "'";
+            Statement stmt = conn.createStatement();
+            stmt.executeQuery(sql);
+            stmt.close();
+            conn.commit();
+            return true;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+		return false;
+	}
+
 
 }

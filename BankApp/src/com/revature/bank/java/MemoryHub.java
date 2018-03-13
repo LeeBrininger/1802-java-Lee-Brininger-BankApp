@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.revature.bank.dao.AccountDao;
@@ -17,10 +18,8 @@ import com.revature.bank.util.ConnectionFactory;
 import com.revature.bank.util.LoggingUtil;
 
 public class MemoryHub {
-	
-	//private static HashMap<String, Account> accounts = new HashMap<String, Account>();
-	//private static HashMap<String, Wallet> wallets = new HashMap<String, Wallet>();
 
+	
 	static AccountDao ad = new AccountDaoImpl();
 	static WalletDao wd = new WalletDaoImpl();
 	
@@ -28,29 +27,27 @@ public class MemoryHub {
 	
 	public static void storeFundsChange(Wallet wallet) {
 		wd.updateWalletMoney(wallet);
+		wd.commit();
+		System.out.println("Wallet stored;");
 	}
 	
 	
 	public static void addAccount(Account account) {
-		//accounts.put(account.getUsername(), account);
 		ad.createAccount(account);
 		LoggingUtil.logInfo("Account " + account.getUsername() + " added");
 	}
 	
 	public static void removeAccount(Account account) {
-		//accounts.remove(account.getUsername());
 		ad.deleteAccount(account);
 		LoggingUtil.logInfo("Account " + account.getUsername() + " removed");
 	}
 
 	public static void addWallet(Wallet wallet) {
-		//wallets.put(wallet.getName(), wallet);
 		wd.createWallet(wallet);
 		LoggingUtil.logInfo("Wallet " + wallet.getName() + " added");
 	}
 	
 	public static void removeWallet(Wallet wallet) {
-		//wallets.remove(wallet.getName());
 		wd.deleteWallet(wallet);
 		LoggingUtil.logInfo("Wallet " + wallet.getName() + " removed");
 	}
@@ -63,9 +60,16 @@ public class MemoryHub {
 		return wd.retrieveAllWallets();
 	}
 
+	public static List<String> getCustomerWallets(Account account){
+		return ad.getWalletsOwned(account); 
+	}
 
-	//public static void setWallets(HashMap<String, Wallet> wallets) {
-	//	MemoryHub.wallets = wallets;
-	//}
+	public static void addWalletOwned(Account account, Wallet wallet) {
+		ad.addWalletToOwned(account, wallet);
+	}
+	
+	public static void swapToActiveAccount(Account account) {
+		ad.swapToActiveAccount(account);
+	}
 	
 }

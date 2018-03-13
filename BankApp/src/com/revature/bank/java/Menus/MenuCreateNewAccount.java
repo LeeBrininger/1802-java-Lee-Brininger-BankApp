@@ -67,6 +67,8 @@ public class MenuCreateNewAccount {
 			BankHub.commandTree();
 		}
 		newCust.setEmail(statement);
+		System.out.println("Thank you for creating an account");
+		MemoryHub.addAccount(newCust);
 		System.out.println("\nWould you like to add a new account or access an existing one?\n1: New Account\n2: Access Existing Account");
 		statement = input.nextLine();
 		if(statement.toLowerCase().equals("exit")) {
@@ -75,21 +77,19 @@ public class MenuCreateNewAccount {
 		choise = Integer.parseInt(statement);
 		switch(choise) {
 		case 1:
-			newCust.addWallet(createNewWallet(input).getName());
+			MemoryHub.addWalletOwned(newCust, createNewWallet(input));
 			break;
 		case 2:
 			newW = AccountWalletFinder.selectAnyWallet(input);
 			if(newW == null){
 				BankHub.commandTree();
 			}
-			newCust.addWallet(newW.getName());
+			MemoryHub.addWalletOwned(newCust, newW);
 			break;
 		}
 		LoggingUtil.logInfo("");
 		System.out.println("Thank you, your account is awaiting approval.");
 		newCust.setUnActive();
-		MemoryHub.addAccount(newCust);
-		//MemoryHub.storeData();
 		BankHub.commandTree();
 	}
 	

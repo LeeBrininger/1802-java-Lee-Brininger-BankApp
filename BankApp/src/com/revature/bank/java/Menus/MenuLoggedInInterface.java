@@ -1,4 +1,4 @@
-package com.revature.bank.java.Menus;
+  package com.revature.bank.java.Menus;
 
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +20,7 @@ public class MenuLoggedInInterface {
 	public static void preformCustomer(Account user, Wallet activeWallet, Scanner input) {
 		HashMap<String, Wallet> allWallets = MemoryHub.getWallets();
 		Customer customer = (Customer) user;
-		List<String> wallets = customer.getWalletsOwned();
+		List<String> wallets = MemoryHub.getCustomerWallets(user);
 		String walletName = "";
 		Wallet secondWallet;
 		String selection = "";
@@ -29,6 +29,8 @@ public class MenuLoggedInInterface {
 		MenuInterface.aesthetics();
 		System.out.println("Hello " + customer.getFirstName() + " " + customer.getLastName() + "\n");
 		///////////////////////////////MenuApproveAccount.checkIfAccountRequested(customer, input);
+		
+		System.out.println(allWallets.size());
 		
 		while(activeWallet == null) {
 			walletName = AccountWalletFinder.selectWallet(customer, wallets, "", input);
@@ -84,14 +86,12 @@ public class MenuLoggedInInterface {
 				System.out.println("The request has been sent to the accound owners for approval");
 				LoggingUtil.logInfo(customer.getUsername() + " requested access to account " + secondWallet);
 			}
-			//MemoryHub.storeData();
 			break;
 		case 7:
 			customer.addWallet(MenuCreateNewAccount.createNewWallet(input).getName());
 			break;
 		case 8:
 			LoggingUtil.logInfo(customer.getUsername() + " logged out");
-			//MemoryHub.storeData();
 			BankHub.commandTree();
 			break;
 		default:

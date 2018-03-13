@@ -21,9 +21,7 @@ public class BankHub {
 	}
 	
 	public static void main(String[] args) {
-
 		LoggingUtil.logInfo("System opened");
-		//MemoryHub.readStored(defaultDataFile);
 		commandTree();
 	}
 	
